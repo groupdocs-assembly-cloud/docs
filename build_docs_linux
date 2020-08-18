@@ -1,0 +1,5 @@
+git submodule update --init --recursive docs-cloud-common
+git submodule foreach git pull origin master
+rsync -avz content docs-cloud-common/content
+cd ./docs-cloud-common
+hugo server -D
