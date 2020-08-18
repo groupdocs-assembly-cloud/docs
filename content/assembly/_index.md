@@ -1,8 +1,16 @@
----
-id: "assembly"
+﻿---
+id: "GroupDocs.Assembly Cloud"
 url: "assembly"
-title: "GroupDocs.Assembly Cloud"
-productName: "GroupDocs.Assembly Cloud"
-description: ""
+title: "GroupDocs.Assembly Cloud Product Family"
+description: "GroupDocs.Assembly Cloud Product Family"
 keywords: ""
+hideChildren: true
 ---
+
+Welcome to the GroupDocs.Assembly Cloud product family. It is a powerful Document Automation and Reports Generation cloud-based solution, designed to create custom documents from templates. This documentation offers you the detailed information on the product's terms and possibilities. It also provides a variety of practical examples of templates, data and code.
+
+To learn about Aspose.Assembly, please, refer to the corresponding section:
+
+*   [Getting Started](/groupdocs-assembly-cloud-product-family/getting-started/) – provides a brief overview of the product.
+*   [Developer Guide](/groupdocs-assembly-cloud-product-family/developer-guide/) – offers comprehensive information on the Report Generation techniques with a focus on the template expression syntax.
+*   [Release Notes](/groupdocs-assembly-cloud-product-family/release-notes/) – contains information on released editions of the product.
