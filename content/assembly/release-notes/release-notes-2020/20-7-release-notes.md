@@ -1,6 +1,6 @@
 ﻿---
-id: "groupdocs-viewer-cloud-20-5-release-notes"
-url: "assembly/release-notes/release-notes-2020/groupdocs-viewer-cloud-20-5-release-notes"
+id: "20-7-release-notes"
+url: "assembly/release-notes/release-notes-2020/20-7-release-notes"
 title: "GroupDocs.Assembly Cloud 20.7 Release Notes"
 weight: 1
 productName: "GroupDocs.Assembly Cloud"

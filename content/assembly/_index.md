@@ -1,8 +1,8 @@
 ﻿---
 id: "GroupDocs.Assembly Cloud"
 url: "assembly"
-title: "GroupDocs.Assembly Cloud Product Family"
-description: "GroupDocs.Assembly Cloud Product Family"
+title: "GroupDocs.Assembly Cloud"
+description: "GroupDocs.Assembly Cloud"
 keywords: ""
 hideChildren: true
 ---
