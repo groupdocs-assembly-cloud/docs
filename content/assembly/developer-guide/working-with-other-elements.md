@@ -1,6 +1,6 @@
 ﻿---
 id: "working-with-html"
-url: "assembly/developer-guide/working-with-html"
+url: "assembly/developer-guide/working-with-other-elements"
 title: "Working with Hyperlinks, Bookmarks, Checkboxes, Barcodes"
 weight: 6
 productName: "GroupDocs.Assembly Cloud"

@@ -22,7 +22,7 @@ GroupDocs.Assembly Cloud is a powerful web-based Document Automation and Report 
 
 The main Report Generation concept, presented on the image below, is simple and consistent:
 
-![image-20200817080527-1.png](assembly/images/report-generation-concepts.png)
+![Report Generation Concepts](assembly/images/concepts/concept.png)
 
 A document template is just a normal document, created using Microsoft Office and OpenOffice, that contains special tags for the dynamic content. You are supposed to use that template to assemble documents on this model repeatedly and consistently.
 

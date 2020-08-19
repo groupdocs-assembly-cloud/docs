@@ -1,6 +1,6 @@
 ﻿---
 id: "template-syntax"
-url: "assembly/developer-guide/template-syntax"
+url: "assembly/developer-guide/working-with-data"
 title: "Working with Data"
 weight: 2
 productName: "GroupDocs.Assembly Cloud"
