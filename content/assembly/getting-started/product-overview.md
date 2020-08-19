@@ -1,6 +1,6 @@
 ﻿---
-id: "features-overview"
-url: "assembly/getting-started/features-overview"
+id: "product-overview"
+url: "assembly/getting-started/product-overview"
 title: "Product Overview"
 weight: 1
 productName: "GroupDocs.Assembly Cloud"
@@ -8,18 +8,19 @@ description: "Product Overview"
 keywords: ""
 ---
 
-1.  [Report Generation vs Document Automation](#HReportGenerationvsA0DocumentAutomation)
-2.  [What is GroupDocs Assembly Cloud](#HWhatisGroupDocsAssemblyCloud)
-3.  [Supported Reporting Features](#HSupportedReportingA0Features)
-4.  [Supported File Formats](#HSupportedFileFormats)
-5.  [Supported Data Sources](#HSupportedDataSources)
-6.  [Security Compliance](#HSecurityCompliance)
-7.  [Software Requirements](#HSoftwareRequirements)
-8.  [Available SDKs](#HAvailableSDKs)
-9.  [Related Resources](#HRelatedResources)
-    1.  [API Explorer](#HAPIExplorer)
-    2.  [Free Online Document Assembly App](#HFreeOnlineDocumentAssemblyApp)
-    3.  [On-Premise Document Assembly SDKs](#HOn-PremiseDocumentAssemblyA0SDKs)
+1. [Report Generation vs Document Automation](#HRGvsDA)
+2. [What is GroupDocs Assembly Cloud](#HWhatIs)
+3. [Supported Reporting Features](#HFeatures)
+4. [Supported File Formats](#HFileFormats)
+5. [Supported Data Sources](#HDataSources)
+6. [Security Compliance](#HSecurity)
+7. [Software Requirements](#HRequirements)
+8. [Available SDKs](#HSDKs)
+9. [Related Resources](#HResources)
+    * [API Explorer](#HAPIExplorer)
+    * [Free Online Document Assembly App](#HApp)
+    * [Document Assembly Cloud GitHub Repository](#HGitHubCloud)
+    * [On-Premise Document Assembly SDKs](#HOnPremise)
 
 ---
 
@@ -45,17 +46,16 @@ GroupDocs Assembly Cloud is also a powerful [Mail Merge](https://en.wikipedia.o
 
 ## Supported Reporting Features
 
-The Reporting Engine, also known as the Report Generator, is the central functional element of our cloud-based Document Assembly technology, which allows customers to perform the following activities:
+The Reporting Engine, also known as the Report Generator, is the central functional element of our cloud-based Document Assembly technology, which allows customers to perform the following actions:
 
-*   Insert contents of outer documents, images, charts, lists, tables, barcodes, hyperlinks and bookmarks into the template dynamically.
-*   Manipulate data using sequential data operations and [LINQ](https://en.wikipedia.org/wiki/Language_Integrated_Query)\-based template syntax.
-*   Perform flexible data formatting for numeric, text & date-time elements.
-*   Use conditional blocks, which represent a set of alternative template options, bound with conditional expressions.
-*   Define variables used to calculate computationally expensive values just once and access them multiple times.
-*   Calculate formula while assembling spreadsheet documents.
-*   Assign attributes to the email message body and build email message attachments dynamically.
-*   Set background color for HTML documents.
-*   And much more.
+* Dynamically generate and insert lists, tables, charts, barcodes, hyperlinks and bookmarks.
+* Manipulate data using sequential data operations.
+* Perform flexible data formatting for numeric, text & date-time elements.
+* Use conditional blocks, which represent a set of alternative template options, bound with conditional expressions.
+* Define variables used to calculate computationally expensive values just once and access them multiple times.
+* Calculate formula while assembling spreadsheet documents.
+* Assign attributes to the email message body and build email message attachments dynamically.
+* And much more.
 
 ## Supported File Formats
 
@@ -63,30 +63,30 @@ GroupDocs.Assembly Cloud API allows you to generate documents in popular Microso
 
 | File Type | File Extensions |
 | --- | --- |
-| Microsoft Word | DOCX, DOC, DOT, DOTX, DOTM, DOCM, RTF |
-| Microsoft Excel | XLSX, XLS, XLSM, XLSB, XLT, XLTM, XLTX |
+| Microsoft Word | DOCX, DOC, DOT, DOTX, DOTM, DOCM, RTF, WordprocessingML |
+| Microsoft Excel | XLSX, XLS, XLSM, XLSB, XLT, XLTM, XLTX, SpreadsheetML |
 | Microsoft PowerPoint | PPTX, PPT, PPTM, PPS, PPSX, PPSM, POT, POTX, POTM |
 | Microsoft Outlook | MSG, EML, EMLX |
 | OpenOffice | ODT, OTT, ODS, ODP, OTP |
-| Adobe Acrobat | PDF |
-| Web | HTML, MHTML, MHT, MD |
+| Adobe | PDF |
+| Web | HTML, MHTML, MHT, MD, TXT |
 | Printing Language | PCL, PS, XPS, OXPS |
 | Vector Images | SVG, EMF |
 | Bitmap Images | PNG, JPEG, GIF, TIFF, BMP |
-| Other Formats | XAML, EPUB, TXT |
+| Other Formats | XAML, EPUB |
 
-Have a look at the detailed list of [Supported File Formats and Conversions](/groupdocs-assembly-cloud-product-family/getting-started/data/).
+Have a look at the detailed list of [Supported File Formats and Conversions](/groupdocs-assembly-cloud-product-family/getting-started/file-formats/).
 
 ## Supported Data Sources
 
 The following types of data sources are currently supported:
 
-*   [XML](https://en.wikipedia.org/wiki/XML) - eXtensible Markup Language format.
-*   [JSON](https://en.wikipedia.org/wiki/JSON) - JavaScript Object Notation format.
+* [XML](https://en.wikipedia.org/wiki/XML) - eXtensible Markup Language format.
+* [JSON](https://en.wikipedia.org/wiki/JSON) - JavaScript Object Notation format.
 
 ## Security Compliance
 
-Assembly Cloud API fully complies with the industry security standards: data transmission is carried out under the [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth) protocol that excludes the possibility of snatching information by third parties. For this purpose, you must acquire an **App SID** and **App KEY** identifiers to authenticate API requests before being able to use the Reporting Engine functionality.
+Assembly Cloud API fully complies with the industry security standards: data transmission is carried out under the [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth) protocol that excludes the possibility of snatching information by third parties. For this purpose, you must acquire an `App SID` and `App KEY` identifiers to authenticate API requests before being able to use the Reporting Engine functionality.
 
 Have a look at the ["Authenticating API Requests"](https://wiki.groupdocs.cloud/gdtotalcloud/getting-started/overview-rest-api/authenticating-api-requests/) article to gain a better understanding of the underlying security layer.
 
@@ -98,7 +98,7 @@ GroupDocs Assembly Cloud does not require any external software or third-party 
 
 Check out our [GitHub repository](https://github.com/groupdocs-assembly-cloud/) for a complete list of GroupDocs.Assembly SDKs along with working examples. At the moment following SDKs are available:
 
-| Programming Language or Platform | Source Codes | Package |
+| Language or Platform | Source Codes | Package |
 | --- | --- | --- |
 | .NET | [Sources on GitHub](https://github.com/groupdocs-assembly-cloud/groupdocs-assembly-cloud-dotnet) | [NuGet Package](https://www.nuget.org/packages/GroupDocs.Assembly-Cloud/) |
 | Java | [Sources on GitHub](https://github.com/groupdocs-assembly-cloud/groupdocs-assembly-cloud-java) |   |
@@ -114,15 +114,19 @@ Check out our [GitHub repository](https://github.com/groupdocs-assembly-cloud/)
 
 ### API Explorer
 
-[API Explorer](https://apireference.groupdocs.cloud/assembly/) is a collection of Swagger neatly categorized documentation for the GroupDocs Cloud APIs. It allows end developers to find, visualize and effortlessly interact with API’s resources and endpoints without having any of the implementation logic in place.
+[API Explorer](https://apireference.groupdocs.cloud/assembly/) is a collection of `Swagger` neatly categorized documentation for the GroupDocs Cloud APIs. It allows end developers to find, visualize and effortlessly interact with API’s resources and endpoints without having any of the implementation logic in place.
 
 ### Free Online Document Assembly App
 
-You can try our free online [Document Assembly App](https://products.groupdocs.app/assembly/total). Just upload your document template and data source files, select the required options, click “ASSEMBLE NOW” button and get the resulting output in a few seconds.
+You can try our free online [Document Assembly App](https://products.groupdocs.app/assembly/total). Just upload your document template and data source files, select the required options, click the “ASSEMBLE NOW” button and get the resulting output in a few seconds.
+
+### Document Assembly Cloud GitHub Repository
+
+Check out our [GitHub repository](https://github.com/groupdocs-assembly-cloud/) for the latest versions of Assembly Cloud SDKs.
 
 ### On-Premise Document Assembly SDKs
 
 We also provide an on-premise family of Assembly SDKs for .NET- and Java-based integrated development:
 
-*   [Assembly for .NET](https://products.groupdocs.com/assembly/net) - a native .NET library, targeting ASP.NET, WinForms, WPF, WCF and other types of .NET-applications.
-*   [Assembly for Java](https://products.groupdocs.com/assembly/java) - a native Java library, targeting web, desktop and other types of Java SE/EE applications.
+* [Assembly for .NET](https://products.groupdocs.com/assembly/net) - a native .NET library, targeting ASP NET, WinForms, WPF, WCF and other types of .NET-applications.
+* [Assembly for Java](https://products.groupdocs.com/assembly/java) - a native Java library, targeting web, desktop and other types of Java SE/EE applications.

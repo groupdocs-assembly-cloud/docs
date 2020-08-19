@@ -1,4 +1,4 @@
-﻿---
+---
 id: "concepts"
 url: "assembly/developer-guide/concepts"
 title: "Report Generation Concepts"
@@ -8,134 +8,347 @@ description: "Report Generation Concepts"
 keywords: ""
 ---
 
-1.  [Data Sources](#HDataSources)
-2.  [Tags and Expressions](#HTagsandExpressions)
-3.  [Data Bands](#HDataBands)
-    1.  [Referencing Fields in a Data Source](#HReferencingFieldsinA0aDataSource)
-    2.  [Managing Paragraph Breaks](#HManagingParagraphBreaks)
-    3.  [Passing Control to Next Iteration](#HPassingControltoNextIteration)
-    4.  [Table-Row Data Band, Spread over Multiple Rows](#HTable-RowDataBand2CSpreadoverMultipleRows)
-4.  [Conditional Data Processing](#HConditionalDataProcessing)
-5.  [See Also](#HSeeAlso)
+1. [Data Sources](#HDataSources)
+2. [Tags and Expressions](#HTags)
+3. [Data Bands](#HDataBands)
+    1. [Referencing Fields in a Data Source](#HFields)
+    2. [Managing Paragraph Breaks](#ParagraphBreaks)
+    3. [Passing Control to Next Iteration](#Next)
+    4. [Table-Row Data Band, Spread over Multiple Rows](#HTableRowDataBands)
+4. [Conditional Data Processing](#HConditions)
+5. [See Also](#HSeeAlso)
 
 GroupDocs.Assembly Cloud is a powerful web-based Document Automation and Report Generation solution, designed to generate data-bound documents through templates dynamically.
 
-The main Report Generation concept is simple and consistent:
+The main Report Generation concept, presented on the image below, is simple and consistent:
 
-![image-20200817080527-1.png](/downloadrev/groupdocs-assembly-cloud-product-family/developer-guide/concepts/WebHome/image-20200817080527-1.png?rev=1.1)
+![image-20200817080527-1.png](assembly/images/report-generation-concepts.png)
 
 A document template is just a normal document, created using Microsoft Office and OpenOffice, that contains special tags for the dynamic content. You are supposed to use that template to assemble documents on this model repeatedly and consistently.
 
 Have a note, that supported template types are not limited to word-processing document templates only, but also include spreadsheet templates, presentation templates, HTML document templates. email document templates. plain-text templates and others.
 
+
 ## Data Sources
 
-The external** Data Source** lets you define which data set will be used to bind with a document template and subsequently evaluated in the output.
+The external **_Data Source_** lets you define which data set will be used to bind with a document template and subsequently evaluated in the output.
 
 You can use both JSON and XML files for this purpose. Both formats are hierarchical, self-describing and human-readable. However, JSON may have slight built-in advantages, because it is more compact and thus it is quicker to read and write.
 
 You can use the following simple data types in your JSON and XML files:
 
-| Data Type | Description | XML Example | JSON Example |
-| --- | --- | --- | --- |
-| [Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32?view=netcore-3.1) | a 32-bit signed integer | <Age>30</Age> | { "Age": "30" } |
-| [Int64](https://docs.microsoft.com/en-us/dotnet/api/system.int64?view=netcore-3.1) | a 64-bit signed integer | <Amount>5612456179438</Amount> | { "Amount": "5612456179438" } |
-| [Double](https://docs.microsoft.com/en-us/dotnet/api/system?view=netcore-3.1) | a double-precision floating-point number | <Price>253.9</Price> | { "Price": "253.9" } |
-| [Boolean](https://docs.microsoft.com/en-us/dotnet/api/system.boolean?view=netcore-3.1) | a Boolean value (True or False) | <IsChecked>True</IsChecked> | { "IsChecked": "True" } |
-| [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system?view=netcore-3.1) | an instant in time | <OrderDate>2019-10-01T00:00:00</OrderDate> | { "OrderDate": "2019-10-01T00:00:00" } |
-| [String](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1) | a sequence of Unicode characters | <Name>John Doe</Name> | { "Name": "John Doe" } |
+<table>
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Description</th>
+<th>XML Example</th>
+<th>JSON Example</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="middle">
+<td>
+
+[Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)
+
+</td>
+<td>A 32-bit signed integer</td>
+<td>
+
+`<Age>30</Age>`
+
+</td>
+
+<td>
+
+`{"Age": "30"}`
+
+</td>
+</tr>
+
+<tr valign="middle">
+<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">Int64</a></td>
+<td>A 64-bit signed integer</td>
+<td>
+
+```XML
+<Amount>5612456179438</Amount>
+```
+
+</td>
+<td>
+
+```JSON
+{"Amount": "5612456179438"}
+```
+
+</td>
+</tr>
+
+<tr valign="middle">
+<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.double">Double</a></td>
+<td>A double-precision floating-point number</td>
+<td>
+
+```XML
+<Price>253.9</Price>
+```
+
+</td>
+<td>
+
+```JSON
+{"Price": "253.9"}
+```
+
+</td>
+</tr>
+
+<tr valign="middle">
+<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></td>
+<td>A boolean value (True or False)</td>
+<td>
+
+```XML
+<IsChecked>True</IsChecked>
+```
+
+</td>
+<td>
+
+```JSON
+{"IsChecked": "True"}
+```
+
+</td>
+</tr>
+
+<tr valign="middle">
+<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime">DateTime</a></td>
+<td>An instant in time</td>
+<td>
+
+```XML
+<OrderDate>2019-10-01T00:00:00</OrderDate>
+```
+
+</td>
+<td>
+
+```JSON
+{"OrderDate": "2019-10-01T00:00:00"}
+```
+
+</td>
+</tr>
+
+<tr valign="middle">
+<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></td>
+<td>A sequence of Unicode characters</td>
+<td>
+
+```XML
+<Name>John Doe</Name>
+```
+
+</td>
+<td>
+
+```JSON
+{"Name": "John Doe"}
+```
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Tags and Expressions
 
-**Tags** and **Expressions** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines commands parameters.
+**_Tags_** and **_Expressions_** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines commands parameters.
 
-In terms of Reporting Engine, it does not matter what type of document templates you are working with - regardless of the document template type, tags and expression syntax remains the same anywhere, however, you need to use character escaping when you work with HTML templates.
+In terms of Reporting Engine, it does not matter what type of document templates you are working with - regardless of the document template type, tags and expression syntax remains the same anywhere. However, you need to use character escaping when working with HTML templates.
 
-A tag syntax consists of the following elements: name, expression, optional switches, optional comment, surrounded with a pair of <<, \>> character sequences:
+A tag is surrounded with a pair of "**`<<`**", "**`>>`**" character sequences and consists of the following elements: name, expression, switches and comment.
 
-<<tag\_name \[expression\] -switch1 -switch2 ... //comment>>  
+```C#
+<<tagName [expression] -switch1 -switch2 ... //comment>>
+```
 
-Some tags require a corresponding closing tag. A closing tag must match the name of the opening tag with the "/" character preceding its name:
+Some tags require a corresponding closing tag. A closing tag must match the name of the opening tag with the "**`/`**" character preceding its name:
 
-<</tag\_name>>
+```C#
+<</tagName>>
+```
 
 Depending on the functional role, the following types of tags can be distinguished:
 
-| Tag Type | Functional Role | Tags | Tag Description | Comments |
-| --- | --- | --- | --- | --- |
-| Control Tags | Provide flow and conditional processing control | ***foreach,*** ***next*** | Provide flow control for traversing elements of a certain type in a sequence |   |
-| ***if***, ***else***, ***elseif*** | Provide conditional processing control |   |
-| Content Tags | Used to generate and insert different content elements into the output dynamically | 
-***backColor***
+<table>
+    <thead>
+        <tr>
+            <th>Tag Type</th>
+            <th>Functional Role</th>
+            <th style="text-align:center">Tags</th>
+            <th>Tag Description</th>
+            <th>Comments</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=2 valign="top">Control Tags</td>
+            <td rowspan=2 valign="top">Provides flow and conditional processing control</td>
+            <td valign="top" align="center"><b><i><code>foreach</code></i></b>, <b><i><code>next</code></i></b></td>
+            <td>Provides flow control for traversing elements of a certain type in a sequence</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>if</code></i></b>, <b><i><code>else</code></i></b>, <b><i><code>elseif</code></i></b></td>
+            <td>Provides conditional processing control</td>
+        </tr>
+        <tr>
+            <td rowspan=8 valign="top">Content Tags</td>
+            <td rowspan=8 valign="top">Used to generate and insert different content elements into the output dynamically</td>
+            <td valign="top" align="center"><b><i><code>backColor</code></i></b></td>
+            <td>Defines a background-color for a text</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>barcode</code></i></b></td>
+            <td>Inserts a barcode image</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>check</code></i></b></td>
+            <td>Sets a checkbox value</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>doc</code></i></b></td>
+            <td valign="top">Inserts a contents of an external document</td>
+            <td style="color:red;"><i>currently not supported</i></td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>image</code></i></b></td>
+            <td  valign="top">Inserts an image</td>
+            <td  style="color:red;"><i>currently not supported</i></td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>link</code></i></b></td>
+            <td>Inserts a hyperlink</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>restartNum</code></i></b></td>
+            <td>Restarts a numbering inside a list</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>var</code></i></b></td>
+            <td>Declares a variable</td>
+        </tr>
+        <tr>
+            <td rowspan=5 valign="top">Chart Tags</td>
+            <td rowspan=5 valign="top">Used to populate charts with data</td>
+            <td valign="top" align="center"><b><i><code>pointColor</code></i></b></td>
+            <td>Defines a color for a chart series</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>removeif</code></i></b></td>
+            <td>Removes a chart series, depending on the condition</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>seriesColor</code></i></b></td>
+            <td valign="top">Defines a color of a chart series</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>size</code></i></b></td>
+            <td>Defines a bubble size for a bubble chart</td>
+        </tr>
+        <tr>
+            <td valign="top" align="center"><b><i><code>x</code></i></b>, <b><i><code>y</code></i></b></td>
+            <td>Specifies a data mapping for chart coordinates</td>
+        </tr>
+    </tbody>
+</table>
 
- | Defines a background-color for text |   |
-| ***barcode*** | Inserts a barcode |   |
-| ***check*** | Sets a checkbox value |   |
-| ***doc*** | Inserts the contents of an external document | currently not supported |
-| ***image*** | Inserts an image | currently not supported |
-| ***link*** | Inserts a hyperlink |   |
-| ***restartNum*** | Restarts a numbering inside a list |   |
-| ***var*** | Declares a variable |   |
-| Chart Tags | Used to populate charts with data | ***pointColor*** | Defines a color for the chart series |   |
-| ***removeif*** | Removes a chart series, depending on the condition |   |
-| ***seriesColor*** | Defines a color of a chart series |   |
-| ***size*** | Defines a bubble size for a bubble chart |   |
-| ***x***, ***y*** | Specifies a data mapping for chart coordinates |   |
-
-Expressions are the most interesting part of a tag syntax. They are composed of operands, usually presented in the form of **data fields**, and **operators**, defined according to [C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029).
+Expressions are the most interesting part of a tag syntax. They are composed of operands, usually presented in the form of **_Data Field_** references, and **_Operators_**, defined according to the [C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029).
 
 ## Data Bands
 
-A **data band** is a template for sequential data processing. During the process of document generation, the Reporting Engine connects each data band to the data source using **data field **references and processes it as many times as there are records in the data source. As a result, the data band body is replicated and appended to the output document.
+A **_Data Band_** is a template for sequential data processing. During the document generation process, the Reporting Engine connects each data band to a data source using **_Data Field_** references and processes it as many times as there are records in the data source. As a result, the data band body is replicated and appended to the output document.
 
 A data band is made up of two parts:
 
-*    A pair of opening and closing ***foreach*** loop tags, that represent the scope of a control flow statement for traversing elements in a sequence. Depending upon the developer's objectives the ***foreach*** tag syntax may vary.
-*   A data band body, defined between the ***foreach*** pair of tags, which represents a template for a single element of a sequence. A data band body may contain nested data bands.
+* A pair of opening and closing ***`foreach`*** loop tags, that represent the scope of a control flow statement for traversing elements in a sequence. Depending upon the developer's objectives the ***`foreach`*** tag syntax may vary.
+* A **_Data Band Body_**, defined between the ***`foreach`*** pair of tags, which represents a template for a single element of a sequence. A data band body may contain nested data bands.
 
 The complete syntax of a data band is provided below:
 
-<<foreach \[variable\_type variable\_name in sequence\]>>  
-data band body  
-<</foreach\>>
+```C#
+<<foreach [varType varName in sequence]>>data_band_body<</foreach>>
+```
 
-An iteration variable, defined by name and type, is intended to reference an element of a sequence inside a data band body. Variable's name and type are optional parameters, and can be specified oromitted depending on the aspects described in the following table:
+An iteration variable, defined by name and type, is intended to reference an element of a sequence inside a data band body.
 
-| Name | Description | Use Aspects |
-| --- | --- | --- |
-| variable\_type | Variable Type | 
-*   If you specify the variable type explicitly, it must be known by the Reporting Engine.
-*   If you omit the variable data type, it is determined implicitly depending on the type of the corresponding element sequence.
+Variable's name and type are optional parameters, that can be specified oromitted depending on the aspects described in the following table:
 
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Use Aspects</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td valign="center" align="middle">Variable Type</td>
+            <td>
+                <ul>
+                    <li>If you specify the variable's type explicitly, it must be known by the Reporting Engine.</li>
+                    <li>If you omit the variable's data type, it is determined implicitly depending on the type of the corresponding element sequence.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td valign="center" align="middle">Variable Name</td>
+            <td>
+                <ul>
+                    <li>If you specify the variable's name, it must be unique within the scope of the corresponding foreach tag.</li>
+                    <li>If you omit the variable's name, you can still access the variable’s members using the <b><i>Contextual Field Access</i></b> syntax.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
+When a data band is related to a list, it is called a ***_Common Data Band_***.
 
- |
-| variable\_name | Variable Name | 
+When a data band is related to a table, that is to a single or multiple rows of a table, it is called a ***_Table-Row Data Band_***.
 
-*   If you specify the variable name, it must be unique within the scope of the corresponding ***foreach*** tag.
-*   If you omit the variable name, you can still access the variable’s members using the contextual object member access syntax.
-
-
-
- |
-
-When a data band is related to a list, it is called a ***common data band***.
-
-When a data band is related to a table, that is to a single or multiple rows of a table, it is called a ***table-row data band***. Depending on the objectives, this type of data band may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in more complicated scenarios, that imply the generation of hierarchical tabular data structures, using multirow data bands may be required.
+Depending on the objectives, this type of data band may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in more complicated scenarios, that imply the generation of hierarchical tabular data structures, using multirow data bands may be required.
 
 ### Referencing Fields in a Data Source
 
-To reference a field inside a data source you must provide a string representation of it. The reference syntax is straightforward:
+To reference a field inside a data source you must provide a string representation of it.
 
-<<\[field\_reference\]>>
+A field reference syntax is straightforward:
 
-To make this baseline technique clear, let's have a look at the sample data source and the corresponding data band.
+```C#
+<<[field_reference]>>
+```
 
-The following XML and JSON data sources represent a list of persons, described by their names and ages:
+To make this baseline technique clear, let's have a look at the sample data sources in XML and JSON and the corresponding data band.
 
-| XML | JSON |
-| --- | --- |
-| <Persons>  
+The following XML and JSON data sources represent a list of persons, described by their names and ages.
+
+<table>
+<thead>
+    <tr>
+        <th>XML Data</th>
+        <th>JSON Data</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top">
+
+```XML
+<Persons>  
   <Person>  
      <Name>John Doe</Name>  
      <Age>30</Age>  
@@ -149,8 +362,15 @@ The following XML and JSON data sources represent a list of persons, described b
      <Age>51</Age>  
   </Person>  
 </Persons>
- | {"Persons": {  
-   "Person": \[  
+```
+
+</td>
+<td valign="top">
+
+```JSON
+{"Persons":
+  {"Person":
+    [  
       { "Name": "John Doe",  
        "Age": "30"  
       },  
@@ -162,167 +382,535 @@ The following XML and JSON data sources represent a list of persons, described b
        "Name": "John Smith",  
        "Age": "51"  
       }  
-    \]  
+    ]
   }  
-} |
+}
+```
 
-The corresponding table-row data band is shown below. As you can see, it is referencing ***Name*** and ***Age*** fields inside a ***ds*** data source, and intended to output the sequence of ***Person*** elements data to a tabular format in three columns:
+</td>
+</tr>
+</tbody>
+</table>
 
-| Number | Name | Age |
-| --- | --- | --- |
-| <<foreach \[p in ds.Persons\]>>  
-<<\[p.NumberOf()\]>>
- | <<\[p.Name\]>> | <<\[p.Age\]>>  
-<</foreach\>>
+The corresponding table-row data band is shown below. As you can see, it is referencing the `Name` and `Age` fields inside the `ds` data source, and intended to output the sequence of `Person` elements to a tabular format in three columns:
 
- |
-| Count: | <<\[ds.Persons.Count()\]>> |
+<table>
+<thead>
+    <tr>
+        <th style="text-align:center">Number</th>
+        <th style="text-align:center">Name</th>
+        <th style="text-align:center">Age</th>
+    </tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+
+```C#
+<<foreach [p in ds.Persons]>><<[p.NumberOf()]>>
+```
+
+</td>
+<td>
+
+```C#
+<<[p.Name]>>
+```
+
+</td>
+<td>
+
+```C#
+<<[p.Age]>><</foreach>>
+```
+
+</td>
+</tr>
+<tr valign="center">
+<td align="center"><b>Count</b></td>
+<td colspan="2">
+
+```C#
+<<[ds.Persons.Count()]>>
+```
+
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 When the report generation process is complete, you'll see the following output:
 
 | Number | Name | Age |
-| --- | --- | --- |
+| :-: | :-: | :-: |
 | 1 | John Doe | 30 |
 | 2 | Jane Doe | 27 |
 | 3 | John Smith | 51 |
-| Count: | 3 |
+| **Count** | **3** |
 
-You can also use the Contextual Field Access technique, which enables you to access fields of a data source depending on the processing context. An object, to which the Contextual Field Access can be applied, is determined by the following rules:
+You can also use the ***Contextual Field Access*** technique, which enables you to access fields of a data source depending on the processing context. An object, to which the Contextual Field Access can be applied, is determined by the following rules:
 
-*   Inside a data band body, the object is resolved to the iteration variable.
-*   Outside a data band body, the object is resolved to a passed data source.
+* Inside a data band body, the object is resolved to the iteration variable.
+* Outside a data band body, the object is resolved to a passed data source.
 
 The main syntax differences between the standard and the contextual types of field access are submitted in the following table:
 
-| Type of Field Access | Iteration Loop Syntax | Field Access Syntax |
-| --- | --- | --- |
-| Standard | <<foreach \[variable in Sequence\]>> | <<\[variable.Field\]>> |
-| Contextual | <<foreach \[in Sequence\]>> | <<\[Field\]>> |
+<table>
+<thead>
+    <tr>
+        <th>Type of Field Access</th>
+        <th>Iteration Loop Syntax</th>
+        <th>Field Access Syntax</th>
+    </tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td valign="middle">Standard</td>
+<td>
+
+```C#
+<<foreach [variable in sequence]>>
+```
+</td>
+<td>
+
+```C#
+<<[variable.Field]>>
+```
+
+</td>
+<tr valign="top">
+<td valign="middle">Contextual</td>
+<td>
+
+```C#
+<<foreach [in sequence]>>
+```
+</td>
+<td>
+
+```C#
+<<[Field]>>
+```
+
+</td>
+</tbody>
+</table>
 
 The complete table-row data band example, that demonstates the Contextual Field Access technique, is provided below:
 
-| Number | Name | Age |
-| --- | --- | --- |
-| <<foreach \[in Persons\]\>>  
-<<\[NumberOf()\]\>>
- | <<\[Name\]>> | <<\[Age\]>>  
-<</foreach\>>
+<table>
+<thead>
+    <tr>
+        <th style="text-align:center">Number</th>
+        <th style="text-align:center">Name</th>
+        <th style="text-align:center">Age</th>
+    </tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
 
- |
-| Count:  | <<\[Persons.Count()\]>> |
+```C#
+<<foreach [in Persons]>><<[NumberOf()]>>
+```
+
+</td>
+<td>
+
+```C#
+<<[Name]>>
+```
+
+</td>
+<td>
+
+```C#
+<<[Age]>><</foreach>>
+```
+
+</td>
+</tr>
+<tr valign="middle">
+<td align="right"><b>Count</b></td>
+<td colspan="2">
+
+```C#
+<<[Persons.Count()]>>
+```
+
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### Managing Paragraph Breaks
 
 While building a report, paragraph breaks derive attributes from their template prototypes. In particular, this fact enables you to build numbered or bulleted lists in reports dynamically.
 
-The following table illustrates some common use-cases with a ¶ symbol, that represents a non-printing control character of a paragraph break. Given an enumeration of strings ("item1", "item2", "item3") and a common data band in the left column, you will get the output, shown in the right column:
+The following table illustrates some common use-cases with a "**`¶`**" symbol, that represents a non-printing control character of a paragraph break.
 
-| A Data Band | The Output |
-| --- | --- |
-| prefix <<foreach \[item in items\]>><<\[item\]>>¶  
-<</foreach\>>suffix | prefix item1¶  
-item2¶  
-item3¶  
+Given an enumeration of strings `["item1", "item2", "item3"]` and a common data band in the left column of the following table, you will get the output, shown in the right column:
+
+<table>
+<thead>
+    <tr>
+        <th style="text-align:center">The Data Band</th>
+        <th style="text-align:center">The Output</th>
+    </tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td >
+
+```C#
+prefix <<foreach [item in items]>><<[item]>>¶
+<</foreach>>suffix
+```
+
+</td>
+<td>
+
+```C#
+prefix item1¶
+item2¶
+item3¶
 suffix
- |
-| prefix<<foreach \[item in items\]>>¶  
-<<\[item\]>><</foreach\>> suffix | prefix¶  
-item1¶  
-item2¶  
+```
+
+</td>
+</tr>
+<tr valign="top">
+<td>
+
+```C#
+prefix<<foreach [item in items]>>¶
+<<[item]>><</foreach>> suffix
+```
+
+</td>
+<td>
+
+```C#
+prefix¶
+item1¶
+item2¶
 item3 suffix
+```
 
- |
-| prefix¶  
-<<foreach \[item in items\]>><<\[item\]>>¶  
-<</foreach\>>suffix | prefix¶  
-item1¶  
-item2¶  
-item3¶  
+</td>
+</tr>
+<tr valign="top">
+<td>
+
+```C#
+prefix¶
+<<foreach [item in items]>><<[item]>>¶
+<</foreach>>suffix
+```
+
+</td>
+<td>
+
+```C#
+prefix¶
+item1¶
+item2¶
+item3¶
 suffix
+```
 
- |
-| prefix<<foreach \[item in items\]>>¶  
-<<\[item\]>><</foreach\>>¶  
-suffix | prefix¶  
-item1¶  
-item2¶  
-item3¶  
+</td>
+</tr>
+<tr valign="top">
+<td>
+
+```C#
+prefix<<foreach [item in items]>>¶
+<<[item]>><</foreach>>¶
 suffix
+```
 
- |
+</td>
+<td>
 
-### Passing Control to Next Iteration
+```C#
+prefix¶
+item1¶
+item2¶
+item3¶
+suffix
+```
 
-You can instruct the Reporting Engine to force movement to the next iteration within a data band using the ***next ***tag. This feature is useful in scenarios when you need to output data of a fixed number of elements in a single row.
+</td>
+</tr>
+</tbody>
+</table>
 
-In the following example, given an enumeration of Person data elements, you can output their names in a row using the following table-row data band:
+### Passing Control to the Next Loop Iteration
 
-<table style="width:500px"><tbody><tr><td style="width:242px"><span class="box"><span class="code">&lt;&lt;<span style="font-weight: bold; color: #008000; ">foreach</span> [p <span style="font-weight: bold; color: #008000; ">in</span> Persons]&gt;&gt;<br>&lt;&lt;[p.Name]&gt;&gt;</span></span></td><td style="width:132px"><span class="box"><span class="code">&lt;&lt;next&gt;&gt;<br>&lt;&lt;[p.Name]&gt;&gt;</span></span></td><td style="width:325px"><span class="box"><span class="code">&lt;&lt;next&gt;&gt;<br>&lt;&lt;[p.Name]&gt;&gt;<br>&lt;&lt;/<span style="font-weight: bold; color: #008000; ">foreach</span>&gt;&gt;</span></span></td></tr></tbody></table>
+You can instruct the Reporting Engine to force movement to the next iteration within a data band using the ***`next`*** tag. This feature is useful in scenarios when you need to output data of a fixed number of elements in a single row.
+
+In the following example, given an enumeration of `Person` data elements, you can output their names in a row using the following table-row data band:
+
+<table>
+<thead>
+    <tr>
+        <th style="text-align:center">Name A</th>
+        <th style="text-align:center">Name B</th>
+        <th style="text-align:center">Name C</th>
+    </tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+
+```C#
+<<foreach [p in Persons]>><<[p.Name]>>
+```
+
+</td>
+<td>
+
+```C#
+<<next>><<[p.Name]>>
+```
+
+</td>
+<td>
+
+```C#
+<<next>><<[p.Name]>><</foreach>>
+```
+
+</td>
+</tr>
+</table>
 
 The result would be as follows:
 
-<table class="table-bordered" style="width:384px"><tbody><tr><td style="text-align:left; vertical-align:middle; width:124px">John Doe</td><td style="text-align:left; vertical-align:middle; width:125px">Jane Doe</td><td style="text-align:left; vertical-align:middle; width:132px">John Smith</td></tr></tbody></table>
+<table>
+<thead>
+    <tr>
+        <th style="text-align:center">Name A</th>
+        <th style="text-align:center">Name B</th>
+        <th style="text-align:center">Name C</th>
+    </tr>
+</thead>
+<tr>
+<td>John Doe</td>
+<td>Jane Doe</td>
+<td>John Smith</td>
+</tr>
+</tbody>
+<table>
 
 ### Table-Row Data Band, Spread over Multiple Rows
 
 The main purpose of a table-row data band, spread over multiple rows, is to generate nested data structures, for example, in-table lists. The body of this data band starts at the beginning of the first occupied row and ends at the end of the last occupied row as follows:
 
-<table class="table-bordered" style="width:464px"><tbody><tr><td style="text-align:center; vertical-align:middle; width:168px"><span class="box"><span class="code">&lt;&lt;<span style="font-weight: bold; color: #008000; ">foreach</span> ...&gt;&gt;</span></span> ...</td><td style="text-align:center; vertical-align:middle; width:142px">...</td><td style="text-align:center; vertical-align:middle; width:151px">...</td></tr><tr><td style="text-align:center; vertical-align:middle; width:168px">...</td><td style="text-align:center; vertical-align:middle; width:142px">...</td><td style="text-align:center; vertical-align:middle; width:151px">...</td></tr><tr><td style="text-align:center; vertical-align:middle; width:168px">...</td><td style="text-align:center; vertical-align:middle; width:142px">...</td><td style="text-align:center; vertical-align:middle; width:151px">... <span class="box"><span class="code">&lt;&lt;/<span style="font-weight: bold; color: #008000; ">foreach</span>&gt;&gt;</span></span></td></tr></tbody></table>
+<table>
+<tbody>
+<tr valign="middle">
+<td>
 
-The next example demonstrates this advanced technique and shows how to populate a ***Manager/Client*** table with a nested in-table ***Contracts*** list. Note that the first (outer) data band, that is responsible for iterating and dealing with ***Manager*** data elements, occupies two table rows:
+```C#
+<<foreach>> ...
+```
 
-| Manager / Client | Contract Price |
-| --- | --- |
-| <<foreach \[m in ds.Managers\]>><<\[m.Name\]>> | <<\[m.Contracts.Sum(c => c.Price)\]>> |
-| <<foreach \[c in m.Contracts\]>><<\[c.Clients.Name\]>> | <<\[c.Price\]>><</foreach\>><</foreach\>> |
-| Total: | <<\[ds.Contracts.Sum(c => c.Price)\]>> |
+</td>
+<td align="center"><code>...</code></td>
+<td align="center"><code>...</code></td>
+</tr>
+<tr valign="middle">
+<td colspan="3" align="center"><code>...</code></td>
+</tr>
+<tr valign="middle">
+<td  align="center"><code>...</code></td>
+<td align="center"><code>...</code></td>
+<td>
+
+```C#
+... <</foreach>>
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
+The next example demonstrates this advanced technique and shows how to populate a `Manager/Client` table with a nested in-table `Contracts` list. Note that the first (outer) data band, that is responsible for iterating and dealing with `Manager` data elements, occupies two table rows:
+
+<table>
+<thead>
+    <tr>
+        <th style="text-align:center">Manager / Client</th>
+        <th style="text-align:center">Contract Price</th>
+    </tr>
+</thead>
+<tbody>
+<tr valign="top">
+<td>
+
+```C#
+<<foreach [m in ds.Managers]>><<[m.Name]>>
+```
+
+</td>
+<td>
+
+```C#
+<<foreach [m in ds.Managers]>><<[m.Name]>>
+```
+
+</td>
+</tr>
+<tr valign="top">
+<td>
+
+```C#
+<<foreach [m in ds.Managers]>><<[m.Name]>>
+```
+
+</td>
+<td>
+
+```C#
+<<[c.Price]>><</foreach>><</foreach>>
+```
+
+</td>
+</tr>
+<tr valign="middle">
+<td align="right"><b>Total</b></td>
+<td>
+
+```C#
+<<[ds.Contracts.Sum(c => c.Price)]>>
+```
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Conditional Data Processing
 
-A conditional block represents a set of template options, bound to associated conditional expressions. During the process of Report Generation, these conditional expressions are sequentially evaluated until an expression that returns True is reached. In this case, the conditional block is replaced with the corresponding template option and populated with data.
+A ***Conditional Block*** represents a set of template options, bound to associated conditional expressions. During the process of Report Generation, these conditional expressions are sequentially evaluated until an expression that returns `True` is reached. In this case, the conditional block is replaced with the corresponding template option and populated with data.
 
-A conditional block can have a default template <<else\>> option that is not bound with a conditional expression. This template option is used during the Report Generation process, when none of the conditional expressions return True. If a default template option is missing and none of the conditional expressions return True, then the whole conditional block is removed.
+A conditional block can have a default template `<<else>>` option that is not bound with a conditional expression. This template option is used when none of the conditional expressions return `True`.
 
-You can use the following syntax to declare a common conditional block:
+You can use the following syntax to declare a conditional block:
 
-<<if \[conditional\_expression1\]>>  
-    template\_option1  
-<<elseif \[conditional\_expression2\]>>  
-     template\_option2  
-     ...  
-<<else\>>  
-    default\_template\_option  
-<</if\>>
+```C#
+<<if [condition_1]>>
+    template_option_1
+<<elseif [condition_2]>>
+    template_option_2
+           ...
+<<elseif [condition_N]>>
+    template_option_N
+<<else>>
+    default_template_option
+<</if>>
+```
 
 The following example shows how you can use conditional expressions to represent a number of elements in a sequence, handling the situation, when the sequence is empty:
 
-You have chosen <<if \[!items.Any()\]>>no items<<else\>><<\[items.Count()\]>> item(s)<</if\>>.
+```C#
+You have chosen <<if [!items.Any()]>>no items<<else>><<[items.Count()]>> item(s)<</if>>.
+```
 
 A template option of a conditional block can be composed of multiple paragraphs and data bands.
 
-For example, given an enumeration of strings ("item1", "item2" and "item3"), you can tentatively check whether the enumeration contains any elements before outputting the list:
+For example, given an enumeration of strings `["item1", "item2", "item3"]`, you can tentatively check whether the enumeration contains any elements before sending them to output:
 
-<<if \[!items.Any()\]>>No data.<<else\>>  
-<<foreach \[item in items\]>><<\[item\]>><</foreach\>><</if\>>
+```C#
+<<if [!items.Any()]>>No data.<<else>><<foreach [item in items]>><<[item]>><</foreach>><</if>>
+```
 
 Given the previous declaration of string items, you can use the following template to apply different formatting for even and odd elements of the sequence:
 
-<<foreach \[item in items\]>><<if \[IndexOf() % 2 == 0\]>><<\[item\]>>  
-<<else\>>**<<\[item\]>>**  
-<</if\>><</foreach\>>
+```C#
+<<foreach [item in items]>><<if [IndexOf() % 2 == 0]>><<[item]>><<else>><<[item]>><</if>><</foreach>>
+```
 
 In this case, the engine produces a report as follows:
 
-item1  
-**item2**  
+```C#
+item1
+item2
 item3
+```
 
-By analogy with table-row data bands, when a conditional block is related to a table, that is to a single or multiple rows of a table, it is called a ***table-row conditional block.*** Depending on the objectives, this conditional block may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in many cases, it occupies multiple rows of a table.
+By analogy with table-row data bands, when a conditional block is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Conditional Block.***
 
-The body of table-row conditional block, spread over multiple rows (as well as the body of its every template option), starts at the beginning of the first occupied row and ends at the end of the last occupied row as follows:
+Depending on the objectives, this conditional block may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in many cases, it occupies multiple rows of a table.
 
-<table style="width:427px"><tbody><tr><td style="width:158px"><span class="box"><span class="code">&lt;&lt;<span style="font-weight: bold; color: #008000; ">if</span> ...&gt;&gt;</span></span> ...</td><td style="width:135px">...</td><td style="width:132px">...</td></tr><tr><td style="width:158px">...</td><td style="width:135px">...</td><td style="width:132px">...</td></tr><tr><td style="width:158px"><span class="box"><span class="code">&lt;&lt;elseif ...&gt;&gt;</span></span> ...</td><td style="width:135px">...</td><td style="width:132px">...</td></tr><tr><td style="width:158px">...</td><td style="width:135px">...</td><td style="width:132px">...</td></tr><tr><td style="width:158px"><span class="box"><span class="code">&lt;&lt;<span style="font-weight: bold; color: #008000; ">else</span>&gt;&gt;</span></span> ...</td><td style="width:135px">...</td><td style="width:132px">...</td></tr><tr><td style="width:158px">...</td><td style="width:135px">...</td><td style="width:132px">...</td></tr><tr><td style="width:158px">...</td><td style="width:135px">...</td><td style="width:132px">... <span class="box"><span class="code">&lt;&lt;/<span style="font-weight: bold; color: #008000; ">if</span>&gt;&gt;</span></span></td></tr></tbody></table>
+The body of a table-row conditional block, spread over multiple rows, as well as the body of its every template option, starts at the beginning of the first occupied row and ends at the end of the last occupied row as shown below:
+
+<table>
+<tbody>
+<tr valign="center">
+<td>
+
+```C#
+<<if [condition_1]>> ...
+```
+
+</td>
+<td align="middle"><code>...</code></td>
+<td align="middle"><code>...</code></td>
+</tr>
+
+<tr valign="center">
+<td>
+
+```C#
+<<elseif [condition_2]>> ...
+```
+
+</td>
+<td align="middle"><code>...</code></td>
+<td align="middle"><code>...</code></td>
+</tr>
+
+<tr valign="center">
+<td>
+
+```C#
+<<elseif [condition_N]>> ...
+```
+
+</td>
+<td align="middle"><code>...</code></td>
+<td align="middle"><code>...</code></td>
+</tr>
+
+<tr valign="center">
+<td>
+
+```C#
+<<else>> ...
+```
+
+</td>
+<td align="middle"><code>...</code></td>
+<td>
+
+```C#
+... <</if>>
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
 
 ## See Also
 
-*   An article "[C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029)" by Microsoft.
+* The article "[C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029)" by Microsoft.
