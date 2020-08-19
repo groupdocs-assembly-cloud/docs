@@ -1,10 +1,10 @@
 ﻿---
 id: "licensing"
 url: "assembly/getting-started/licensing"
-title: "Evaluation &#38; Pricing Plans"
+title: "Evaluation and Pricing Plans"
 weight: 6
 productName: "GroupDocs.Assembly Cloud"
-description: "Evaluation &#38; Pricing Plans"
+description: "Evaluation and Pricing Plans"
 keywords: ""
 ---
 
@@ -20,8 +20,8 @@ For production use and greater scale start with a [Paid Plan](https://purchase.g
 
 Please, follow these steps to upgrade to a Paid Plan:
 
-*   Login to [https://dashboard.groupdocs.cloud/#/](https://dashboard.groupdocs.cloud/#/)
-*   Follow instructions after clicking on the [Subscribe](https://dashboard.groupdocs.cloud/#/plan) button.
+* Login to [https://dashboard.groupdocs.cloud/#/](https://dashboard.groupdocs.cloud/#/)
+* Follow instructions after clicking on the [Subscribe](https://dashboard.groupdocs.cloud/#/plan) button.
 
 ![1597080026474-642.png](/downloadrev/groupdocs-assembly-cloud-product-family/getting-started/licensing/WebHome/1597080026474-642.png?rev=1.1&width=445&height=273)
 
