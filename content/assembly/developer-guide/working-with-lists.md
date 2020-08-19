@@ -8,11 +8,11 @@ description: "Working with Lists"
 keywords: ""
 ---
 
-1. [In-Paragraph List](#HInParagraphList)
-2. [Bulleted List](#HBulletedList)
-3. [Numbered List](#HNumberedList)
-4. [Colouring List Items](#HColouringListItems)
-5. [Sample Data Source](#HSampleDataSource)
+1. [In-Paragraph List](#in-paragraph-list)
+2. [Bulleted List](#bulleted-list)
+3. [Numbered List](#numbered-list)
+4. [Colouring List Items](#colouring-list-items)
+5. [Sample Data Source](#sample-data-source)
 
 Lists are extensively used in documents to emphasize important ideas and increase the readability of text by arranging and formatting information.
 
@@ -25,7 +25,7 @@ An in-paragraph list is the most simple and straightforward form of the list, wh
 You can generate an in-paragraph list with the following data band:
 
 ```C#
-We provide support fоr the following products: <<foreach \[in products]>><<[IndexOf() != 0 ? ", " : ""]>><<[ProductName]>><</foreach>>.
+We provide support fоr the following products: <<foreach [in products]>><<[IndexOf() != 0 ? ", " : ""]>><<[ProductName]>><</foreach>>.
 ```
 
 The result would be as follows:
@@ -36,7 +36,7 @@ We provide support for the following products: LG Nexus 5, Nokia Lumia 5801, Hua
 
 ## Bulleted List
 
-A list, which items are marked out with bullets, is called a bulleted lists. The bullet symbol may take a variety of shapes, such as circular, square, diamond, arrow and other. You can use any bullet symbol in your document template.
+A list, which items are marked out with bullets, is called a ***Bulleted List***. The bullet symbol may take a variety of shapes, such as circular, square, diamond, arrow and other. You can use any bullet symbol in your document template.
 
 The following example shows how to generate a bulleted list with circular bullets:
 
@@ -56,7 +56,7 @@ The result would be as follows:
 
 ## Numbered List
 
-You can generate a numbered h list with the following data band:
+You can generate a numbered list with the following data band:
 
 ```C#
 1. <<foreach [in products]>><<[ProductName]>>
@@ -72,14 +72,14 @@ The result would be as follows:
 4. Moto Style
 ```
 
-When working with a nested numbered list you can use a **Numbering Restart** feature to control indexation options of nested element sequences. To implement this you need to put a ***`restartNum`*** tag before the corresponding ***`foreach`*** tag in the nested numbered paragraph.
+When working with a nested numbered list you can use a ***Numbering Restart*** feature to control the indexation options of the nested element sequence. To implement this you need to put a **`restartNum`** tag before the corresponding **`foreach`** tag in the nested numbered paragraph.
 
 This technique is illustrated in the following example with two interrelated data bands. The outer loop is involved in the processing of `Order` data elements, while the inner loop is dealing with the `Service` data elements, related to each `Order` element.
 
 You can restart list numbering of an inner loop on each outer loop iteration as follows:
 
 ```C#
-<<foreach [order in Orders]>><<[order.ClientName]>> (<<[order.ClientAddress]>>)  
+<<foreach [order in Orders]>><<[order.ClientName]>><<[order.ClientAddress]>>
 1. <<restartNum>><<foreach [service in order.Services]>><<[service.Name]>>  
 <</foreach>><</foreach>>
 ```

@@ -8,13 +8,13 @@ description: "Working with Tables"
 keywords: ""
 ---
 
-1. [Generating a Simple Table](#HSimple)
-2. [Varying Table's Contents](#HVarying)
-3. [Data Filtering and Grouping](#HData)
-4. [Calculating a Progressive Total](#HTotal)
-5. [Highlighting Rows](#HHighlighting)
-6. [Setting Cell's Background Color](#HBackground)
-7. [See Also](#HSeeAlso)
+1. [Generating a Simple Table](#generating-a-simple-table)
+2. [Varying Table's Contents](#varying-table's-contents)
+3. [Data Filtering and Grouping](#data-filtering-and-grouping)
+4. [Calculating a Progressive Total](#calculating-a-progressive-total)
+5. [Highlighting Rows](#highlighting-rows)
+6. [Setting Cell's Background Color](#setting-cell's-background-color)
+7. [See Also](#see-also)
 
 Tables are widely used in almost every area of human endeavor to ensure precision, correctness and comparability of data. They organize text into rows and columns, which can make information easy to consolidate and analyze.
 
@@ -147,7 +147,7 @@ The following example shows how to generate an In-Table List with data filterin
 
 ## Calculating a Progressive Total
 
-The following example shows how to generate an In-Table List with a progressive total, that requires using a ***var*** tag:
+The following example shows how to generate an In-Table List with a progressive total, that requires using a **`var`** tag:
 
 <table>
 <thead>
@@ -188,7 +188,7 @@ The following example shows how to generate an In-Table List with row highlight
 </tr>
 </thead>
 <tbody>
-<tr valign="top" bgcolor="darkgreen">
+<tr valign="top" bgcolor="darkgray">
 <td>
 
 ```C#
@@ -269,4 +269,4 @@ The following example shows how to generate an In-Table List with a background 
 
 ## See Also
 
-* A complete example of table generation technique from the [Quick Start]() section.
+* A complete table generation [example](/assembly/getting-started/quick-start/#generating-a-report-in-three-steps) from the "Quick Start" section.

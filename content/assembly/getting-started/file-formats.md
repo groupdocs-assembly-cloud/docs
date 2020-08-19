@@ -8,19 +8,19 @@ description: "Supported File Formats and Conversions"
 keywords: ""
 ---
 
-1. [Supported Multipurpose Document Formats](#HMultipurpose)
-    1. [Microsoft Office Word Documents](#HWord)
-    2. [Microsoft Office Excel Documents](#HExcel)
-    3. [Microsoft Office PowerPoint Documents](#HPowerPoint)
-    4. [OpenOffice Documents](#HOpenOffice)
-    5. [Email Documents](#HEmail)
-    6. [Web Documents](#HWeb)
-2. [Supported Export-Only File Formats](#HSpecific)
-    1. [Adobe Documents](#HAdobe)
-    2. [Printing Language Documents](#HPrinting)
-    3. [Vector Images](#HVector)
-    4. [Bitmap Images](#HBitmap)
-    5. [Other File Formats](#HOther)
+1. [Supported Multipurpose Document Formats](#supported-multipurpose-document-formats)
+    * [Microsoft Office Word Documents](#microsoft-office-word-documents)
+    * [Microsoft Office Excel Documents](#microsoft-office-excel-documents)
+    * [Microsoft Office PowerPoint Documents](#microsoft-office-powerpoint-documents)
+    * [OpenOffice Documents](#openoffice-documents)
+    * [Email Documents](#email-documents)
+    * [Web Documents](#web-documents)
+2. [Supported Export-Only File Formats](#supported-export-only-file-formats)
+    * [Adobe Documents](#adobe-documents)
+    * [Printing Language Documents](#printing-language-documents)
+    * [Vector Images](#vector-images)
+    * [Bitmap Images](#bitmap-images)
+    * [Other File Formats](#other-file-formats)
 
 File formats supported by Assembly Cloud API can be categorized into two groups:
 

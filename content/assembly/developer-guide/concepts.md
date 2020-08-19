@@ -8,30 +8,29 @@ description: "Report Generation Concepts"
 keywords: ""
 ---
 
-1. [Data Sources](#HDataSources)
-2. [Tags and Expressions](#HTags)
-3. [Data Bands](#HDataBands)
-    1. [Referencing Fields in a Data Source](#HFields)
-    2. [Managing Paragraph Breaks](#ParagraphBreaks)
-    3. [Passing Control to Next Iteration](#Next)
-    4. [Table-Row Data Band, Spread over Multiple Rows](#HTableRowDataBands)
-4. [Conditional Data Processing](#HConditions)
-5. [See Also](#HSeeAlso)
+1. [Data Sources](#data-sources)
+2. [Tags and Expressions](#tags-and-expressions)
+3. [Data Bands](#data-bands)
+    * [Referencing Fields in a Data Source](#referencing-fields-in-a-data-source)
+    * [Managing Paragraph Breaks](#managing-paragraph-breaks)
+    * [Passing Control to the Next Loop Iteration](#passing-control-to-the-next-loop-iteration)
+    * [Multi-Row Data Bands](#multi-row-data-bands)
+4. [Conditional Data Processing](#conditional-data-processing)
+5. [See Also](#see-also)
 
 GroupDocs.Assembly Cloud is a powerful web-based Document Automation and Report Generation solution, designed to generate data-bound documents through templates dynamically.
 
 The main Report Generation concept, presented on the image below, is simple and consistent:
 
-![Report Generation Concepts](assembly/images/concepts/concept.png)
+![Report Generation Concepts](/assembly/images/concepts/concept.png)
 
 A document template is just a normal document, created using Microsoft Office and OpenOffice, that contains special tags for the dynamic content. You are supposed to use that template to assemble documents on this model repeatedly and consistently.
 
 Have a note, that supported template types are not limited to word-processing document templates only, but also include spreadsheet templates, presentation templates, HTML document templates. email document templates. plain-text templates and others.
 
-
 ## Data Sources
 
-The external **_Data Source_** lets you define which data set will be used to bind with a document template and subsequently evaluated in the output.
+The external ***Data Source*** lets you define which data set will be used to bind with a document template and subsequently evaluated in the output.
 
 You can use both JSON and XML files for this purpose. Both formats are hierarchical, self-describing and human-readable. However, JSON may have slight built-in advantages, because it is more compact and thus it is quicker to read and write.
 
@@ -56,13 +55,17 @@ You can use the following simple data types in your JSON and XML files:
 <td>A 32-bit signed integer</td>
 <td>
 
-`<Age>30</Age>`
+```XML
+<Age>30</Age>
+```
 
 </td>
 
 <td>
 
-`{"Age": "30"}`
+```JSON
+{"Age": "30"}
+```
 
 </td>
 </tr>
@@ -166,7 +169,7 @@ You can use the following simple data types in your JSON and XML files:
 
 ## Tags and Expressions
 
-**_Tags_** and **_Expressions_** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines commands parameters.
+***Tags*** and ***Expressions*** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines commands parameters.
 
 In terms of Reporting Engine, it does not matter what type of document templates you are working with - regardless of the document template type, tags and expression syntax remains the same anywhere. However, you need to use character escaping when working with HTML templates.
 
@@ -266,16 +269,16 @@ Depending on the functional role, the following types of tags can be distinguish
     </tbody>
 </table>
 
-Expressions are the most interesting part of a tag syntax. They are composed of operands, usually presented in the form of **_Data Field_** references, and **_Operators_**, defined according to the [C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029).
+Expressions are the most interesting part of a tag syntax. They are composed of operands, usually presented in the form of ***Data Field*** references, and ***Operators***, defined according to the [C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029).
 
 ## Data Bands
 
-A **_Data Band_** is a template for sequential data processing. During the document generation process, the Reporting Engine connects each data band to a data source using **_Data Field_** references and processes it as many times as there are records in the data source. As a result, the data band body is replicated and appended to the output document.
+A ***Data Band*** is a template for sequential data processing. During the document generation process, the Reporting Engine connects each data band to a data source using ***Data Field*** references and processes it as many times as there are records in the data source. As a result, the data band body is replicated and appended to the output document.
 
 A data band is made up of two parts:
 
-* A pair of opening and closing ***`foreach`*** loop tags, that represent the scope of a control flow statement for traversing elements in a sequence. Depending upon the developer's objectives the ***`foreach`*** tag syntax may vary.
-* A **_Data Band Body_**, defined between the ***`foreach`*** pair of tags, which represents a template for a single element of a sequence. A data band body may contain nested data bands.
+* A pair of opening and closing **`foreach`** loop tags, that represent the scope of a control flow statement for traversing elements in a sequence. Depending upon the developer's objectives the **`foreach`** tag syntax may vary.
+* A ***Data Band Body***, defined between the **`foreach`** pair of tags, which represents a template for a single element of a sequence. A data band body may contain nested data bands.
 
 The complete syntax of a data band is provided below:
 
@@ -316,9 +319,9 @@ Variable's name and type are optional parameters, that can be specified oromitte
     </tbody>
 </table>
 
-When a data band is related to a list, it is called a ***_Common Data Band_***.
+When a data band is related to a list, it is called a ****Common Data Band****.
 
-When a data band is related to a table, that is to a single or multiple rows of a table, it is called a ***_Table-Row Data Band_***.
+When a data band is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Data Band***.
 
 Depending on the objectives, this type of data band may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in more complicated scenarios, that imply the generation of hierarchical tabular data structures, using multirow data bands may be required.
 
@@ -558,8 +561,8 @@ Given an enumeration of strings `["item1", "item2", "item3"]` and a common data 
 <table>
 <thead>
     <tr>
-        <th style="text-align:center">The Data Band</th>
-        <th style="text-align:center">The Output</th>
+        <th style="text-align:center">Data Band</th>
+        <th style="text-align:center">Output</th>
     </tr>
 </thead>
 <tbody>
@@ -652,7 +655,7 @@ suffix
 
 ### Passing Control to the Next Loop Iteration
 
-You can instruct the Reporting Engine to force movement to the next iteration within a data band using the ***`next`*** tag. This feature is useful in scenarios when you need to output data of a fixed number of elements in a single row.
+You can instruct the Reporting Engine to force movement to the next iteration within a data band using the **`next`** tag. This feature is useful in scenarios when you need to output data of a fixed number of elements in a single row.
 
 In the following example, given an enumeration of `Person` data elements, you can output their names in a row using the following table-row data band:
 
@@ -708,7 +711,7 @@ The result would be as follows:
 </tbody>
 <table>
 
-### Table-Row Data Band, Spread over Multiple Rows
+### Multi-Row Data Bands
 
 The main purpose of a table-row data band, spread over multiple rows, is to generate nested data structures, for example, in-table lists. The body of this data band starts at the beginning of the first occupied row and ends at the end of the last occupied row as follows:
 
@@ -846,7 +849,7 @@ item2
 item3
 ```
 
-By analogy with table-row data bands, when a conditional block is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Conditional Block.***
+By analogy with table-row data bands, when a conditional block is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Conditional Block***.
 
 Depending on the objectives, this conditional block may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in many cases, it occupies multiple rows of a table.
 
@@ -909,7 +912,6 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 </tr>
 </tbody>
 </table>
-
 
 ## See Also
 

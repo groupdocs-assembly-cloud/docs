@@ -8,15 +8,11 @@ description: "SDK Installation Instructions"
 keywords: ""
 ---
 
-1.  [.NET SDK Installation](#H.NETSDKA0Installation)
-2.  [Java SDK Installation](#HJavaSDKA0Installation)
-3.  [PHP SDK Installation](#HPHPSDKA0Installation)
-4.  [C++ SDK Installation](#HC2B2BSDKA0Installation)
-5.  [Node.js SDK Installation](#HNode.jsSDKA0Installation)
-6.  [Ruby SDK Installation](#HRubySDKA0Installation)
-7.  [Python SDK Installation](#HPythonSDKA0Installation)
-8.  [Swift SDK Installation](#HSwiftSDKA0Installation)
-9.  [Go SDK Installation](#HGoSDKA0Installation)
+1. [.NET SDK Installation](#.net-sdk-installation)
+2. [PHP SDK Installation](#php-sdk-installation)
+3. [Node.js SDK Installation](#node.js-sdk-installation)
+4. [Ruby SDK Installation](#ruby-sdk-installation)
+5. [Python SDK Installation](#python-sdk-installation)
 
 The architecture of Assembly Cloud API can be applied to different kinds of applications, independent of operating systems and programming languages. Our team aims to provide the best programming technology to our customers to make their office automation convenient with a family of SDKs, which are lightweight wrappers around the Assembly Cloud API.
 
@@ -26,44 +22,38 @@ To install the required SDK follow the corresponding instructions below:
 
 To install the .NET SDK, run the following command:
 
+```HTML
 PM> Install-Package GroupDocs.Assembly-Cloud
-
-## Java SDK Installation
-
-To install the Java SDK, run the following command:
+```
 
 ## PHP SDK Installation
 
 To install the PHP SDK, run the following command:
 
-composer require groupdocscloud/groupdocs-assembly-cloud  
-
-## C++ SDK Installation
-
-To install the C++ SDK, run the following command:
+```HTML
+composer require groupdocscloud/groupdocs-assembly-cloud
+```
 
 ## Node.js SDK Installation
 
 To install the Node.js SDK, run the following command:
 
+```HTML
 npm install groupdocs-assembly-cloud
+```
 
 ## Ruby SDK Installation
 
 To install the Ruby SDK, run the following command:
 
+```HTML
 gem install groupdocs\_cloud\_assembly
+```
 
 ## Python SDK Installation
 
 To install the Python SDK, run the following command:
 
+```HTML
 pip install groupdocs-assembly-cloud
-
-## Swift SDK Installation
-
-To install the Swift SDK, run the following command:
-
-## Go SDK Installation
-
-To install the Go SDK, run the following command:
+```
