@@ -56,7 +56,7 @@ You can normally use common expression tags in chart titles, series names, and a
 
 The following chart template demonstrates how to set the chart’s title, series name, and axis title dynamically:
 
-![Chart Template Example](assembly/images/working-with-charts/chart_example_1.png)
+![Chart Template Example](/assembly/images/working-with-charts/chart_example_1.png)
 
 ## Excluding Chart Series
 

@@ -23,6 +23,6 @@ Please, follow these steps to upgrade to a Paid Plan:
 * Login to [https://dashboard.groupdocs.cloud/#/](https://dashboard.groupdocs.cloud/#/)
 * Follow instructions after clicking on the [Subscribe](https://dashboard.groupdocs.cloud/#/plan) button.
 
-![Paid Plan upgrade instructions](assembly/images/licensing/upgrade.png)
+![Paid Plan upgrade instructions](/assembly/images/licensing/upgrade.png)
 
 For more details, please, check the [Cloud APIs Pricing](https://purchase.groupdocs.cloud/pricing) page.
