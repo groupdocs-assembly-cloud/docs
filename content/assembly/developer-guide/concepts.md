@@ -432,8 +432,8 @@ When the report generation process is complete, you'll see the following output:
 <td>John Smith</td>
 <td>51</td>
 </tr>
-<tr>
-<td>Count</td>
+<tr valign="center">
+<td align="center"><b>Count</b></td>
 <td colspan="2">3</td>
 </tr>
 </tbody>
