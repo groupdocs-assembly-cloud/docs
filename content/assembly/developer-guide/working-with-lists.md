@@ -6,13 +6,15 @@ weight: 3
 productName: "GroupDocs.Assembly Cloud"
 description: "Working with Lists"
 keywords: ""
+accent1: "background-color:#b8f2e6;color:#000;"
+accent2: "background-color:#ffa69e;color:#000;"
 ---
 
-1. [In-Paragraph List](/assembly/developer-guide/working-with-lists/#in-paragraph-list)
-2. [Bulleted List](/assembly/developer-guide/working-with-lists/#bulleted-list)
-3. [Numbered List](/assembly/developer-guide/working-with-lists/#numbered-list)
-4. [Colouring List Items](/assembly/developer-guide/working-with-lists/#colouring-list-items)
-5. [Sample Data Source](/assembly/developer-guide/working-with-lists/#sample-data-source)
+1. [In-Paragraph List]({{< param url >}}/#in-paragraph-list)
+2. [Bulleted List]({{< param url >}}/#bulleted-list)
+3. [Numbered List]({{< param url >}}/#numbered-list)
+4. [Colouring List Items]({{< param url >}}/#colouring-list-items)
+5. [Sample Data Source]({{< param url >}}/#sample-data-source)
 
 Lists are extensively used in documents to emphasize important ideas and increase the readability of text by arranging and formatting information.
 
@@ -90,21 +92,21 @@ You can apply dynamic item colouring using conditional expressions.
 
 The following example shows how you can define different colouring options for even and odd elements of the sequence:
 
-```C#
-We provide support for the following products:
-1. <<foreach [in products]>><<if [IndexOf() % 2 == 0]>><<[ProductName]>>
-2. <<else>><<[ProductName]>><</if>><</foreach>>
-```
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<code class="language-C#" data-lang="C#">We provide support <span style="color:#66d9ef">for</span> the following products:
+<span style="color:#ae81ff">1.</span> &lt;&lt;<span style="color:#66d9ef">foreach</span> [<span style="color:#66d9ef">in</span> products]&gt;&gt;&lt;&lt;<span style="color:#66d9ef">if</span> [IndexOf() % <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">1</span>]&gt;&gt;<span style="{{< param accent2 >}}">&lt;&lt;[ProductName]&gt;&gt;</span>
+<span style="color:#ae81ff">2.</span> &lt;&lt;<span style="color:#66d9ef">else</span>&gt;&gt;<span style="{{< param accent1 >}}">&lt;&lt;[ProductName]&gt;&gt;</span>&lt;&lt;/<span style="color:#66d9ef">if</span>&gt;&gt;&lt;&lt;/<span style="color:#66d9ef">foreach</span>&gt;&gt;
+</code></pre></div>
 
 The result would be as follows:
 
-```HTML
-We provide support for the following products:
-1. LG Nexus 5
-2. Nokia Lumia 5801
-3. Huawie Mate S
-4. Moto Style
-```
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<code class="language-HTML" data-lang="HTML">We provide support for the following products:
+<span style="{{< param accent2 >}}">1. LG Nexus 5</span>
+<span style="{{< param accent1 >}}">2. Nokia Lumia 5801</span>
+<span style="{{< param accent2 >}}">3. Huawie Mate S</span>
+<span style="{{< param accent1 >}}">4. Moto Style</span>
+</code></pre></div>
 
 ## Sample Data Source
 

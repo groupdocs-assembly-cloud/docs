@@ -13,7 +13,7 @@ This introductory part provides a brief overview of the most important features,
 
 Please, refer to the required documentation section:
 
-| Section  | Short Description  |
+| <div style="width:200px">Section</div>  | Short Description  |
 | --: | --- |
 | [Product Overview]({{< ref "product-overview" >}}) | Contains information about product's supported features, file formats, data sources, security compliance, software requirements, available SDKs and related resources. |
 | [Supported File Formats and Conversions]({{< ref "file-formats" >}}) | Describes groups of file formats and their conversions, supported by the API. |

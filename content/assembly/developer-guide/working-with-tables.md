@@ -6,15 +6,17 @@ weight: 4
 productName: "GroupDocs.Assembly Cloud"
 description: "Working with Tables"
 keywords: ""
+accent1: "background-color:#b8f2e6;color:#000;"
+accent2: "background-color:#ffa69e;color:#000;"
 ---
 
-1. [Generating a Simple Table](/assembly/developer-guide/working-with-tables/#generating-a-simple-table)
-2. [Varying Table's Contents](/assembly/developer-guide/working-with-tables/#varying-table's-contents)
-3. [Data Filtering and Grouping](/assembly/developer-guide/working-with-tables/#data-filtering-and-grouping)
-4. [Calculating a Progressive Total](/assembly/developer-guide/working-with-tables/#calculating-a-progressive-total)
-5. [Highlighting Rows](/assembly/developer-guide/working-with-tables/#highlighting-rows)
-6. [Setting Cell's Background Color](/assembly/developer-guide/working-with-tables/#setting-cell's-background-color)
-7. [See Also](/assembly/developer-guide/working-with-tables/#see-also)
+1. [Generating a Simple Table]({{< param url >}}/#generating-a-simple-table)
+2. [Varying Table's Contents]({{< param url >}}/#varying-tables-contents)
+3. [Data Filtering and Grouping]({{< param url >}}/#data-filtering-and-grouping)
+4. [Calculating a Progressive Total]({{< param url >}}/#calculating-a-progressive-total)
+5. [Highlighting Rows]({{< param url >}}/#highlighting-rows)
+6. [Setting Cell's Background Color]({{< param url >}}/#setting-cells-background-color)
+7. [See Also]({{< param url >}}/#see-also)
 
 Tables are widely used in almost every area of human endeavor to ensure precision, correctness and comparability of data. They organize text into rows and columns, which can make information easy to consolidate and analyze.
 
@@ -22,7 +24,7 @@ The template syntax, which was extensively described in the previous sections,
 
 There are several useful techniques you can use within your template expressions to customize table generation. They can be best illustrated with simple examples provided below.
 
-## Generating a Simple Table
+## Generating a Simple Table
 
 The following example shows how to generate a simple In-Table List:
 
@@ -100,7 +102,7 @@ The following example shows how to generate an In-Table List with a variable c
 </tbody>
 </table>
 
-## Data Filtering and Grouping
+## Data Filtering and Grouping
 
 The following example shows how to generate an In-Table List with data filtering and grouping:
 
@@ -154,7 +156,7 @@ The following example shows how to generate an In-Table List with a progressive
 </tbody>
 </table>
 
-## Highlighting Rows
+## Highlighting Rows
 
 The following example shows how to generate an In-Table List with row highlighting:
 
@@ -166,7 +168,7 @@ The following example shows how to generate an In-Table List with row highlight
 </tr>
 </thead>
 <tbody>
-<tr valign="top" bgcolor="darkblue">
+<tr valign="top" style="{{< param accent1 >}}">
 <td>
 
 `<<foreach [in orders]>><<if [Price >= 400]>><<[Customer.CustomerName]>>`
@@ -179,7 +181,7 @@ The following example shows how to generate an In-Table List with row highlight
 </td>
 </tr>
 
-<tr valign="top">
+<tr valign="top" style="{{< param accent2 >}}">
 <td>
 
 `<<else>><<[Customer.CustomerName]>>`
@@ -190,7 +192,6 @@ The following example shows how to generate an In-Table List with row highlight
 `<<[Price]>><</if>><</foreach>>`
 
 </td>
-</tr>
 </tr>
 <tr valign="middle">
 <td align="right"><b>Total</b></td>

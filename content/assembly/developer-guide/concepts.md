@@ -6,17 +6,19 @@ weight: 1
 productName: "GroupDocs.Assembly Cloud"
 description: "Report Generation Concepts"
 keywords: ""
+accent1: "background-color:#b8f2e6;color:#000;"
+accent2: "background-color:#ffa69e;color:#000;"
 ---
 
-1. [Data Sources](/assembly/developer-guide/concepts/#data-sources)
-2. [Tags and Expressions](/assembly/developer-guide/concepts/#tags-and-expressions)
-3. [Data Bands](/assembly/developer-guide/concepts/#data-bands)
-    * [Referencing Fields in a Data Source](/assembly/developer-guide/concepts/#referencing-fields-in-a-data-source)
-    * [Managing Paragraph Breaks](/assembly/developer-guide/concepts/#managing-paragraph-breaks)
-    * [Passing Control to the Next Loop Iteration](/assembly/developer-guide/concepts/#passing-control-to-the-next-loop-iteration)
-    * [Multi-Row Data Bands](/assembly/developer-guide/concepts/#multi-row-data-bands)
-4. [Conditional Data Processing](/assembly/developer-guide/concepts/#conditional-data-processing)
-5. [See Also](/assembly/developer-guide/concepts/#see-also)
+1. [Data Sources]({{< param url >}}/#data-sources)
+2. [Tags and Expressions]({{< param url >}}/#tags-and-expressions)
+3. [Data Bands]({{< param url >}}/#data-bands)
+    * [Referencing Fields in a Data Source]({{< param url >}}/#referencing-fields-in-a-data-source)
+    * [Managing Paragraph Breaks]({{< param url >}}/#managing-paragraph-breaks)
+    * [Passing Control to the Next Loop Iteration]({{< param url >}}/#passing-control-to-the-next-loop-iteration)
+    * [Multi-Row Data Bands]({{< param url >}}/#multi-row-data-bands)
+4. [Conditional Data Processing]({{< param url >}}/#conditional-data-processing)
+5. [See Also]({{< param url >}}/#see-also)
 
 GroupDocs.Assembly Cloud is a powerful web-based Document Automation and Report Generation solution, designed to generate data-bound documents through templates dynamically.
 
@@ -166,7 +168,7 @@ Depending on the functional role, the following types of tags can be distinguish
     <thead>
         <tr>
             <th>Tag Type</th>
-            <th>Functional Role</th>
+            <th style="width: 20%">Functional Role</th>
             <th style="text-align:center">Tags</th>
             <th>Tag Description</th>
         </tr>
@@ -372,8 +374,8 @@ The corresponding table-row data band is shown below. As you can see, it is refe
 <table>
 <thead>
     <tr>
-        <th style="text-align:center">Number</th>
-        <th style="text-align:center">Name</th>
+        <th style="text-align:center; width: 30%">Number</th>
+        <th style="text-align:center; width: 40%">Name</th>
         <th style="text-align:center">Age</th>
     </tr>
 </thead>
@@ -411,8 +413,8 @@ When the report generation process is complete, you'll see the following output:
 <table>
 <thead>
 <tr>
-<th>Number</th>
-<th>Name</th>
+<th style="width: 30%">Number</th>
+<th style="width: 40%">Name</th>
 <th>Age</th>
 </tr>
 </thead>
@@ -432,8 +434,8 @@ When the report generation process is complete, you'll see the following output:
 <td>John Smith</td>
 <td>51</td>
 </tr>
-<tr valign="center">
-<td align="center"><b>Count</b></td>
+<tr>
+<td>Count</td>
 <td colspan="2">3</td>
 </tr>
 </tbody>
@@ -616,8 +618,8 @@ In the following example, given an enumeration of `Person` data elements, you ca
 <table>
 <thead>
     <tr>
-        <th style="text-align:center">Name A</th>
-        <th style="text-align:center">Name B</th>
+        <th style="text-align:center; width: 34%">Name A</th>
+        <th style="text-align:center; width: 33%">Name B</th>
         <th style="text-align:center">Name C</th>
     </tr>
 </thead>
@@ -646,11 +648,12 @@ The result would be as follows:
 <table>
 <thead>
     <tr>
-        <th style="text-align:center">Name A</th>
-        <th style="text-align:center">Name B</th>
+        <th style="text-align:center;width: 34%">Name A</th>
+        <th style="text-align:center;width: 33%">Name B</th>
         <th style="text-align:center">Name C</th>
     </tr>
 </thead>
+<tbody>
 <tr>
 <td>John Doe</td>
 <td>Jane Doe</td>
@@ -675,7 +678,7 @@ The main purpose of a table-row data band, spread over multiple rows, is to gene
 <td align="center"><code>...</code></td>
 </tr>
 <tr valign="middle">
-<td colspan="3" align="center"><code>...</code></td>
+<td colspan="3" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>...</code></td>
 </tr>
 <tr valign="middle">
 <td  align="center"><code>...</code></td>
@@ -771,17 +774,18 @@ For example, given an enumeration of strings `["item1", "item2", "item3"]`, you
 
 Given the previous declaration of string items, you can use the following template to apply different formatting for even and odd elements of the sequence:
 
-```C#
-<<foreach [item in items]>><<if [IndexOf() % 2 == 0]>><<[item]>><<else>><<[item]>><</if>><</foreach>>
-```
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<code class="language-C#" data-lang="C#">&lt;&lt;<span style="color:#66d9ef">foreach</span> [item <span style="color:#66d9ef">in</span> items]&gt;&gt;&lt;&lt;<span style="color:#66d9ef">if</span> [IndexOf() % <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">1</span>]&gt;&gt;<span style="{{< param accent1 >}}">&lt;&lt;[item]&gt;&gt;</span>&lt;&lt;<span style="color:#66d9ef">else</span>&gt;&gt;<span style="{{< param accent2 >}}">&lt;&lt;[item]&gt;&gt;</span>&lt;&lt;/<span style="color:#66d9ef">if</span>&gt;&gt;&lt;&lt;/<span style="color:#66d9ef">foreach</span>&gt;&gt;
+</code></pre></div>
 
 In this case, the engine produces a report as follows:
 
-```C#
-item1
-item2
-item3
-```
+<div class="highlight">
+	<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<code class="language-C#" data-lang="C#"><span style="{{< param accent1 >}}">item1</span>
+<span style="{{< param accent2 >}}">item2</span>
+<span style="{{< param accent1 >}}">item3</span>
+</code></pre></div>
 
 By analogy with table-row data bands, when a conditional block is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Conditional Block***.
 
@@ -801,7 +805,7 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 <td align="middle"><code>...</code></td>
 </tr>
 
-<tr valign="center">
+<tr valign="center" style="{{< param accent1 >}}">
 <td>
 
 `<<elseif [condition_2]>>`...
@@ -811,7 +815,7 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 <td align="middle"><code>...</code></td>
 </tr>
 
-<tr valign="center">
+<tr valign="center" style="{{< param accent2 >}}">
 <td>
 
 `<<elseif [condition_N]>>` ...
