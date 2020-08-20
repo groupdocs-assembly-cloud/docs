@@ -8,11 +8,11 @@ description: "SDK Installation Instructions"
 keywords: ""
 ---
 
-1. [.NET SDK Installation](/assembly/getting-started/sdk-installation/#net-sdk-installation)
-2. [PHP SDK Installation](/assembly/getting-started/sdk-installation/#php-sdk-installation)
-3. [Node.js SDK Installation](/assembly/getting-started/sdk-installation/#nodejs-sdk-installation)
-4. [Ruby SDK Installation](/assembly/getting-started/sdk-installation/#ruby-sdk-installation)
-5. [Python SDK Installation](/assembly/getting-started/sdk-installation/#python-sdk-installation)
+1. [.NET SDK Installation]({{< param url >}}//#net-sdk-installation)
+2. [PHP SDK Installation]({{< param url >}}//#php-sdk-installation)
+3. [Node.js SDK Installation]({{< param url >}}//#nodejs-sdk-installation)
+4. [Ruby SDK Installation]({{< param url >}}//#ruby-sdk-installation)
+5. [Python SDK Installation]({{< param url >}}//#python-sdk-installation)
 
 The architecture of Assembly Cloud API can be applied to different kinds of applications, independent of operating systems and programming languages. Our team aims to provide the best programming technology to our customers to make their office automation convenient with a family of SDKs, which are lightweight wrappers around the Assembly Cloud API.
 
@@ -22,7 +22,7 @@ To install the required SDK follow the corresponding instructions below:
 
 To install the .NET SDK, run the following command:
 
-```HTML
+```PowerShell
 PM> Install-Package GroupDocs.Assembly-Cloud
 ```
 
@@ -30,7 +30,7 @@ PM> Install-Package GroupDocs.Assembly-Cloud
 
 To install the PHP SDK, run the following command:
 
-```HTML
+```BASH
 composer require groupdocscloud/groupdocs-assembly-cloud
 ```
 
@@ -38,7 +38,7 @@ composer require groupdocscloud/groupdocs-assembly-cloud
 
 To install the Node.js SDK, run the following command:
 
-```HTML
+```BASH
 npm install groupdocs-assembly-cloud
 ```
 
@@ -46,7 +46,7 @@ npm install groupdocs-assembly-cloud
 
 To install the Ruby SDK, run the following command:
 
-```HTML
+```BASH
 gem install groupdocs\_cloud\_assembly
 ```
 
@@ -54,6 +54,6 @@ gem install groupdocs\_cloud\_assembly
 
 To install the Python SDK, run the following command:
 
-```HTML
+```BASH
 pip install groupdocs-assembly-cloud
 ```

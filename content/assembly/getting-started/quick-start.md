@@ -8,20 +8,19 @@ description: "Quick Start"
 keywords: ""
 ---
 
-1. [Obtaining Security Credentials to Authorize API Requests](/assembly/getting-started/quick-start/#obtaining-security-credentials-to-authorize-api-requests)
-2. [Generating a Report in Three Steps](/assembly/getting-started/quick-start/#generating-a-report-in-three-steps)
-    1. [Designing a Document Template](/assembly/getting-started/quick-start/#designing-a-document-template)
-    2. [Designing a Data Source](/assembly/getting-started/quick-start/#designing-a-data-source)
-    3. [Writing and Executing a Program Code](/assembly/getting-started/quick-start/#writing-and-executing-a-program-code)
-        * [Python Code Sample](/assembly/getting-started/quick-start/#python-code-sample)
+1. [Obtaining Security Credentials to Authorize API Requests]({{< param url >}}/#obtaining-security-credentials-to-authorize-api-requests)
+2. [Generating a Report in Three Steps]({{< param url >}}/#generating-a-report-in-three-steps)
+    1. [Designing a Document Template]({{< param url >}}/#designing-a-document-template)
+    2. [Designing a Data Source]({{< param url >}}/#designing-a-data-source)
+    3. [Writing and Executing a Program Code]({{< param url >}}/#writing-and-executing-a-program-code)
 
 This section is intended to help developers start working with the chosen SDK quickly. You will learn how to obtain security credentials to authorize your requests to Assembly Cloud API and proceed with tree steps of the report generation process to demonstrate some major features and functionalities. The following code samples illustrate, that the Reporting Cloud API can be integrated into your application with just several lines of code in almost any mainstream programming language.
 
 ## Obtaining Security Credentials to Authorize API Requests
 
-To start using Assembly Cloud API you need to set up authorization using OAuth 2.0.
+To start using Assembly Cloud API you need to set up your credentials.
 
-Please, follow the instructions below to get your ***App Key** and ***App SID*** security credentials:
+Please, follow the instructions below to get your ***App Key*** and ***App SID*** security credentials:
 
 1. Log into the [GroupDocs Cloud Dashboard](https://dashboard.groupdocs.cloud/#/).
 2. Click on **_My Apps_** tab. Each App has its own ***App Key*** and ***App SID*** credentials.
@@ -99,31 +98,3 @@ The following example demonstrates a JSON data source, that is compatible with a
 Finally, you need to use a program code to pass a document template with a data source to the Reporting Engine to bind them together and produce a final document, which would look as follows:
 
 ![The Output of Example 1](/assembly/images/getting-started/result_1.png)
-
-Below you can find code samples for different SDKs. Use the ***App SID*** and ***App Key*** from the API app client you created and replace them in the corresponding code lines.
-
-#### Python Code Sample
-
-A Python code sample is provided below:
-
-```Python
-import os
-from groupdocsassemblycloud import AssemblyApi, AssembleOptions, TemplateFileInfo
-from groupdocsassemblycloud.models.requests import AssembleDocumentRequest, UploadFileRequest
-
-app_sid = '####-####-####-####-####'
-app_key = '##################'
-assembly_api = AssemblyApi(app_sid, app_key, 'https://api.groupdocs.cloud')
-
-# Upload the template
-with open('Template.docx', 'rb') as template_file:
- upload_request = UploadFileRequest(template_file, path='/')
- assembly_api.upload_file(upload_request)
-
-with open('data.json') as f:
- data = f.read()
-template_file_info = TemplateFileInfo(template_file)
-options = AssembleOptions(template_file, save_format='docx', report_data=data)
-request = AssembleDocumentRequest(options)
-result = assembly_api.assemble_document(request)
-```

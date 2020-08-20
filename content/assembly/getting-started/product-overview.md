@@ -8,19 +8,19 @@ description: "Product Overview"
 keywords: ""
 ---
 
-1. [Report Generation vs Document Automation](/assembly/getting-started/product-overview/#report-generation-vs-document-automation)
-2. [What is GroupDocs Assembly Cloud](/assembly/getting-started/product-overview/#what-is-groupdocs-assembly-cloud)
-3. [Supported Reporting Features](/assembly/getting-started/product-overview/#supported-reporting-features)
-4. [Supported File Formats](/assembly/getting-started/product-overview/#supported-file-formats)
-5. [Supported Data Sources](/assembly/getting-started/product-overview/#supported-data-sources)
-6. [Security Compliance](/assembly/getting-started/product-overview/#security-compliance)
-7. [Software Requirements](/assembly/getting-started/product-overview/#software-requirements)
-8. [Available SDKs](/assembly/getting-started/product-overview/#available-sdks)
-9. [Related Resources](/assembly/getting-started/product-overview/#related-resources)
-    * [API Explorer](/assembly/getting-started/product-overview/#api-explorer)
-    * [Free Online Document Assembly App](/assembly/getting-started/product-overview/#free-online-document-assembly-app)
-    * [Document Assembly Cloud GitHub Repository](/assembly/getting-started/product-overview/#document-assembly-cloud-github-repository)
-    * [On-Premise Document Assembly SDKs](/assembly/getting-started/product-overview/#on-premise-document-assembly-sdks)
+1. [Report Generation vs Document Automation]({{< param url >}}//#report-generation-vs-document-automation)
+2. [What is GroupDocs Assembly Cloud]({{< param url >}}//#what-is-groupdocs-assembly-cloud)
+3. [Supported Reporting Features]({{< param url >}}//#supported-reporting-features)
+4. [Supported File Formats]({{< param url >}}//#supported-file-formats)
+5. [Supported Data Sources]({{< param url >}}//#supported-data-sources)
+6. [Security Compliance]({{< param url >}}//#security-compliance)
+7. [Software Requirements]({{< param url >}}//#software-requirements)
+8. [Available SDKs]({{< param url >}}//#available-sdks)
+9. [Related Resources]({{< param url >}}//#related-resources)
+    * [API Explorer]({{< param url >}}//#api-explorer)
+    * [Free Online Document Assembly App]({{< param url >}}//#free-online-document-assembly-app)
+    * [Document Assembly Cloud GitHub Repository]({{< param url >}}//#document-assembly-cloud-github-repository)
+    * [On-Premise Document Assembly SDKs]({{< param url >}}//#on-premise-document-assembly-sdks)
 
 ---
 
@@ -86,7 +86,7 @@ The following types of data sources are currently supported:
 
 ## Security Compliance
 
-Assembly Cloud API fully complies with the industry security standards: data transmission is carried out under the [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth) protocol that excludes the possibility of snatching information by third parties. For this purpose, you must acquire an ***App SID*** and ***App KEY*** identifiers to authenticate API requests before being able to use the Reporting Engine functionality.
+GroupDocs Assembly Cloud API fully complies with the industry security standards: data transmission is carried out under the JWT authentication that excludes the possibility of snatching information by third parties. For this purpose, you must acquire an ***App SID*** and ***App KEY*** identifiers to authenticate API requests before being able to use the Reporting Engine functionality.
 
 Have a look at the ["Authenticating API Requests"](https://wiki.groupdocs.cloud/gdtotalcloud/getting-started/overview-rest-api/authenticating-api-requests/) article to gain a better understanding of the underlying security layer.
 
@@ -101,7 +101,7 @@ Check out our [GitHub repository](https://github.com/groupdocs-assembly-cloud/)
 | Language or Platform | Source Codes | Package |
 | --- | --- | --- |
 | .NET | [Sources on GitHub](https://github.com/groupdocs-assembly-cloud/groupdocs-assembly-cloud-dotnet) | [NuGet Package](https://www.nuget.org/packages/GroupDocs.Assembly-Cloud/) |
-| Java | [Sources on GitHub](https://github.com/groupdocs-assembly-cloud/groupdocs-assembly-cloud-java) |   |
+| Java | [Sources on GitHub](https://github.com/groupdocs-assembly-cloud/groupdocs-assembly-cloud-java) | [Java Package](https://repository.groupdocs.cloud/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-assembly-cloud) |
 | PHP | [Sources on GitHub](https://github.com/groupdocs-assembly-cloud/groupdocs-assembly-cloud-php) | [Composer Package](https://packagist.org/packages/groupdocscloud/groupdocs-assembly-cloud) |
 | C++ | [Sources on GitHub](https://github.com/groupdocs-assembly-cloud/groupdocs-assembly-cloud-cpp) | not provided |
 | Node.js | [Sources on GitHub](https://github.com/groupdocs-assembly-cloud/groupdocs-assembly-cloud-node) | [Npm Package](https://www.npmjs.com/package/groupdocs-assembly-cloud) |
