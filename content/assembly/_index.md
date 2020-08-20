@@ -11,8 +11,8 @@ Welcome to the GroupDocs.Assembly Cloud product family. It is a powerful Documen
 
 To learn about Aspose.Assembly, please, refer to the corresponding section:
 
-|  |  |
-| --- |---|
+| Section | Short Description  |
+| --: |---|
 | [Getting Started](/assembly/getting-started/) | Provides a brief overview of the product. |
 | [Developer Guide](/assembly/developer-guide/) | Offers comprehensive information on the Report Generation techniques with a focus on the template expression syntax. |
 | [Release Notes](/assembly/release-notes/) | Contains information on the released editions of the product. |

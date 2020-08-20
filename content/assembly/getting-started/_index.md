@@ -13,10 +13,10 @@ This introductory part provides a brief overview of the most important features,
 
 Please, refer to the required documentation section:
 
-|  |  |
-| ----------- | ----------- |
+| Section  | Short Description  |
+| --: | --- |
 | [Product Overview](/assembly/getting-started/product-overview) | Contains information about product's supported features, file formats, data sources, security compliance, software requirements, available SDKs and related resources. |
-| [Supported File Formats and Conversions](/assembly/getting-started/supported-file-formats-and-conversions) | Describes groups of file formats and their conversions, supported by the API. |
+| [Supported File Formats and Conversions](/assembly/getting-started/file-formats) | Describes groups of file formats and their conversions, supported by the API. |
 | [SDK Installation Instructions](/assembly/getting-started/sdk-installation-instructions) | Contains detailed instructions on how to install the required SDK. |
 | [Quick Start](/assembly/getting-started/quick-start) | Helps you get up and running with the Assembly Cloud SDK, so you can start using it within minutes. |
 | [Status and Error Codes](/assembly/getting-started/status-and-error-codes) | Introduces product's specific status and error codes. |

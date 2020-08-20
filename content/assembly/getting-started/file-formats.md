@@ -8,19 +8,19 @@ description: "Supported File Formats and Conversions"
 keywords: ""
 ---
 
-1. [Supported Multipurpose Document Formats](#supported-multipurpose-document-formats)
-    * [Microsoft Office Word Documents](#microsoft-office-word-documents)
-    * [Microsoft Office Excel Documents](#microsoft-office-excel-documents)
-    * [Microsoft Office PowerPoint Documents](#microsoft-office-powerpoint-documents)
-    * [OpenOffice Documents](#openoffice-documents)
-    * [Email Documents](#email-documents)
-    * [Web Documents](#web-documents)
-2. [Supported Export-Only File Formats](#supported-export-only-file-formats)
-    * [Adobe Documents](#adobe-documents)
-    * [Printing Language Documents](#printing-language-documents)
-    * [Vector Images](#vector-images)
-    * [Bitmap Images](#bitmap-images)
-    * [Other File Formats](#other-file-formats)
+1. [Supported Multipurpose Document Formats](/assembly/getting-started/file-formats/#supported-multipurpose-document-formats)
+    * [Microsoft Office Word Documents](/assembly/getting-started/file-formats/#microsoft-office-word-documents)
+    * [Microsoft Office Excel Documents](/assembly/getting-started/file-formats/#microsoft-office-excel-documents)
+    * [Microsoft Office PowerPoint Documents](/assembly/getting-started/file-formats/#microsoft-office-powerpoint-documents)
+    * [OpenOffice Documents](/assembly/getting-started/file-formats/#openoffice-documents)
+    * [Email Documents](/assembly/getting-started/file-formats/#email-documents)
+    * [Web Documents](/assembly/getting-started/file-formats/#web-documents)
+2. [Supported Export-Only File Formats](/assembly/getting-started/file-formats/#supported-export-only-file-formats)
+    * [Adobe Documents](/assembly/getting-started/file-formats/#adobe-documents)
+    * [Printing Language Documents](/assembly/getting-started/file-formats/#printing-language-documents)
+    * [Vector Images](/assembly/getting-started/file-formats/#vector-images)
+    * [Bitmap Images](/assembly/getting-started/file-formats/#bitmap-images)
+    * [Other File Formats](/assembly/getting-started/file-formats/#other-file-formats)
 
 File formats supported by Assembly Cloud API can be categorized into two groups:
 

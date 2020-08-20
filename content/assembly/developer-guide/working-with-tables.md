@@ -8,13 +8,13 @@ description: "Working with Tables"
 keywords: ""
 ---
 
-1. [Generating a Simple Table](#generating-a-simple-table)
-2. [Varying Table's Contents](#varying-table's-contents)
-3. [Data Filtering and Grouping](#data-filtering-and-grouping)
-4. [Calculating a Progressive Total](#calculating-a-progressive-total)
-5. [Highlighting Rows](#highlighting-rows)
-6. [Setting Cell's Background Color](#setting-cell's-background-color)
-7. [See Also](#see-also)
+1. [Generating a Simple Table](/assembly/developer-guide/working-with-tables/#generating-a-simple-table)
+2. [Varying Table's Contents](/assembly/developer-guide/working-with-tables/#varying-table's-contents)
+3. [Data Filtering and Grouping](/assembly/developer-guide/working-with-tables/#data-filtering-and-grouping)
+4. [Calculating a Progressive Total](/assembly/developer-guide/working-with-tables/#calculating-a-progressive-total)
+5. [Highlighting Rows](/assembly/developer-guide/working-with-tables/#highlighting-rows)
+6. [Setting Cell's Background Color](/assembly/developer-guide/working-with-tables/#setting-cell's-background-color)
+7. [See Also](/assembly/developer-guide/working-with-tables/#see-also)
 
 Tables are widely used in almost every area of human endeavor to ensure precision, correctness and comparability of data. They organize text into rows and columns, which can make information easy to consolidate and analyze.
 
@@ -37,16 +37,12 @@ The following example shows how to generate a simple In-Table List:
 <tr valign="top">
 <td>
 
-```C#
-<<foreach [in customers]>><<[CustomerName]>>
-```
+`<<foreach [in customers]>><<[CustomerName]>>`
 
 </td>
 <td>
 
-```C#
-<<[Order.Sum(c => c.Price)]>><</foreach>>
-```
+`<<[Order.Sum(c => c.Price)]>><</foreach>>`
 
 </td>
 </tr>
@@ -54,9 +50,7 @@ The following example shows how to generate a simple In-Table List:
 <td align="right"><b>Total</b></td>
 <td>
 
-```C#
-<<[Sum(m => m.Order.Sum(c => c.Price))]>>
-```
+`<<[Sum(m => m.Order.Sum(c => c.Price))]>>`
 
 </td>
 </tr>
@@ -78,9 +72,7 @@ The following example shows how to generate an In-Table List with a variable c
 <tr>
 <td colspan="2" align="center">
 
-```C#
-<<if [!Any()]>>No data
-```
+`<<if [!Any()]>>`No data
 
 </td>
 </tr>
@@ -88,16 +80,12 @@ The following example shows how to generate an In-Table List with a variable c
 <tr valign="top">
 <td>
 
-```C#
-<<else>><<foreach [in orders]>><<[Product.ProductName]>>
-```
+`<<else>><<foreach [in orders]>><<[Product.ProductName]>>`
 
 </td>
 <td>
 
-```C#
-<<[Price]>><</foreach>>
-```
+`<<[Price]>><</foreach>>`
 
 </td>
 </tr>
@@ -105,9 +93,7 @@ The following example shows how to generate an In-Table List with a variable c
 <td align="right"><b>Total</b></td>
 <td>
 
-```C#
-<<[Sum(c => c.Price)]>><</if>>
-```
+`<<[Sum(c => c.Price)]>><</if>>`
 
 </td>
 </tr>
@@ -129,16 +115,12 @@ The following example shows how to generate an In-Table List with data filterin
 <tr valign="top">
 <td>
 
-```C#
-<<foreach [in orders.Where(c => c.OrderDate.Year == 2020).GroupBy(c => c.Customer).OrderBy(g => g.Key.CustomerName)]>><<[Key.CustomerName]>>
-```
+`<<foreach [in orders.Where(c => c.OrderDate.Year == 2020).GroupBy(c => c.Customer).OrderBy(g => g.Key.CustomerName)]>><<[Key.CustomerName]>>`
 
 </td>
 <td>
 
-```C#
-<<[Sum(c => c.Price)]>><</foreach>>
-```
+`<<[Sum(c => c.Price)]>><</foreach>>`
 
 </td>
 </tr>
@@ -160,16 +142,12 @@ The following example shows how to generate an In-Table List with a progressive
 <tr valign="top">
 <td>
 
-```C#
-<<var [total = 0.0]>><<foreach [in orders]>><<[Customer.CustomerName]>>
-```
+`<<var [total = 0.0]>><<foreach [in orders]>><<[Customer.CustomerName]>>`
 
 </td>
 <td>
 
-```C#
-<<var [total = total + Price]>><<[total]>><</foreach>>
-```
+`<<var [total = total + Price]>><<[total]>><</foreach>>`
 
 </td>
 </tr>
@@ -188,19 +166,15 @@ The following example shows how to generate an In-Table List with row highlight
 </tr>
 </thead>
 <tbody>
-<tr valign="top" bgcolor="darkgray">
+<tr valign="top" bgcolor="darkblue">
 <td>
 
-```C#
-<<foreach [in orders]>><<if [Price >= 400]>><<[Customer.CustomerName]>>
-```
+`<<foreach [in orders]>><<if [Price >= 400]>><<[Customer.CustomerName]>>`
 
 </td>
 <td>
 
-```C#
-<<[Price]>>
-```
+`<<[Price]>>`
 
 </td>
 </tr>
@@ -208,16 +182,12 @@ The following example shows how to generate an In-Table List with row highlight
 <tr valign="top">
 <td>
 
-```C#
-<<else>><<[Customer.CustomerName]>>
-```
+`<<else>><<[Customer.CustomerName]>>`
 
 </td>
 <td>
 
-```C#
-<<[Price]>><</if>><</foreach>>
-```
+`<<[Price]>><</if>><</foreach>>`
 
 </td>
 </tr>
@@ -226,9 +196,7 @@ The following example shows how to generate an In-Table List with row highlight
 <td align="right"><b>Total</b></td>
 <td>
 
-```C#
-<<[Sum(c => c.Price)]>>
-```
+`<<[Sum(c => c.Price)]>>`
 
 </td>
 </tr>
@@ -251,16 +219,12 @@ The following example shows how to generate an In-Table List with a background 
 <tr valign="top">
 <td>
 
-```C#
-<<var [total = 0.0]>><<foreach [in orders]>><<backColor[color]>><<[Customer.CustomerName]>><</backColor>>
-```
+`<<var [total = 0.0]>><<foreach [in orders]>><<backColor[color]>><<[Customer.CustomerName]>><</backColor>>`
 
 </td>
 <td>
 
-```C#
-<<var [total = total + Price]>><<[total]>><</foreach>>
-```
+`<<var [total = total + Price]>><<[total]>><</foreach>>`
 
 </td>
 </tr>

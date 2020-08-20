@@ -8,15 +8,15 @@ description: "Report Generation Concepts"
 keywords: ""
 ---
 
-1. [Data Sources](#data-sources)
-2. [Tags and Expressions](#tags-and-expressions)
-3. [Data Bands](#data-bands)
-    * [Referencing Fields in a Data Source](#referencing-fields-in-a-data-source)
-    * [Managing Paragraph Breaks](#managing-paragraph-breaks)
-    * [Passing Control to the Next Loop Iteration](#passing-control-to-the-next-loop-iteration)
-    * [Multi-Row Data Bands](#multi-row-data-bands)
-4. [Conditional Data Processing](#conditional-data-processing)
-5. [See Also](#see-also)
+1. [Data Sources](/assembly/developer-guide/concepts/#data-sources)
+2. [Tags and Expressions](/assembly/developer-guide/concepts/#tags-and-expressions)
+3. [Data Bands](/assembly/developer-guide/concepts/#data-bands)
+    * [Referencing Fields in a Data Source](/assembly/developer-guide/concepts/#referencing-fields-in-a-data-source)
+    * [Managing Paragraph Breaks](/assembly/developer-guide/concepts/#managing-paragraph-breaks)
+    * [Passing Control to the Next Loop Iteration](/assembly/developer-guide/concepts/#passing-control-to-the-next-loop-iteration)
+    * [Multi-Row Data Bands](/assembly/developer-guide/concepts/#multi-row-data-bands)
+4. [Conditional Data Processing](/assembly/developer-guide/concepts/#conditional-data-processing)
+5. [See Also](/assembly/developer-guide/concepts/#see-also)
 
 GroupDocs.Assembly Cloud is a powerful web-based Document Automation and Report Generation solution, designed to generate data-bound documents through templates dynamically.
 
@@ -55,17 +55,12 @@ You can use the following simple data types in your JSON and XML files:
 <td>A 32-bit signed integer</td>
 <td>
 
-```XML
-<Age>30</Age>
-```
+`<Age>30</Age>`
 
 </td>
-
 <td>
 
-```JSON
-{"Age": "30"}
-```
+`{"Age": "30"}`
 
 </td>
 </tr>
@@ -75,16 +70,12 @@ You can use the following simple data types in your JSON and XML files:
 <td>A 64-bit signed integer</td>
 <td>
 
-```XML
-<Amount>5612456179438</Amount>
-```
+`<Amount>5612456179438</Amount>`
 
 </td>
 <td>
 
-```JSON
-{"Amount": "5612456179438"}
-```
+`{"Amount": "5612456179438"}`
 
 </td>
 </tr>
@@ -94,16 +85,12 @@ You can use the following simple data types in your JSON and XML files:
 <td>A double-precision floating-point number</td>
 <td>
 
-```XML
-<Price>253.9</Price>
-```
+`<Price>253.9</Price>`
 
 </td>
 <td>
 
-```JSON
-{"Price": "253.9"}
-```
+`{"Price": "253.9"}`
 
 </td>
 </tr>
@@ -113,16 +100,12 @@ You can use the following simple data types in your JSON and XML files:
 <td>A boolean value (True or False)</td>
 <td>
 
-```XML
-<IsChecked>True</IsChecked>
-```
+`<IsChecked>True</IsChecked>`
 
 </td>
 <td>
 
-```JSON
-{"IsChecked": "True"}
-```
+`{"IsChecked": "True"}`
 
 </td>
 </tr>
@@ -132,16 +115,12 @@ You can use the following simple data types in your JSON and XML files:
 <td>An instant in time</td>
 <td>
 
-```XML
-<OrderDate>2019-10-01T00:00:00</OrderDate>
-```
+`<OrderDate>2019-10-01T00:00:00</OrderDate>`
 
 </td>
 <td>
 
-```JSON
-{"OrderDate": "2019-10-01T00:00:00"}
-```
+`{"OrderDate": "2019-10-01T00:00:00"}`
 
 </td>
 </tr>
@@ -151,16 +130,12 @@ You can use the following simple data types in your JSON and XML files:
 <td>A sequence of Unicode characters</td>
 <td>
 
-```XML
-<Name>John Doe</Name>
-```
+`<Name>John Doe</Name>`
 
 </td>
 <td>
 
-```JSON
-{"Name": "John Doe"}
-```
+`{"Name": "John Doe"}`
 
 </td>
 </tr>
@@ -409,23 +384,17 @@ The corresponding table-row data band is shown below. As you can see, it is refe
 <tr valign="top">
 <td>
 
-```C#
-<<foreach [p in ds.Persons]>><<[p.NumberOf()]>>
-```
+`<<foreach [p in ds.Persons]>><<[p.NumberOf()]>>`
 
 </td>
 <td>
 
-```C#
-<<[p.Name]>>
-```
+`<<[p.Name]>>`
 
 </td>
 <td>
 
-```C#
-<<[p.Age]>><</foreach>>
-```
+`<<[p.Age]>><</foreach>>`
 
 </td>
 </tr>
@@ -433,9 +402,7 @@ The corresponding table-row data band is shown below. As you can see, it is refe
 <td align="center"><b>Count</b></td>
 <td colspan="2">
 
-```C#
-<<[ds.Persons.Count()]>>
-```
+`<<[ds.Persons.Count()]>>`
 
 </td>
 <td></td>
@@ -472,30 +439,23 @@ The main syntax differences between the standard and the contextual types of fie
 <td valign="middle">Standard</td>
 <td>
 
-```C#
-<<foreach [variable in sequence]>>
-```
+`<<foreach [variable in sequence]>>`
 </td>
 <td>
 
-```C#
-<<[variable.Field]>>
-```
+`<<[variable.Field]>>`
 
 </td>
 <tr valign="top">
 <td valign="middle">Contextual</td>
 <td>
 
-```C#
-<<foreach [in sequence]>>
-```
+`<<foreach [in sequence]>>`
+
 </td>
 <td>
 
-```C#
-<<[Field]>>
-```
+`<<[Field]>>`
 
 </td>
 </tbody>
@@ -515,23 +475,17 @@ The complete table-row data band example, that demonstates the Contextual Field 
 <tr valign="top">
 <td>
 
-```C#
-<<foreach [in Persons]>><<[NumberOf()]>>
-```
+`<<foreach [in Persons]>><<[NumberOf()]>>`
 
 </td>
 <td>
 
-```C#
-<<[Name]>>
-```
+`<<[Name]>>`
 
 </td>
 <td>
 
-```C#
-<<[Age]>><</foreach>>
-```
+`<<[Age]>><</foreach>>`
 
 </td>
 </tr>
@@ -539,9 +493,7 @@ The complete table-row data band example, that demonstates the Contextual Field 
 <td align="right"><b>Count</b></td>
 <td colspan="2">
 
-```C#
-<<[Persons.Count()]>>
-```
+`<<[Persons.Count()]>>`
 
 </td>
 <td>
@@ -569,84 +521,68 @@ Given an enumeration of strings `["item1", "item2", "item3"]` and a common data 
 <tr valign="top">
 <td >
 
-```C#
-prefix <<foreach [item in items]>><<[item]>>¶
-<</foreach>>suffix
-```
+`prefix <<foreach [item in items]>><<[item]>>¶`
+`<</foreach>>suffix`
 
 </td>
 <td>
 
-```C#
-prefix item1¶
-item2¶
-item3¶
-suffix
-```
+`prefix item1¶`
+`item2¶`
+`item3¶`
+`suffix`
 
 </td>
 </tr>
 <tr valign="top">
 <td>
 
-```C#
-prefix<<foreach [item in items]>>¶
-<<[item]>><</foreach>> suffix
-```
+`prefix<<foreach [item in items]>>¶`
+`<<[item]>><</foreach>> suffix`
 
 </td>
 <td>
 
-```C#
-prefix¶
-item1¶
-item2¶
-item3 suffix
-```
+`prefix¶`
+`item1¶`
+`item2¶`
+`item3 suffix`
 
 </td>
 </tr>
 <tr valign="top">
 <td>
 
-```C#
-prefix¶
-<<foreach [item in items]>><<[item]>>¶
-<</foreach>>suffix
-```
+`prefix¶`
+`<<foreach [item in items]>><<[item]>>¶`
+`<</foreach>>suffix`
 
 </td>
 <td>
 
-```C#
-prefix¶
-item1¶
-item2¶
-item3¶
-suffix
-```
+`prefix¶`
+`item1¶`
+`item2¶`
+`item3¶`
+`suffix`
 
 </td>
 </tr>
 <tr valign="top">
 <td>
 
-```C#
-prefix<<foreach [item in items]>>¶
-<<[item]>><</foreach>>¶
-suffix
-```
+`prefix<<foreach [item in items]>>¶`
+`<<[item]>><</foreach>>¶`
+`suffix`
 
 </td>
 <td>
 
-```C#
-prefix¶
-item1¶
-item2¶
-item3¶
-suffix
-```
+`prefix¶`
+`item1¶`
+`item2¶`
+`item3¶`
+`suffix`
 
 </td>
 </tr>
@@ -671,23 +607,17 @@ In the following example, given an enumeration of `Person` data elements, you ca
 <tr valign="top">
 <td>
 
-```C#
-<<foreach [p in Persons]>><<[p.Name]>>
-```
+`<<foreach [p in Persons]>><<[p.Name]>>`
 
 </td>
 <td>
 
-```C#
-<<next>><<[p.Name]>>
-```
+`<<next>><<[p.Name]>>`
 
 </td>
 <td>
 
-```C#
-<<next>><<[p.Name]>><</foreach>>
-```
+`<<next>><<[p.Name]>><</foreach>>`
 
 </td>
 </tr>
@@ -720,9 +650,7 @@ The main purpose of a table-row data band, spread over multiple rows, is to gene
 <tr valign="middle">
 <td>
 
-```C#
-<<foreach>> ...
-```
+`<<foreach>> ...`
 
 </td>
 <td align="center"><code>...</code></td>
@@ -736,9 +664,7 @@ The main purpose of a table-row data band, spread over multiple rows, is to gene
 <td align="center"><code>...</code></td>
 <td>
 
-```C#
-... <</foreach>>
-```
+...`<</foreach>>`
 
 </td>
 </tr>
@@ -758,32 +684,24 @@ The next example demonstrates this advanced technique and shows how to populate
 <tr valign="top">
 <td>
 
-```C#
-<<foreach [m in ds.Managers]>><<[m.Name]>>
-```
+`<<foreach [m in ds.Managers]>><<[m.Name]>>`
 
 </td>
 <td>
 
-```C#
-<<foreach [m in ds.Managers]>><<[m.Name]>>
-```
+`<<foreach [m in ds.Managers]>><<[m.Name]>>`
 
 </td>
 </tr>
 <tr valign="top">
 <td>
 
-```C#
-<<foreach [m in ds.Managers]>><<[m.Name]>>
-```
+`<<foreach [m in ds.Managers]>><<[m.Name]>>`
 
 </td>
 <td>
 
-```C#
-<<[c.Price]>><</foreach>><</foreach>>
-```
+`<<[c.Price]>><</foreach>><</foreach>>`
 
 </td>
 </tr>
@@ -791,9 +709,7 @@ The next example demonstrates this advanced technique and shows how to populate
 <td align="right"><b>Total</b></td>
 <td>
 
-```C#
-<<[ds.Contracts.Sum(c => c.Price)]>>
-```
+`<<[ds.Contracts.Sum(c => c.Price)]>>`
 
 </td>
 </tr>
@@ -860,9 +776,7 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 <tr valign="center">
 <td>
 
-```C#
-<<if [condition_1]>> ...
-```
+`<<if [condition_1]>>`...
 
 </td>
 <td align="middle"><code>...</code></td>
@@ -872,9 +786,7 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 <tr valign="center">
 <td>
 
-```C#
-<<elseif [condition_2]>> ...
-```
+`<<elseif [condition_2]>>`...
 
 </td>
 <td align="middle"><code>...</code></td>
@@ -884,9 +796,7 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 <tr valign="center">
 <td>
 
-```C#
-<<elseif [condition_N]>> ...
-```
+`<<elseif [condition_N]>>` ...
 
 </td>
 <td align="middle"><code>...</code></td>
@@ -896,17 +806,13 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 <tr valign="center">
 <td>
 
-```C#
-<<else>> ...
-```
+`<<else>>`...
 
 </td>
 <td align="middle"><code>...</code></td>
 <td>
 
-```C#
-... <</if>>
-```
+... `<</if>>`
 
 </td>
 </tr>

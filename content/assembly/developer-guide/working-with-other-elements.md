@@ -8,17 +8,17 @@ description: "Working with Hyperlinks, Bookmarks, Checkboxes, Barcodes"
 keywords: ""
 ---
 
-1. [Inserting a Hyperlink](#inserting-a-hyperlink)
-    * [Inserting a Hyperlink for Word-Processing Documents and Emails](#inserting-a-hyperlink-for-word-processing-documents-and-Emails)
-    * [Inserting a Hyperlink for Spreadsheet Documents](#inserting-a-hyperlink-for-spreadsheet-documents)
-    * [Inserting a Hyperlink for Presentation documents](#inserting-a-hyperlink-for-presentation-documents)
-2. [Inserting a Bookmark](#inserting-a-bookmark)
-3. [Setting Checkbox Values](#setting-checkbox-values)
-4. [Generating and Inserting a Barcode Image](#generating-and-inserting-a-barcode-image)
-    * [Scaling of Barcode Symbols](#scaling-of-barcode-symbols)
-    * [Setting Height of 1D Barcode Symbols](#setting-height-of-1D-barcode-symbols)
-    * [Customizing Colors](#customizing-colors)
-    * [Customizing Font and Placement](#customizing-font-and-placement)
+1. [Inserting a Hyperlink](/assembly/developer-guide/working-with-other-elements/#inserting-a-hyperlink)
+    * [Inserting a Hyperlink for Word-Processing Documents and Emails](/assembly/developer-guide/working-with-other-elements/#inserting-a-hyperlink-for-word-processing-documents-and-Emails)
+    * [Inserting a Hyperlink for Spreadsheet Documents](/assembly/developer-guide/working-with-other-elements/#inserting-a-hyperlink-for-spreadsheet-documents)
+    * [Inserting a Hyperlink for Presentation documents](/assembly/developer-guide/working-with-other-elements/#inserting-a-hyperlink-for-presentation-documents)
+2. [Inserting a Bookmark](/assembly/developer-guide/working-with-other-elements/#inserting-a-bookmark)
+3. [Setting Checkbox Values](/assembly/developer-guide/working-with-other-elements/#setting-checkbox-values)
+4. [Generating and Inserting a Barcode Image](/assembly/developer-guide/working-with-other-elements/#generating-and-inserting-a-barcode-image)
+    * [Scaling of Barcode Symbols](/assembly/developer-guide/working-with-other-elements/#scaling-of-barcode-symbols)
+    * [Setting Height of 1D Barcode Symbols](/assembly/developer-guide/working-with-other-elements/#setting-height-of-1D-barcode-symbols)
+    * [Customizing Colors](/assembly/developer-guide/working-with-other-elements/#customizing-colors)
+    * [Customizing Font and Placement](/assembly/developer-guide/working-with-other-elements/#customizing-font-and-placement)
 
 This section describes template tags, used to generate and insert different types of elements, such as hyperlinks, bookmarks, checkboxes, barcodes into reports dynamically.
 

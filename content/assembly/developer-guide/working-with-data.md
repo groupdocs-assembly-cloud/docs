@@ -8,16 +8,16 @@ description: "Working with Data"
 keywords: ""
 ---
 
-1. [Using Variables](#using-variables)
-2. [Using Extension Methods](#using-extension-methods)
-    * [Using Extension Methods of Iteration Variables](#using-extension-methods-of-iteration-variables)
-    * [Using Enumeration Extension Methods](#using-enumeration-extension-methods)
-3. [Data Formatting](#data-formatting)
-   * [Formatting Numeric and DateTime Expressions](#formatting-numeric-and-datetime-expressions)
-   * [Additional Number Formats](#additional-number-formats)
-   * [Additional String Formats](#additional-string-formats)
-   * [Formatting Options Combinations](#formatting-options-combinations)
-4. [See Also](#see-also)
+1. [Using Variables](/assembly/developer-guide/working-with-data/#using-variables)
+2. [Using Extension Methods](/assembly/developer-guide/working-with-data/#using-extension-methods)
+    * [Using Extension Methods of Iteration Variables](/assembly/developer-guide/working-with-data/#using-extension-methods-of-iteration-variables)
+    * [Using Enumeration Extension Methods](/assembly/developer-guide/working-with-data/#using-enumeration-extension-methods)
+3. [Data Formatting](/assembly/developer-guide/working-with-data/#data-formatting)
+   * [Formatting Numeric and DateTime Expressions](/assembly/developer-guide/working-with-data/#formatting-numeric-and-datetime-expressions)
+   * [Additional Number Formats](/assembly/developer-guide/working-with-data/#additional-number-formats)
+   * [Additional String Formats](/assembly/developer-guide/working-with-data/#additional-string-formats)
+   * [Formatting Options Combinations](/assembly/developer-guide/working-with-data/#formatting-options-combinations)
+4. [See Also](/assembly/developer-guide/working-with-data/#see-also)
 
 This section describes special techniques, designed to apply data filtering, sorting, groupings and formatting throughout the Report Generation process. There are a number of flexible approaches to data processing depending on what you want to do.
 
@@ -83,16 +83,12 @@ For example, given the previous declaration of items, you can enumerate and numb
 <tr valign="top">
 <td>
 
-```C#
-<<foreach [item in items]>><<[item.NumberOf()]>>
-```
+`<<foreach [item in items]>><<[item.NumberOf()]>>`
 
 </td>
 <td>
 
-```C#
-<<[item]>><</foreach>>
-```
+`<<[item]>><</foreach>>`
 
 </td>
 </tr>

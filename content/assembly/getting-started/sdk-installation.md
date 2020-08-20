@@ -8,11 +8,11 @@ description: "SDK Installation Instructions"
 keywords: ""
 ---
 
-1. [.NET SDK Installation](#.net-sdk-installation)
-2. [PHP SDK Installation](#php-sdk-installation)
-3. [Node.js SDK Installation](#node.js-sdk-installation)
-4. [Ruby SDK Installation](#ruby-sdk-installation)
-5. [Python SDK Installation](#python-sdk-installation)
+1. [.NET SDK Installation](/assembly/getting-started/sdk-installation/#.net-sdk-installation)
+2. [PHP SDK Installation](/assembly/getting-started/sdk-installation/#php-sdk-installation)
+3. [Node.js SDK Installation](/assembly/getting-started/sdk-installation/#node.js-sdk-installation)
+4. [Ruby SDK Installation](/assembly/getting-started/sdk-installation/#ruby-sdk-installation)
+5. [Python SDK Installation](/assembly/getting-started/sdk-installation/#python-sdk-installation)
 
 The architecture of Assembly Cloud API can be applied to different kinds of applications, independent of operating systems and programming languages. Our team aims to provide the best programming technology to our customers to make their office automation convenient with a family of SDKs, which are lightweight wrappers around the Assembly Cloud API.
 

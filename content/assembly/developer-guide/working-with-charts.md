@@ -8,13 +8,13 @@ description: "Working with Charts"
 keywords: ""
 ---
 
-1. [Binding Chart to a Data Source](#binding-chart-to-a-data-source)
-2. [Specifying Chart Options](#specifying-chart-options)
-3. [Excluding Chart Series](#excluding-chart-series)
-4. [Working with Colors](#working-with-colors)
-    * [Configuring Chart Series Colors](#configuring-chart-series-colors)
-    * [Configuring Chart Series Point Colors](#configuring-chart-series-point-colors)
-5. [See Also](#HSeeAlso)
+1. [Binding Chart to a Data Source](/assembly/developer-guide/working-with-charts/#binding-chart-to-a-data-source)
+2. [Specifying Chart Options](/assembly/developer-guide/working-with-charts/#specifying-chart-options)
+3. [Excluding Chart Series](/assembly/developer-guide/working-with-charts/#excluding-chart-series)
+4. [Working with Colors](/assembly/developer-guide/working-with-charts/#working-with-colors)
+    * [Configuring Chart Series Colors](/assembly/developer-guide/working-with-charts/#configuring-chart-series-colors)
+    * [Configuring Chart Series Point Colors](/assembly/developer-guide/working-with-charts/#configuring-chart-series-point-colors)
+5. [See Also](/assembly/developer-guide/working-with-charts/#HSeeAlso)
 
 A good template layout should reflect the client’s view and the kinds of questions he will ask. Graphics (diagrams and charts) and tabular data are usually combined with the relative weighting depending on the client’s preferences and analytical demands - that provides additional insight into specific trends that may not be evident from simple tabular reports.
 
@@ -85,7 +85,7 @@ To work with colors dynamically you need to use ***Color Expressions***. A color
 For a chart series to be colored dynamically, define the corresponding color expressions in names of these series using **`seriesColor`** tag, which has the following syntax:
 
 ```C#
-<<seriesColor [color-expression]>>
+<<seriesColor [color_expression]>>
 ```
 
 The following template demonstrates how to use the **`seriesColor`** tag:
@@ -97,5 +97,5 @@ The following template demonstrates how to use the **`seriesColor`** tag:
 You can set colors of an individual chart series points dynamically through the color expression. For a chart series with points to be colored dynamically, define corresponding color expressions in names of these series using **`pointColor`** tag, which has the following syntax:
 
 ```C#
-<<pointColor [color-expression]>>
+<<pointColor [color_expression]>>
 ```

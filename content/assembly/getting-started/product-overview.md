@@ -8,19 +8,19 @@ description: "Product Overview"
 keywords: ""
 ---
 
-1. [Report Generation vs Document Automation](#report-generation-vs-document-automation)
-2. [What is GroupDocs.Assembly Cloud](#what-is-groupdocs.assembly-cloud)
-3. [Supported Reporting Features](#supported-reporting-features)
-4. [Supported File Formats](#supported-file-formats)
-5. [Supported Data Sources](#supported-data-sources)
-6. [Security Compliance](#security-compliance)
-7. [Software Requirements](#software-requirements)
-8. [Available SDKs](#available-sdks)
-9. [Related Resources](#related-resources)
-    * [API Explorer](#api-explorer)
-    * [Free Online Document Assembly App](#free-online-document-assembly-app)
-    * [Document Assembly Cloud GitHub Repository](#document-assembly-cloud-github-repository)
-    * [On-Premise Document Assembly SDKs](#on-premise-document-assembly-sdks)
+1. [Report Generation vs Document Automation](/assembly/getting-started/product-overview/#report-generation-vs-document-automation)
+2. [What is GroupDocs.Assembly Cloud](/assembly/getting-started/product-overview/#what-is-groupdocs.assembly-cloud)
+3. [Supported Reporting Features](/assembly/getting-started/product-overview/#supported-reporting-features)
+4. [Supported File Formats](/assembly/getting-started/product-overview/#supported-file-formats)
+5. [Supported Data Sources](/assembly/getting-started/product-overview/#supported-data-sources)
+6. [Security Compliance](/assembly/getting-started/product-overview/#security-compliance)
+7. [Software Requirements](/assembly/getting-started/product-overview/#software-requirements)
+8. [Available SDKs](/assembly/getting-started/product-overview/#available-sdks)
+9. [Related Resources](/assembly/getting-started/product-overview/#related-resources)
+    * [API Explorer](/assembly/getting-started/product-overview/#api-explorer)
+    * [Free Online Document Assembly App](/assembly/getting-started/product-overview/#free-online-document-assembly-app)
+    * [Document Assembly Cloud GitHub Repository](/assembly/getting-started/product-overview/#document-assembly-cloud-github-repository)
+    * [On-Premise Document Assembly SDKs](/assembly/getting-started/product-overview/#on-premise-document-assembly-sdks)
 
 ---
 

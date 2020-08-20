@@ -8,11 +8,11 @@ description: "Working with Lists"
 keywords: ""
 ---
 
-1. [In-Paragraph List](#in-paragraph-list)
-2. [Bulleted List](#bulleted-list)
-3. [Numbered List](#numbered-list)
-4. [Colouring List Items](#colouring-list-items)
-5. [Sample Data Source](#sample-data-source)
+1. [In-Paragraph List](/assembly/developer-guide/working-with-lists/#in-paragraph-list)
+2. [Bulleted List](/assembly/developer-guide/working-with-lists/#bulleted-list)
+3. [Numbered List](/assembly/developer-guide/working-with-lists/#numbered-list)
+4. [Colouring List Items](/assembly/developer-guide/working-with-lists/#colouring-list-items)
+5. [Sample Data Source](/assembly/developer-guide/working-with-lists/#sample-data-source)
 
 Lists are extensively used in documents to emphasize important ideas and increase the readability of text by arranging and formatting information.
 
