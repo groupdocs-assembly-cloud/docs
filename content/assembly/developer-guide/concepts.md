@@ -169,7 +169,6 @@ Depending on the functional role, the following types of tags can be distinguish
             <th>Functional Role</th>
             <th style="text-align:center">Tags</th>
             <th>Tag Description</th>
-            <th>Comments</th>
         </tr>
     </thead>
     <tbody>
@@ -200,12 +199,10 @@ Depending on the functional role, the following types of tags can be distinguish
         <tr>
             <td valign="top" align="center"><b><i><code>doc</code></i></b></td>
             <td valign="top">Inserts a contents of an external document</td>
-            <td style="color:red;"><i>currently not supported</i></td>
         </tr>
         <tr>
             <td valign="top" align="center"><b><i><code>image</code></i></b></td>
             <td  valign="top">Inserts an image</td>
-            <td  style="color:red;"><i>currently not supported</i></td>
         </tr>
         <tr>
             <td valign="top" align="center"><b><i><code>link</code></i></b></td>
@@ -300,7 +297,7 @@ When a data band is related to a table, that is to a single or multiple rows of 
 
 Depending on the objectives, this type of data band may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in more complicated scenarios, that imply the generation of hierarchical tabular data structures, using multirow data bands may be required.
 
-### Referencing Fields in a Data Source
+### Referencing Fields in a Data Source
 
 To reference a field inside a data source you must provide a string representation of it.
 
@@ -405,19 +402,42 @@ The corresponding table-row data band is shown below. As you can see, it is refe
 `<<[ds.Persons.Count()]>>`
 
 </td>
-<td></td>
 </tr>
 </tbody>
 </table>
 
 When the report generation process is complete, you'll see the following output:
 
-| Number | Name | Age |
-| :-: | :-: | :-: |
-| 1 | John Doe | 30 |
-| 2 | Jane Doe | 27 |
-| 3 | John Smith | 51 |
-| **Count** | **3** |
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Name</th>
+<th>Age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>John Doe</td>
+<td>30</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Jane Doe</td>
+<td>27</td>
+</tr>
+<tr>
+<td>3</td>
+<td>John Smith</td>
+<td>51</td>
+</tr>
+<tr>
+<td>Count</td>
+<td colspan="2">3</td>
+</tr>
+</tbody>
+</table>
 
 You can also use the ***Contextual Field Access*** technique, which enables you to access fields of a data source depending on the processing context. An object, to which the Contextual Field Access can be applied, is determined by the following rules:
 
@@ -495,8 +515,6 @@ The complete table-row data band example, that demonstates the Contextual Field 
 
 `<<[Persons.Count()]>>`
 
-</td>
-<td>
 </td>
 </tr>
 </tbody>

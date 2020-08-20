@@ -8,9 +8,9 @@ description: "SDK Installation Instructions"
 keywords: ""
 ---
 
-1. [.NET SDK Installation](/assembly/getting-started/sdk-installation/#.net-sdk-installation)
+1. [.NET SDK Installation](/assembly/getting-started/sdk-installation/#net-sdk-installation)
 2. [PHP SDK Installation](/assembly/getting-started/sdk-installation/#php-sdk-installation)
-3. [Node.js SDK Installation](/assembly/getting-started/sdk-installation/#node.js-sdk-installation)
+3. [Node.js SDK Installation](/assembly/getting-started/sdk-installation/#nodejs-sdk-installation)
 4. [Ruby SDK Installation](/assembly/getting-started/sdk-installation/#ruby-sdk-installation)
 5. [Python SDK Installation](/assembly/getting-started/sdk-installation/#python-sdk-installation)
 
@@ -18,7 +18,7 @@ The architecture of Assembly Cloud API can be applied to different kinds of appl
 
 To install the required SDK follow the corresponding instructions below:
 
-## .NET SDK Installation
+## NET SDK Installation
 
 To install the .NET SDK, run the following command:
 
@@ -26,7 +26,7 @@ To install the .NET SDK, run the following command:
 PM> Install-Package GroupDocs.Assembly-Cloud
 ```
 
-## PHP SDK Installation
+## PHP SDK Installation
 
 To install the PHP SDK, run the following command:
 
@@ -34,7 +34,7 @@ To install the PHP SDK, run the following command:
 composer require groupdocscloud/groupdocs-assembly-cloud
 ```
 
-## Node.js SDK Installation
+## NodeJS SDK Installation
 
 To install the Node.js SDK, run the following command:
 
@@ -42,7 +42,7 @@ To install the Node.js SDK, run the following command:
 npm install groupdocs-assembly-cloud
 ```
 
-## Ruby SDK Installation
+## Ruby SDK Installation
 
 To install the Ruby SDK, run the following command:
 
@@ -50,7 +50,7 @@ To install the Ruby SDK, run the following command:
 gem install groupdocs\_cloud\_assembly
 ```
 
-## Python SDK Installation
+## Python SDK Installation
 
 To install the Python SDK, run the following command:
 

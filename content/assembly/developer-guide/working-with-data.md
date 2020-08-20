@@ -115,7 +115,6 @@ The following table describes the built-in extension methods. Several notation c
 * `ComparableSelector` stands for the `Selector` returning [IComparable](http://msdn.microsoft.com/en-US/library/system.icomparable(v=vs.110).aspx);
 * `Predicate` stands for the `Selector` returning a boolean value.
 
-
 <table><thead><tr valign="top"><th>Extension Method</th><th>Argument</th><th>Description</th><th>Examples and Notes</th></tr></thead><tbody><tr valign="top"><td><p id="HAll">All</p></td><td>(Predicate)</td><td>Determines whether all elements of a sequence satisfy a condition</td><td><div><code>persons.All(p =&gt; p.Age &lt; 50)</code></td></tr><tr valign="top"><td rowspan="2"><p id="HAny">Any</p></td><td>()</td><td>Determines whether a sequence contains any elements</td><td><div><code>persons.Any()</code></td></tr><tr valign="top"><td>(Predicate)</td><td>Determines whether any element of a sequence satisfies a condition</td><td><div><code>persons.Any(p =&gt; p.Name == "John Smith")</code></td></tr><tr valign="top"><td><p id="HAverage">Average</p></td><td>(Selector)</td><td>Computes the average of a sequence of numeric values</td><td><div><code>persons.Average(p =&gt; p.Age)</code><p>The input selector must return a value of any type that has predefined or user-defined addition and division operators.</p></td></tr><tr valign="top"><td><p id="HConcat">Concat</p></td><td>(IEnumerable)</td><td>Concatenates two sequences</td><td><div><code>persons.Concat(otherPersons)</code><p>An implicit reference conversion must exist between types of items of concatenated enumerations.</p></td></tr><tr valign="top"><td><p id="HContains">Contains</p></td><td>(Object)</td><td>Determines whether a sequence contains a specified element</td><td><div><code>persons.Contains(otherPersons.First())</code></td></tr><tr valign="top"><td rowspan="2"><p id="HCount">Count</p></td><td>()</td><td>Returns the number of elements in a sequence</td><td><div><code>persons.Count()</code></td></tr><tr valign="top"><td>(Predicate)</td><td>Returns a number that represents how many elements in the specified sequence satisfy a condition</td><td><div><code>persons.Count(p =&gt; p.Age &gt; 30)</code></td></tr><tr valign="top"><td><p id="HDistinct">Distinct</p></td><td>()</td><td>Returns distinct elements from a sequence</td><td><div><code>persons.Distinct()</code></td></tr><tr valign="top"><td rowspan="2"><p id="HFirst">First</p></td><td>()</td><td>Returns the first element of a sequence</td><td><div><code>persons.First()</code></td></tr><tr valign="top"><td>(Predicate)</td><td>Returns the first element in a sequence that satisfies a specified condition</td><td><div><code>persons.First(p =&gt; p.Age &gt; 30)</code></td></tr><tr valign="top"><td rowspan="2"><p id="HFirstOrDefault">FirstOrDefault</p></td><td>()</td><td>Returns the first element of a sequence, or a default value if the sequence contains no elements</td><td><div><code>persons.FirstOrDefault()</code></td></tr><tr valign="top"><td>(Predicate)</td><td>Returns the first element of the sequence that satisfies a condition or a default value if no such element is found</td><td><div><code>persons.FirstOrDefault(p =&gt; p.Age &gt; 30)</code></td></tr><tr valign="top"><td><p id="HGroupBy">GroupBy</p></td><td>(Selector)</td><td>Groups the elements of a sequence according to a specified key selector function and creates a result value from each group and its key</td><td><div><code>persons.GroupBy(p =&gt; p.Age)</code><p>or</p><div><code>persons.GroupBy(p =&gt; new { Age = p.Age, Count = p.Children.Count() })</code><p>This method returns an enumeration of group objects. Each group has a unique key defined by the input selector and contains items of the source enumeration associated with this key. You can access the key of a group instance using the Key property. You can treat a group itself as an enumeration of items that the group contains.</p></td></tr><tr valign="top"><td rowspan="2"><p id="HLast">Last</p></td><td>()</td><td>Returns the last element of a sequence</td><td><div><code>persons.Last()</code></td></tr><tr valign="top"><td>(Predicate)</td><td>Returns the last element of a sequence that satisfies a specified condition</td><td><div><code>persons.Last(p =&gt; p.Age &gt; 100)</code></td></tr><tr valign="top"><td rowspan="2"><p id="HLastOrDefault">LastOrDefault</p></td><td>()</td><td>Returns the last element of a sequence, or a default value if the sequence contains no elements</td><td><div><code>persons.LastOrDefault()</code></td></tr><tr valign="top"><td>(Predicate)</td><td>Returns the last element of a sequence that satisfies a condition or a default value if no such element is found</td><td><div><code>persons.LastOrDefault(p =&gt; p.Age &gt; 100)</code></td></tr><tr valign="top"><td><p id="HMax">Max</p></td><td>(ComparableSelector)</td><td>Returns the maximum value in a sequence of values</td><td><div><code>persons.Max(p =&gt; p.Age)</code></td></tr><tr valign="top"><td><p id="HMin">Min</p></td><td>(ComparableSelector)</td><td>Returns the minimum value in a sequence of values</td><td><div><code>persons.Min(p =&gt; p.Age)</code></td></tr><tr valign="top"><td><p id="HOrderBy">OrderBy</p></td><td>(ComparableSelector)</td><td>Sorts the elements of a sequence in ascending order</td><td><div><code>persons.OrderBy(p =&gt; p.Age)</code><p>or<br>&nbsp;</p><div><code>persons.OrderBy(p =&gt; p.Age).ThenByDescending(p =&gt; p.Name)</code><p>or</p><div><code>persons.OrderBy(p =&gt; p.Age).ThenByDescending(p =&gt; p.Name).ThenBy(p =&gt; p.Children.Count())</code><p>This method returns an enumeration ordered by a single key. To specify additional ordering keys, you can use the following extension methods of an ordered enumeration:</p><ul><li><code>ThenBy(ComparableSelector)</code></li><li><code>ThenByDescending(ComparableSelector)</code></li></ul></td></tr><tr valign="top"><td><p id="HOrderByDescending">OrderByDescending</p><p id="H28ComparableSelector29-3">&nbsp;</p></td><td>(ComparableSelector)</td><td>Sorts the elements of a sequence in descending order</td><td><div><code>persons.OrderByDescending(p =&gt; p.Age)</code><p>or</p><div><code>persons.OrderByDescending(p =&gt; p.Age).ThenByDescending(p =&gt; p.Name)</code><p>or</p><div><code>persons.OrderByDescending(p =&gt; p.Age).ThenByDescending(p =&gt; p.Name).ThenBy(p =&gt; p.Children.Count())</code></td></tr><tr valign="top"><td rowspan="2"><p id="HSingle">Single</p></td><td>()</td><td>Returns the only element of a sequence, and throws an exception if there is not exactly one element in the sequence</td><td><div><code>persons.Single()</code></td></tr><tr valign="top"><td>(Predicate)</td><td>Returns the only element of a sequence that satisfies a specified condition, and throws an exception if more than one such element exists</td><td><div><code>persons.Single(p =&gt; p.Name == "John Smith")</code></td></tr><tr valign="top"><td rowspan="2"><p id="HSingleOrDefault">SingleOrDefault</p></td><td>()</td><td>Returns the only element of a sequence, or a default value if the sequence is empty; this method throws an exception if there is more than one element in the sequence</td><td><div><code>persons.SingleOrDefault()</code></td></tr><tr valign="top"><td>(Predicate)</td><td>Returns the only element of a sequence that satisfies a specified condition or a default value if no such element exists; this method throws an exception if more than one element satisfies the condition</td><td><div><code>persons.SingleOrDefault(p =&gt; p.Name == "John Smith")</code></td></tr><tr valign="top"><td><p id="HSkip">Skip</p></td><td>(int)</td><td>Bypasses a specified number of elements in a sequence and then returns the remaining elements</td><td><div><code>persons.Skip(10)</code></td></tr><tr valign="top"><td><p id="HSkipWhile">SkipWhile</p></td><td>(Predicate)</td><td>Bypasses elements in a sequence as long as a specified condition is true and then returns the remaining elements</td><td><div><code>persons.SkipWhile(p =&gt; p.Age &lt; 21)</code></td></tr><tr valign="top"><td><p id="HSum">Sum</p></td><td>(Selector)</td><td>Computes the sum of a sequence of numeric values</td><td><div><code>persons.Sum(p =&gt; p.Children.Count())</code><p>The input selector must return a value of any type that has a predefined or user-defined addition operator.</p></td></tr><tr valign="top"><td><p id="HTake">Take</p></td><td>(int)</td><td>Returns a specified number of contiguous elements from the start of a sequence.</td><td><div><code>persons.Take(5)</code></td></tr><tr valign="top"><td><p id="HTakeWhile">TakeWhile</p></td><td>(Predicate)</td><td>Returns elements from a sequence as long as a specified condition is true</td><td><div><code>persons.TakeWhile(p =&gt; p.Age &lt; 50)</code></td></tr><tr valign="top"><td><p id="HUnion">Union</p></td><td>(IEnumerable)</td><td>Produces the set union of two sequences</td><td><div><code>persons.Union(otherPersons)</code><p>An implicit reference conversion must exist between types of items of united enumerations.</p></td></tr><tr valign="top"><td><p id="HWhere">Where</p></td><td>(Predicate)</td><td>Filters a sequence of values based on a predicate</td><td><div><code>persons.Where(p =&gt; p.Age &gt; 18)</code></td></tr></tbody></table>
 
 ## Data Formatting
@@ -128,13 +127,13 @@ Formatting is the process of converting an instance of a class (numeric, string,
 
 The complete syntax of a formatting expression is shown below:
 
-```HTML
+```C#
 <<[expression]:"format" -html>>
 ```
 
 If **`-html`** switch is present, the expression result is considered to be an HTML block. For example, the following tag is replaced with content like "Bold and italic text" at runtime.
 
-```HTML
+```C#
 <<["<b>Bold</b> and <i>italic</i> text"] -html>>
 ```
 
@@ -144,7 +143,7 @@ To format a numeric or date-time expression result, you can specify a format str
 
 For example, given that `d` is a `DateTime` value, you can use the following template to format values using the `"yyyy.MM.dd"` pattern:
 
-```HTML
+```C#
 <<\[d\]:"yyyy.MM.dd">>
 ```
 
@@ -164,7 +163,7 @@ Several additional number formats, that are missing in standard .NET libraries, 
 
 You can specify one of these additional number formats instead of a format string like in the following example. Given that `i` is an integer number, you can format the number as an upper-case letter using the following template:
 
-```HTML
+```C#
 <<[i]:alphabetic>>
 ```
 
@@ -181,7 +180,7 @@ Several additional string formats, that are missing in standard .NET libraries, 
 
 You can specify one of these additional string formats instead of a format string like in the following example. Given that `s` is a string, you can capitalize the first letter of every word in the string using the following template.
 
-```HTML
+```C#
 <<[s]:caps>>
 ```
 
@@ -189,13 +188,13 @@ You can specify one of these additional string formats instead of a format strin
 
 You can also specify one of the additional string formats together with a format string or an additional number format like in the following examples. Given that `d` is a `DateTime` value, you can convert its textual month representation to upper case using the following template:
 
-```HTML
+```C#
 <<[d]:"MMMM":upper>>
 ```
 
 Given that `i` is an `integer` number, you can convert the number to a lower-case Roman numeral using the following template:
 
-```HTML
+```C#
 <<[i]:roman:lower>>
 ```
 

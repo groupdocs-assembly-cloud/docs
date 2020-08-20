@@ -9,7 +9,7 @@ keywords: ""
 ---
 
 1. [Report Generation vs Document Automation](/assembly/getting-started/product-overview/#report-generation-vs-document-automation)
-2. [What is GroupDocs.Assembly Cloud](/assembly/getting-started/product-overview/#what-is-groupdocs.assembly-cloud)
+2. [What is GroupDocs Assembly Cloud](/assembly/getting-started/product-overview/#what-is-groupdocs-assembly-cloud)
 3. [Supported Reporting Features](/assembly/getting-started/product-overview/#supported-reporting-features)
 4. [Supported File Formats](/assembly/getting-started/product-overview/#supported-file-formats)
 5. [Supported Data Sources](/assembly/getting-started/product-overview/#supported-data-sources)
@@ -30,13 +30,13 @@ Just about any modern company has office files to automate, and the possibility 
 
 For all these reasons, Report Generation & Document Automation are the important parts of modern software design, targeting to meet the client's customized needs and provide him with analytical tools necessary for integrated assessment.
 
-## Report Generation vs Document Automation
+## Report Generation vs Document Automation
 
 Both Report Generation and Document Automation software serve one purpose – create documents with no user interaction using templates and external data sources. However, there are a number of differences between them. Generally, Document Automation solutions tend to be more lightweight, whereas Report Generation solutions are more powerful. In terms of template design, Document Automation is mostly oriented on users with advanced text editor skills, whereas Report Generation is oriented on IT pros.
 
 To undertake those challenges and help our customers to seamlessly fulfill Document Automation and Report Generation tasks of various volume and complexity level, GroupDocs team has developed an enterprise-ready Assembly Cloud API with a powerful set of open-source SDKs for nearly all mainstream programming languages.
 
-## What is GroupDocs.Assembly Cloud
+## What is GroupDocs Assembly Cloud
 
 Assembly Cloud is a Report Generation & Document Automation [REST API](https://apireference.groupdocs.cloud/assembly/), designed to create customized Microsoft Word and OpenOffice documents, Excel spreadsheets, PowerPoint presentations, PDFs and files of many other types based on a powerful Reporting Engine and reusable document template management.
 
@@ -44,7 +44,7 @@ A common template usually contains a portion of static content, combined with sp
 
 Assembly Cloud is also a powerful [Mail Merge](https://en.wikipedia.org/wiki/Mail_merge) automation alternative, that generates personalized emails on the fly.
 
-## Supported Reporting Features
+## Supported Reporting Features
 
 The Reporting Engine, also known as the Report Generator, is the central functional element of our cloud-based Document Assembly technology, which allows customers to perform the following actions:
 
@@ -124,7 +124,7 @@ You can try our free online [Document Assembly App](https://products.groupdocs.a
 
 Check out our [GitHub repository](https://github.com/groupdocs-assembly-cloud/) for the latest versions of Assembly Cloud SDKs.
 
-### On-Premise Document Assembly SDKs
+### On-Premise Document Assembly SDKs
 
 We also provide an on-premise family of Assembly SDKs for .NET- and Java-based integrated development:
 

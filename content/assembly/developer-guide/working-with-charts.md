@@ -14,7 +14,6 @@ keywords: ""
 4. [Working with Colors](/assembly/developer-guide/working-with-charts/#working-with-colors)
     * [Configuring Chart Series Colors](/assembly/developer-guide/working-with-charts/#configuring-chart-series-colors)
     * [Configuring Chart Series Point Colors](/assembly/developer-guide/working-with-charts/#configuring-chart-series-point-colors)
-5. [See Also](/assembly/developer-guide/working-with-charts/#HSeeAlso)
 
 A good template layout should reflect the client’s view and the kinds of questions he will ask. Graphics (diagrams and charts) and tabular data are usually combined with the relative weighting depending on the client’s preferences and analytical demands - that provides additional insight into specific trends that may not be evident from simple tabular reports.
 
