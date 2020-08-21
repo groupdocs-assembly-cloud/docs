@@ -1,4 +1,4 @@
-﻿---
+---
 id: "working-with-other-elements"
 url: "assembly/developer-guide/working-with-other-elements"
 title: "Working with Hyperlinks, Bookmarks, Checkboxes, Barcodes"
@@ -9,110 +9,122 @@ keywords: ""
 ---
 
 1. [Inserting a Hyperlink]({{< param url >}}/#inserting-a-hyperlink)
-    * [Inserting a Hyperlink for Word-Processing Documents and Emails]({{< param url >}}/#inserting-a-hyperlink-for-word-processing-documents-and-Emails)
-    * [Inserting a Hyperlink for Spreadsheet Documents]({{< param url >}}/#inserting-a-hyperlink-for-spreadsheet-documents)
-    * [Inserting a Hyperlink for Presentation documents]({{< param url >}}/#inserting-a-hyperlink-for-presentation-documents)
+    * [Inserting a Hyperlink into a Word-Processing Document or Email]({{< param url >}}/#inserting-a-hyperlink-into-a-word-processing-document-or-email)
+    * [Inserting a Hyperlink into a Spreadsheet]({{< param url >}}/#inserting-a-hyperlink-into-a-spreadsheet)
+    * [Inserting a Hyperlink into a Presentation]({{< param url >}}/#inserting-a-hyperlink-into-a-presentation)
 2. [Inserting a Bookmark]({{< param url >}}/#inserting-a-bookmark)
 3. [Setting Checkbox Values]({{< param url >}}/#setting-checkbox-values)
 4. [Generating and Inserting a Barcode Image]({{< param url >}}/#generating-and-inserting-a-barcode-image)
-    * [Scaling of Barcode Symbols]({{< param url >}}/#scaling-of-barcode-symbols)
-    * [Setting Height of 1D Barcode Symbols]({{< param url >}}/#setting-height-of-1D-barcode-symbols)
-    * [Customizing Colors]({{< param url >}}/#customizing-colors)
-    * [Customizing Font and Placement]({{< param url >}}/#customizing-font-and-placement)
+    * [Setting a Barcode Type]({{< param url >}}/#setting-a-barcode-type)
 
-This section describes template tags, used to generate and insert different types of elements, such as hyperlinks, bookmarks, checkboxes, barcodes into reports dynamically.
+This section describes template tags used to generate and insert different types of elements, such as hyperlinks, bookmarks, checkboxes, barcodes, into reports dynamically.
 
 ## Inserting a Hyperlink
 
-You can insert hyperlinks to different types of documents: word-processing documents and emails, spreadsheet and presentation documents. The following subsections show some tag syntax differences, applied to each document type.
+You can insert hyperlinks to different types of documents: word-processing documents and emails, spreadsheet and presentation documents. The following subsections show some tag syntax differences applied to each document type.
 
-### Inserting a Hyperlink for Word-Processing Documents and Emails
+### Inserting a Hyperlink into a Word-Processing Document or Email
 
-You can also insert links to bookmarks to your reports dynamically using **`link`** tags. The syntax of a **`link`** tag is defined as follows:
+You can insert links to bookmarks using the **`link`** tags.
+The syntax of a **`link`** tag is defined as follows:
 
 ```C#
-<<link [uri_or_bookmark_expression][display_text_expression]>>
+<<link [reference][text]>>
 ```
 
-Here, `uri_or_bookmark_expression` defines URI or the name of a bookmark within the same document for a hyperlink to be inserted dynamically. This expression is mandatory and must return a non-empty value.
+Here, a mandatory `reference` parameter defines either ***URI***, which represents a hyperlink to an external resource, or the name of a ***Bookmark*** within the same document. If a `reference` represents the name of a bookmark, then the corresponding link navigates to the documents bookmark.
 
-In turn, `display_text_expression` defines text to be displayed for the hyperlink. This expression is optional. If it is omitted or returns an empty value, then during runtime, a value of `uri_or_bookmark_expression` is used as display text as well.
+An optional `text` parameter can be omitted. In this case, a text from the `reference` parameter is used by default.
 
-While building a report `uri_or_bookmark_expression` and `display_text_expression` are evaluated and their results are used to construct a hyperlink that replaces the corresponding **`link`** tag then. If `uri_or_bookmark_expression` returns the name of a bookmark in the same document, then the hyperlink navigates to the bookmark. Otherwise, the hyperlink navigates to a corresponding external resource.
+Have a note that a **`link`** tag cannot be used within charts.
 
-A **`link`** tag cannot be used within a chart.
+### Inserting a Hyperlink into a Spreadsheet
 
-### Inserting a Hyperlink for Spreadsheet Documents
+For spreadsheet documents, the behavior of **`link`** tags is different. Here, a `reference` parameter represents a ***Cell*** or a ***Cell Range***.
 
-For spreadsheet documents, the behavior of **`link`** tags is different.
-
-If an expression defined within a **`link`** tag is evaluated to a cell or cell range reference during runtime, then the tag is replaced with a link to the corresponding cell or cell range.
-
-The following table describes supported formats of cell and cell range references:
+Some common use-cases are described in the following table:
 
 | Description | Format | Example |
 | --- | --- | --- |
-| Reference to a cell within the same worksheet | `cell_name` | A1 |
-| Reference to a cell in another worksheet | `worksheet_name!cell_name` | Sheet1!A1 |
-| Reference to a cell range within the same worksheet | `start_cell_name:end_cell_name` | A1:B2 |
-| Reference to a cell range in another worksheet | `worksheet_name!start_cell_name:end_cell_name` | Sheet1!A1:B2 |
+| Local reference to a Cell | `cellName` | B11 |
+| Reference to a Cell within another Worksheet | `worksheetName!cellName` | Sheet2!A1 |
+| Local reference to a Cell Range  | `startCellName:endCellName` | B3:B7 |
+| Reference to a Cell Range within another Worksheet | `worksheetName!startCellName:endCellName` | Sheet3!A2:C2 |
 
-The following example demonstrates how to insert a link to a cell `A1`:
+### Inserting a Hyperlink into a Presentation
 
-```C#
-<<link ["A1"] ["Home"]>>
-```
+For Presentation documents, the behavior of **`link`** tags is also different. Here, a `reference` parameter represents a reference to a slide within the same presentation, defined by a "Slide`N`" string, where `N` is a slide number.
 
-### Inserting a Hyperlink for Presentation documents
-
-For Presentation documents, the behavior of **`link`** tags is different.
-
-If an expression defined within a **`link`** tag is evaluated to a `SlideN` value, where `N` is a one-based index of a slide within the same Presentation document.
-
-The following example demonstrates how to insert a link to the first slide:
+The following example demonstrates how to insert a link to a second slide of a presentation:
 
 ```C#
-<<link ["Slide1"] ["Home"]>>
+<<link ["Slide2"] ["A reference to a second slide"]>>
 ```
 
 ## Inserting a Bookmark
 
-You can insert bookmarks to your Word-processing documents and emails with HTML and RTF bodies dynamically using **`bookmark`** tags. The syntax of a **`bookmark`** tag is defined as follows:
+You can insert bookmarks to your Word-processing documents and emails using **`bookmark`** tags. The syntax of a **`bookmark`** tag is defined as follows:
 
 ```C#
-<<bookmark [bookmark_expression]>>bookmarked_content<</bookmark>>
+<<bookmark [bookmarkName]>>content<</bookmark>>
 ```
 
-Here, a `bookmark_expression` defines the name of a bookmark to be inserted during run-time. This expression is mandatory and must return a non-empty value. While building a report, `bookmark_expression` is evaluated and its result is used to construct a bookmark start and end that replace corresponding opening and closing **`bookmark`** tags respectively.
-
-A bookmark tag cannot be used within a chart.
+Here, a mandatory `bookmarkName` parameter defines the name of a bookmark to be inserted.
 
 ## Setting Checkbox Values
 
-You can set checkbox values to either checked or unchecked in your Word-based documents dynamically by taking the following steps:
+You can set a Checkbox state to either checked or unchecked in your Word-based documents by taking the following steps:
 
-1. Add a checkbox content control to your template at a place where you want it to appear in a result document.
-2. By editing content control properties, add a **`check`** tag to the title of the checkbox content control using the following syntax.
+1. Add a Checkbox content control to your document template.
+2. By editing content properties of a Checkbox control, add a **`check`** tag to its title using the following syntax:
 
 ```C#
-<<check [conditional_expression]>>
+<<check [condition]>>
 ```
 
-Here, `conditional_expression` defines a condition upon which the value of the checkbox content control is to be set to checked. The conditional expression must return a boolean value.
+Here, a mandatory `condition` parameter of a `boolean` type, defines a condition upon which the value of the Checkbox is set to checked state.
 
 ## Generating and Inserting a Barcode Image
 
-You can generate and insert barcode images to your documents dynamically using **`barcode`** tags. To declare a dynamically generated barcode image within your template, perform the following steps:
+You can generate and insert barcode images to your documents using a **`barcode`** tag. To declare a dynamically generated barcode image within your template, perform the following steps:
 
-* Add a textbox to your template at the place where you want a barcode image to be inserted.
-* Set common image attributes such as size and others for the textbox, making the textbox look like a barcode image without bars and text.
-* Specify a barcode tag within the textbox using the following syntax:
+* Add a ***Textbox** to your template at the required place.
+* Set standard settings for the textbox.
+* Specify a **`barcode`** tag within this textbox using the following syntax:
 
 ```C#
-<<barcode [barcode_expression] -barcode_type>>
+<<barcode [barcodeText] -barcodeType>>
 ```
 
-The following example shows how you can dynamically generate a barcode image:
+Font settings that are used to render barcode image, including font name, size, style and color, are derived from the font setting of the corresponding **`barcode`** tag. Similarly, the barcode text alignment options are derived from the tag's text alignment options. The background color of the barcode image is derived from the solid fill of the textbox containing the tag.
+
+You can scale barcode symbols of a barcode image specifying the **`scale`** attribute as follows:
+
+```C#
+<<barcode [barcodeText] -barcodeType scale="scalingFactor">>
+```
+
+A **`scale`** attribute affects the width and height of a 2D barcode symbol and the width of a linear barcode symbol. The `scalingFactor` value represents the percentage of barcode symbol scaling.  
+
+You can also set the height of a barcode image applying the **`barHeight`** attribute as follows:
+
+```C#
+<<barcode [barcodeText] -barcodeType barHeight="height">>
+```
+
+The `height` value specifies the percentage of the overall barcode image height.
+
+For example, to set the height of a barcode symbol equal to two-thirds of its overall barcode image height, you can use the following barcode tag:
+
+```C#
+<<barcode ["30734690"] -codabar barHeight="67">>
+```
+
+### Setting a Barcode Type
+
+You can specify a barcode type with a switch within a **`barcode`** tag declaration.
+
+The following example shows how you can dynamically generate a barcode image of a ***CODABAR*** type:
 
 ```C#
 <<barcode ["736192"] -codabar>>
@@ -122,9 +134,7 @@ The result would look like as follows:
 
 ![Barcode Image Example](/assembly/images/working-with-other-elements/barcode.png)
 
-During run-time, an expression declared within a barcode tag is evaluated, its value is encoded using the specified barcode type, and the tag’s containing textbox is filled with a corresponding barcode image.
-
-To specify a barcode type within a **`barcode`** tag, you can use one of the predefined identifiers described in the following table:
+A list of supported barcode types is presented below:
 
 | Barcode Type | Description |
 | --- | --- |
@@ -192,45 +202,3 @@ To specify a barcode type within a **`barcode`** tag, you can use one of the pre
 | dkix | Dutch KIX barcode |
 | codablockF | Codablock F barcode |
 | codablockFGS1 | GS1 Codablock F barcode |
-
-### Scaling of Barcode Symbols
-
-You can scale barcode symbols of dynamically inserted barcode images specifying the **`scale`** attribute for a **`barcode`** tag as follows:
-
-```C#
-<<barcode [barcode_expression] -barcode_type scale="scaling_hint">>
-```
-
-A **`scale`** attribute affects the width and height of a 2D barcode symbol and the width of a 1D barcode symbol. The value of a **`scale`** attribute represents the percent of barcode symbol scaling.  
-The value of a **`scale`** attribute, however, is just a hint. That is, actual scaling of a barcode symbol can be not precisely equal to the specified one. The reason is that scaling can damage a barcode symbol in a way it to become unreadable by barcode scanners. That is why, the engine calculates actual scaling not to bring such a damage trying to be as close to the specified scaling as possible at the same time.
-
-### Setting Height of 1D Barcode Symbols
-
-The height of a 1D barcode symbol is not affected by the scale attribute of the corresponding **`barcode`** tag. However, you can set the height applying the **`barHeight`** attribute as follows:
-
-```C#
-<<barcode [barcode_expression] -barcode_type barHeight="height">>
-```
-
-The value of a **`barHeight`** attribute specifies the percent of the overall barcode image height.
-
-That is, for example, to set the height of a barcode symbol equal to two-thirds of its overall barcode image height, you can use the following barcode tag:
-
-```C#
-<<barcode ["736192"] -codabar barHeight="67">>
-```
-
-### Customizing Colors
-
-The fore color of a dynamically inserted barcode image is used to render the barcode’s symbol and text. This color is derived from the font of the corresponding **`barcode`** tag. The background color of the image is derived from the solid fill of the textbox containing the tag.
-
-### Customizing Font and Placement
-
-The font used to render barcode text of a dynamically inserted barcode image derives the following attributes from the font of the corresponding **`barcode`** tag:
-
-* Name
-* Size
-* Style (bold and italic)
-* Color
-
-The placement of barcode text of a dynamically inserted barcode image – leftward, rightward, or centered – is defined by text alignment of the corresponding **`barcode`** tag.
