@@ -18,7 +18,7 @@ accent2: "background-color:#ffa69e;color:#000;"
 
 Lists are extensively used in documents to emphasize important ideas and increase the readability of text by arranging and formatting information.
 
-In this section, we'll show you how to dynamically generate items within different types of lists and specify their options. For this purpose, we'll use a sample data source, presented at the end of this page, and a number of prime template examples provided below.
+In this section we'll show you how to dynamically generate items within different types of lists and specify their options. For this purpose, we'll use a sample data source, presented at the end of this page, and a number of prime template examples provided below.
 
 ## In-Paragraph List
 

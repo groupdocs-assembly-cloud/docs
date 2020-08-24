@@ -1,4 +1,4 @@
----
+﻿---
 id: "concepts"
 url: "assembly/developer-guide/concepts"
 title: "Report Generation Concepts"
@@ -28,7 +28,7 @@ The main Report Generation concept, presented on the image below, is simple and 
 
 A document template is just a normal document, created using Microsoft Office and OpenOffice, that contains special tags for the dynamic content. You are supposed to use that template to assemble documents on this model repeatedly and consistently.
 
-Have a note, that supported template types are not limited to word-processing document templates only, but also include spreadsheet templates, presentation templates, HTML document templates. email document templates. plain-text templates and others.
+Have a note, that supported template types are not limited to word-processing document templates only, but also include spreadsheet templates, presentation templates, HTML document templates. email document templates, plain-text templates and others.
 
 ## Data Sources
 
@@ -146,7 +146,7 @@ You can use the following simple data types in your JSON and XML files:
 
 ## Tags and Expressions
 
-***Tags*** and ***Expressions*** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines commands parameters.
+***Tags*** and ***Expressions*** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines command's parameters.
 
 In terms of the Reporting Engine, it does not matter what type of document templates you are working with - regardless of the document template type, tags and expression syntax remains the same anywhere. However, you need to use character escaping when working with HTML templates.
 
@@ -185,8 +185,8 @@ Depending on the functional role, the following types of tags can be distinguish
             <td>Provides conditional processing control</td>
         </tr>
         <tr>
-            <td rowspan=8 valign="top">Content Tags</td>
-            <td rowspan=8 valign="top">Used to generate and insert different content elements into the output dynamically</td>
+            <td rowspan=6 valign="top">Content Tags</td>
+            <td rowspan=6 valign="top">Used to generate and insert different content elements into the output dynamically</td>
             <td valign="top" align="center"><b><i><code>backColor</code></i></b></td>
             <td>Defines a background-color for a text</td>
         </tr>
@@ -197,14 +197,6 @@ Depending on the functional role, the following types of tags can be distinguish
         <tr>
             <td valign="top" align="center"><b><i><code>check</code></i></b></td>
             <td>Sets a checkbox value</td>
-        </tr>
-        <tr>
-            <td valign="top" align="center"><b><i><code>doc</code></i></b></td>
-            <td valign="top">Inserts a contents of an external document</td>
-        </tr>
-        <tr>
-            <td valign="top" align="center"><b><i><code>image</code></i></b></td>
-            <td  valign="top">Inserts an image</td>
         </tr>
         <tr>
             <td valign="top" align="center"><b><i><code>link</code></i></b></td>
@@ -774,7 +766,7 @@ You can use the following syntax to declare a conditional block:
 <</if>>
 ```
 
-The following example shows how you can use conditional expressions to represent a number of elements in a sequence, handling the situation, when the sequence is empty:
+The following example shows how you can use conditional expressions to represent a number of elements in a sequence, handling the situation when the sequence is empty:
 
 ```C#
 You have chosen <<if [!items.Any()]>>no items<<else>><<[items.Count()]>> item(s)<</if>>.
@@ -805,7 +797,7 @@ In this case, the engine produces a report as follows:
 
 By analogy with table-row data bands, when a conditional block is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Conditional Block***.
 
-Depending on the objectives, this conditional block may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in many cases, it occupies multiple rows of a table.
+Depending on the objectives, this conditional block may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in many cases it occupies multiple rows of a table.
 
 The body of a table-row conditional block, spread over multiple rows, as well as the body of its every template option, starts at the beginning of the first occupied row and ends at the end of the last occupied row as shown below:
 

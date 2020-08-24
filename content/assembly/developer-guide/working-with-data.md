@@ -23,7 +23,7 @@ This section describes special techniques, designed to apply data filtering, sor
 
 The Reporting Engine supplies a consistent [LINQ](http://ru.wikipedia.org/wiki/Language_Integrated_Query)-based model for working with data, which specifies what elements to retrieve from the data source and, optionally, how that data elements should be filtered, sorted and grouped before exporting to the resulting document.
 
-In practical terms, this implies the possibility to use a source element sequence as input and change it in different ways to make an output sequence in a final document. This technique is based on Enumeration Extension Methods, many of which take lambda-functions as arguments.
+In practical terms this implies the possibility to use a source element sequence as input and change it in different ways to make an output sequence in a final document. This technique is based on Enumeration Extension Methods, many of which take lambda-functions as arguments.
 
 ## Using Variables
 
@@ -32,7 +32,7 @@ In the course of data processing, you can define custom variables and use them 
 You can declare a variable in a document template using a **`var`** tag as follows:
 
 ```C#
-<<var [variable_type variable_name = variable_value]>>
+<<var [variableType variableName = variableValue]>>
 ```
 
 After a variable is declared in a template, its value can be accessed using the name of the variable. For example, the following template expression outputs the string “Hello World!”:
@@ -144,7 +144,7 @@ To format a numeric or date-time expression result, you can specify a format str
 For example, given that `d` is a `DateTime` value, you can use the following template to format values using the `"yyyy.MM.dd"` pattern:
 
 ```C#
-<<\[d\]:"yyyy.MM.dd">>
+<<[d]:"yyyy.MM.dd">>
 ```
 
 ### Additional Number Formats

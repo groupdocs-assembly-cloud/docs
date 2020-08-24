@@ -34,7 +34,7 @@ The syntax of a **`link`** tag is defined as follows:
 
 Here, a mandatory `reference` parameter defines either an ***URI***, which represents a hyperlink to an external resource, or the name of a ***Bookmark*** within the same document. If a `reference` represents the name of a bookmark, then the corresponding link navigates to the documents bookmark.
 
-An optional `text` parameter can be omitted. In this case, a text from the `reference` parameter is used by default.
+An optional `text` parameter can be omitted. In this case a text from the `reference` parameter is used by default.
 
 Have a note that a **`link`** tag cannot be used within charts.
 
