@@ -148,7 +148,7 @@ You can use the following simple data types in your JSON and XML files:
 
 ***Tags*** and ***Expressions*** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines commands parameters.
 
-In terms of Reporting Engine, it does not matter what type of document templates you are working with - regardless of the document template type, tags and expression syntax remains the same anywhere. However, you need to use character escaping when working with HTML templates.
+In terms of the Reporting Engine, it does not matter what type of document templates you are working with - regardless of the document template type, tags and expression syntax remains the same anywhere. However, you need to use character escaping when working with HTML templates.
 
 A tag is surrounded with a pair of "**`<<`**", "**`>>`**" character sequences and consists of the following elements: name, expression, switches and comment.
 
@@ -541,68 +541,84 @@ Given an enumeration of strings `["item1", "item2", "item3"]` and a common data 
 <tr valign="top">
 <td >
 
-`prefix <<foreach [item in items]>><<[item]>>¶`
-`<</foreach>>suffix`
+```C#
+prefix <<foreach [item in items]>><<[item]>>¶
+<</foreach>>suffix
+```
 
 </td>
 <td>
 
-`prefix item1¶`
-`item2¶`
-`item3¶`
-`suffix`
-
-</td>
-</tr>
-<tr valign="top">
-<td>
-
-`prefix<<foreach [item in items]>>¶`
-`<<[item]>><</foreach>> suffix`
-
-</td>
-<td>
-
-`prefix¶`
-`item1¶`
-`item2¶`
-`item3 suffix`
+```C#
+prefix item1¶`
+item2¶
+item3¶
+suffix
+```
 
 </td>
 </tr>
 <tr valign="top">
 <td>
 
-`prefix¶`
-`<<foreach [item in items]>><<[item]>>¶`
-`<</foreach>>suffix`
+```C#
+prefix<<foreach [item in items]>>¶
+<<[item]>><</foreach>> suffix
+```
 
 </td>
 <td>
 
-`prefix¶`
-`item1¶`
-`item2¶`
-`item3¶`
-`suffix`
+```C#
+prefix¶
+item1¶
+item2¶
+item3 suffix
+```
 
 </td>
 </tr>
 <tr valign="top">
 <td>
 
-`prefix<<foreach [item in items]>>¶`
-`<<[item]>><</foreach>>¶`
-`suffix`
+```C#
+prefix¶
+<<foreach [item in items]>><<[item]>>¶
+<</foreach>>suffix
+```
 
 </td>
 <td>
 
-`prefix¶`
-`item1¶`
-`item2¶`
-`item3¶`
-`suffix`
+```C#
+prefix¶
+item1¶
+item2¶
+item3¶
+suffix
+```
+
+</td>
+</tr>
+<tr valign="top">
+<td>
+
+```C#
+prefix<<foreach [item in items]>>¶
+<<[item]>><</foreach>>¶
+suffix
+```
+
+</td>
+<td>
+
+```C#
+prefix¶
+item1¶
+item2¶
+item3¶
+suffix
+```
 
 </td>
 </tr>

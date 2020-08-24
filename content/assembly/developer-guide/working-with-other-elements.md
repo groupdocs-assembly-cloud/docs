@@ -32,7 +32,7 @@ The syntax of a **`link`** tag is defined as follows:
 <<link [reference][text]>>
 ```
 
-Here, a mandatory `reference` parameter defines either ***URI***, which represents a hyperlink to an external resource, or the name of a ***Bookmark*** within the same document. If a `reference` represents the name of a bookmark, then the corresponding link navigates to the documents bookmark.
+Here, a mandatory `reference` parameter defines either an ***URI***, which represents a hyperlink to an external resource, or the name of a ***Bookmark*** within the same document. If a `reference` represents the name of a bookmark, then the corresponding link navigates to the documents bookmark.
 
 An optional `text` parameter can be omitted. In this case, a text from the `reference` parameter is used by default.
 
@@ -42,7 +42,7 @@ Have a note that a **`link`** tag cannot be used within charts.
 
 For spreadsheet documents, the behavior of **`link`** tags is different. Here, a `reference` parameter represents a ***Cell*** or a ***Cell Range***.
 
-Some common use-cases are described in the following table:
+Some common use-cases are shown in the following table:
 
 | Description | Format | Example |
 | --- | --- | --- |
@@ -88,7 +88,7 @@ Here, a mandatory `condition` parameter of a `boolean` type, defines a condition
 
 You can generate and insert barcode images to your documents using a **`barcode`** tag. To declare a dynamically generated barcode image within your template, perform the following steps:
 
-* Add a ***Textbox** to your template at the required place.
+* Add a ***Textbox*** to your template at the required place.
 * Set standard settings for the textbox.
 * Specify a **`barcode`** tag within this textbox using the following syntax:
 
