@@ -13,7 +13,7 @@ Welcome to the Assembly Cloud developer guide. The section includes information
 
 | <div style="width:220px">Section</div> | Short Description |
 | --: | --- |
-| [Report Generation Concepts]({{< ref "concepts" >}}) | Deals with basic concepts of the Report Generation and describes it's fundamental elements, such as tags, expressions, data bands and conditional data processing. |
+| [Report Generation Concepts]({{< ref "concepts" >}}) | Deals with basic concepts of the Report Generation and describes its fundamental elements, such as tags, expressions, data bands and conditional data processing. |
 | [Working with Data]({{< ref "working-with-data" >}}) | Describes major techniques, designed to apply data filtering, sorting, groupings and formatting throughout the Report Generation process. |
 | [Working with Lists]({{< ref "working-with-lists" >}}) | Provides information about template tags, used to customize dynamic List generation. |
 | [Working with Tables]({{< ref "working-with-tables" >}}) | Describes template tags, you can use to customize dynamic Table generation. |
