@@ -4,8 +4,8 @@ url: "assembly/getting-started/sdk-installation"
 title: "SDK Installation Instructions"
 weight: 3
 productName: "GroupDocs.Assembly Cloud"
-description: "SDK Installation Instructions"
-keywords: ""
+description: "GroupDocs Assembly Cloud developer kit installation instructions for .NET (C#), Java, PHP, C++, Node.JS, Ruby, Python, Swift, Golang programming languages."
+keywords: "groupdocs assembly cloud report generation document automation templates build generate dynamically sdk programming language c# .net java php c++ node.js ruby python swift go library software developer kit"
 ---
 
 1. [.NET SDK Installation]({{< param url >}}//#net-sdk-installation)
@@ -14,9 +14,9 @@ keywords: ""
 4. [Ruby SDK Installation]({{< param url >}}//#ruby-sdk-installation)
 5. [Python SDK Installation]({{< param url >}}//#python-sdk-installation)
 
-The architecture of Assembly Cloud API can be applied to different kinds of applications, independent of operating systems and programming languages. Our team aims to provide the best programming technology to our customers to make their office automation convenient with a family of SDKs, which are lightweight wrappers around the Assembly Cloud API.
+The architecture of [Assembly Cloud API](https://apireference.groupdocs.cloud/assembly/) can be applied to different kinds of applications, independent of operating systems and programming languages. Our team aims to provide the best programming technology to our customers to make their office automation convenient with a family of SDKs, which are lightweight wrappers around the Assembly Cloud API.
 
-To install the required SDK follow the corresponding instructions below:
+To install the required SDK follow the corresponding instructions below.
 
 ## NET SDK Installation
 

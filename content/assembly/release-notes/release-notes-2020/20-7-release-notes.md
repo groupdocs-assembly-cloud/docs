@@ -4,8 +4,8 @@ url: "assembly/release-notes/release-notes-2020/20-7-release-notes"
 title: "GroupDocs.Assembly Cloud 20.7 Release Notes"
 weight: 1
 productName: "GroupDocs.Assembly Cloud"
-description: "GroupDocs.Assembly Cloud 20.7 Release Notes"
-keywords: ""
+description: "GroupDocs Assembly Cloud 20.7 Release Notes"
+keywords: "groupdocs assembly cloud 20.7 release notes features"
 ---
 
 ## Major Features

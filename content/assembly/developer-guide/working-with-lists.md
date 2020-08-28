@@ -4,8 +4,8 @@ url: "assembly/developer-guide/working-with-lists"
 title: "Working with Lists"
 weight: 3
 productName: "GroupDocs.Assembly Cloud"
-description: "Working with Lists"
-keywords: ""
+description: "How-to dynamically generate items within different types of lists and specify their options using GroupDocs Assembly Cloud."
+keywords: "groupdocs assembly cloud report generation document automation templates build generate insert list items dynamically"
 accent1: "background-color:#b8f2e6;color:#000;"
 accent2: "background-color:#ffa69e;color:#000;"
 ---
@@ -18,7 +18,7 @@ accent2: "background-color:#ffa69e;color:#000;"
 
 Lists are extensively used in documents to emphasize important ideas and increase the readability of text by arranging and formatting information.
 
-In this section, we'll show you how to dynamically generate items within different types of lists and specify their options. For this purpose, we'll use a sample data source, presented at the end of this page, and a number of prime template examples provided below.
+In this section we'll show you how to dynamically generate items within different types of lists and specify their options. For this purpose, we'll use a sample data source, presented at the end of this page, and a number of prime template examples provided below.
 
 ## In-Paragraph List
 
@@ -110,7 +110,7 @@ The result would be as follows:
 
 ## Sample Data Source
 
-The following XML and JSON data sources represent a list of persons, described by their names and ages.
+The following XML and JSON data sources represent a list of persons, described by their names and ages:
 
 <table>
 <thead>

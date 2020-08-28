@@ -1,24 +1,27 @@
----
+﻿---
 id: "concepts"
 url: "assembly/developer-guide/concepts"
 title: "Report Generation Concepts"
 weight: 1
 productName: "GroupDocs.Assembly Cloud"
-description: "Report Generation Concepts"
-keywords: ""
+description: "GroupDocs Assembly Cloud is a powerful Document Automation and Report Generation solution designed to generate data-bound documents through templates."
+keywords: "groupdocs assembly cloud report generation document automation templates build generate dynamically syntax tag expression data band source conditional processing"
 accent1: "background-color:#b8f2e6;color:#000;"
 accent2: "background-color:#ffa69e;color:#000;"
 ---
 
-1. [Data Sources]({{< param url >}}/#data-sources)
-2. [Tags and Expressions]({{< param url >}}/#tags-and-expressions)
-3. [Data Bands]({{< param url >}}/#data-bands)
-    * [Referencing Fields in a Data Source]({{< param url >}}/#referencing-fields-in-a-data-source)
-    * [Managing Paragraph Breaks]({{< param url >}}/#managing-paragraph-breaks)
-    * [Passing Control to the Next Loop Iteration]({{< param url >}}/#passing-control-to-the-next-loop-iteration)
-    * [Multi-Row Data Bands]({{< param url >}}/#multi-row-data-bands)
-4. [Conditional Data Processing]({{< param url >}}/#conditional-data-processing)
-5. [See Also]({{< param url >}}/#see-also)
+1. [Document Templates]({{< param url >}}/#document-templates)
+2. [Data Sources]({{< param url >}}/#data-sources)
+3. [Tags and Expressions]({{< param url >}}/#tags-and-expressions)
+4. [Data Bands]({{< param url >}}/#data-bands)
+   1. [Data Band Syntax]({{< param url >}}/#data-band-syntax)
+   2. [Data Band Types]({{< param url >}}/#data-band-types)
+   3. [Referencing Fields in a Data Source]({{< param url >}}/#referencing-fields-in-a-data-source)
+   4. [Managing Paragraph Breaks]({{< param url >}}/#managing-paragraph-breaks)
+   5. [Passing Control to the Next Loop Iteration]({{< param url >}}/#passing-control-to-the-next-loop-iteration)
+   6. [Multi-Row Data Bands]({{< param url >}}/#multi-row-data-bands)
+5. [Conditional Data Processing]({{< param url >}}/#conditional-data-processing)
+6. [See Also]({{< param url >}}/#see-also)
 
 GroupDocs.Assembly Cloud is a powerful web-based Document Automation and Report Generation solution, designed to generate data-bound documents through templates dynamically.
 
@@ -26,13 +29,15 @@ The main Report Generation concept, presented on the image below, is simple and 
 
 ![Report Generation Concepts](/assembly/images/concepts/concept.png)
 
-A document template is just a normal document, created using Microsoft Office and OpenOffice, that contains special tags for the dynamic content. You are supposed to use that template to assemble documents on this model repeatedly and consistently.
+## Document Templates
 
-Have a note, that supported template types are not limited to word-processing document templates only, but also include spreadsheet templates, presentation templates, HTML document templates. email document templates. plain-text templates and others.
+A document template is just a normal document, created with Microsoft Office, OpenOffice or any other compatible office suite (LibreOffice, WPS Office, Polaris Office, Open365, SoftMaker FreeOffice, etc.), that contains special tags for the dynamic content. You are supposed to use that template to assemble documents on this model repeatedly and consistently.
+
+Have a note, that supported template types are not limited to word-processing document templates only, but also include spreadsheet templates, presentation templates, HTML document templates. email document templates, plain-text templates and others.
 
 ## Data Sources
 
-The external ***Data Source*** lets you define which data set will be used to bind with a document template and subsequently evaluated in the output.
+A ***Data Source*** lets you define which data set will be used to bind with a document template and subsequently evaluated in the output.
 
 You can use both JSON and XML files for this purpose. Both formats are hierarchical, self-describing and human-readable. However, JSON may have slight built-in advantages, because it is more compact and thus it is quicker to read and write.
 
@@ -49,11 +54,7 @@ You can use the following simple data types in your JSON and XML files:
 </thead>
 <tbody>
 <tr valign="middle">
-<td>
-
-[Int32](https://docs.microsoft.com/en-us/dotnet/api/system.int32)
-
-</td>
+<td>Int32</td>
 <td>A 32-bit signed integer</td>
 <td>
 
@@ -68,7 +69,7 @@ You can use the following simple data types in your JSON and XML files:
 </tr>
 
 <tr valign="middle">
-<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.int64">Int64</a></td>
+<td>Int64</td>
 <td>A 64-bit signed integer</td>
 <td>
 
@@ -83,7 +84,7 @@ You can use the following simple data types in your JSON and XML files:
 </tr>
 
 <tr valign="middle">
-<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.double">Double</a></td>
+<td>Double</td>
 <td>A double-precision floating-point number</td>
 <td>
 
@@ -98,7 +99,7 @@ You can use the following simple data types in your JSON and XML files:
 </tr>
 
 <tr valign="middle">
-<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.boolean">Boolean</a></td>
+<td>Boolean</td>
 <td>A boolean value (True or False)</td>
 <td>
 
@@ -113,7 +114,7 @@ You can use the following simple data types in your JSON and XML files:
 </tr>
 
 <tr valign="middle">
-<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.datetime">DateTime</a></td>
+<td>DateTime</td>
 <td>An instant in time</td>
 <td>
 
@@ -128,7 +129,7 @@ You can use the following simple data types in your JSON and XML files:
 </tr>
 
 <tr valign="middle">
-<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.string">String</a></td>
+<td>String</td>
 <td>A sequence of Unicode characters</td>
 <td>
 
@@ -146,11 +147,11 @@ You can use the following simple data types in your JSON and XML files:
 
 ## Tags and Expressions
 
-***Tags*** and ***Expressions*** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines commands parameters.
+***Tags*** and ***Expressions*** are the fundamental elements of the report generation technique, that are located in the document template and intended for the purposes of dynamic content management. At its simplest, a tag defines a command for the Reporting Engine, and the expression, which is an integral part of the tag, defines command's parameters.
 
-In terms of the Reporting Engine, it does not matter what type of document templates you are working with - regardless of the document template type, tags and expression syntax remains the same anywhere. However, you need to use character escaping when working with HTML templates.
+In terms of the Reporting Engine, it does not matter what type of document templates you are working with — regardless of the document template type, tags and expression syntax remains the same anywhere. However, you need to use character escaping when working with HTML templates.
 
-A tag is surrounded with a pair of "**`<<`**", "**`>>`**" character sequences and consists of the following elements: name, expression, switches and comment.
+A tag is surrounded with a pair of "**`<<`**", "**`>>`**" character sequences and consists of the following elements: name, expression, switches and comment:
 
 ```C#
 <<tagName [expression] -switch1 -switch2 ... //comment>>
@@ -170,7 +171,7 @@ Depending on the functional role, the following types of tags can be distinguish
             <th>Tag Type</th>
             <th style="width: 20%">Functional Role</th>
             <th style="text-align:center">Tags</th>
-            <th>Tag Description</th>
+            <th>Tags Description</th>
         </tr>
     </thead>
     <tbody>
@@ -185,8 +186,8 @@ Depending on the functional role, the following types of tags can be distinguish
             <td>Provides conditional processing control</td>
         </tr>
         <tr>
-            <td rowspan=8 valign="top">Content Tags</td>
-            <td rowspan=8 valign="top">Used to generate and insert different content elements into the output dynamically</td>
+            <td rowspan=6 valign="top">Content Tags</td>
+            <td rowspan=6 valign="top">Used to generate and insert different content elements into the output dynamically</td>
             <td valign="top" align="center"><b><i><code>backColor</code></i></b></td>
             <td>Defines a background-color for a text</td>
         </tr>
@@ -197,14 +198,6 @@ Depending on the functional role, the following types of tags can be distinguish
         <tr>
             <td valign="top" align="center"><b><i><code>check</code></i></b></td>
             <td>Sets a checkbox value</td>
-        </tr>
-        <tr>
-            <td valign="top" align="center"><b><i><code>doc</code></i></b></td>
-            <td valign="top">Inserts a contents of an external document</td>
-        </tr>
-        <tr>
-            <td valign="top" align="center"><b><i><code>image</code></i></b></td>
-            <td  valign="top">Inserts an image</td>
         </tr>
         <tr>
             <td valign="top" align="center"><b><i><code>link</code></i></b></td>
@@ -243,11 +236,13 @@ Depending on the functional role, the following types of tags can be distinguish
     </tbody>
 </table>
 
-Expressions are the most interesting part of a tag syntax. They are composed of operands, usually presented in the form of ***Data Field*** references, and ***Operators***, defined according to the [C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029).
+Expressions are the most interesting part of a tag syntax. They are composed of operands, usually presented in the form of ***Data Field*** references, and ***Operators***, defined according to the _C# Language Specification 5.0_.
 
 ## Data Bands
 
 A ***Data Band*** is a template for sequential data processing. During the document generation process, the Reporting Engine connects each data band to a data source using ***Data Field*** references and processes it as many times as there are records in the data source. As a result, the data band body is replicated and appended to the output document.
+
+### Data Band Syntax
 
 A data band is made up of two parts:
 
@@ -293,7 +288,9 @@ Variable's name and type are optional parameters, that can be specified oromitte
     </tbody>
 </table>
 
-When a data band is related to a list, it is called a ****Common Data Band****.
+### Data Band Types
+
+When a data band is related to a list, it is called a ***Common Data Band***.
 
 When a data band is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Data Band***.
 
@@ -398,7 +395,7 @@ The corresponding table-row data band is shown below. As you can see, it is refe
 </td>
 </tr>
 <tr valign="center">
-<td align="center"><b>Count</b></td>
+<td align="left">Count</td>
 <td colspan="2">
 
 `<<[ds.Persons.Count()]>>`
@@ -435,7 +432,7 @@ When the report generation process is complete, you'll see the following output:
 <td>51</td>
 </tr>
 <tr>
-<td>Count</td>
+<td align="left">Count</td>
 <td colspan="2">3</td>
 </tr>
 </tbody>
@@ -512,7 +509,7 @@ The complete table-row data band example, that demonstates the Contextual Field 
 </td>
 </tr>
 <tr valign="middle">
-<td align="right"><b>Count</b></td>
+<td align="left">Count</td>
 <td colspan="2">
 
 `<<[Persons.Count()]>>`
@@ -687,21 +684,21 @@ The main purpose of a table-row data band, spread over multiple rows, is to gene
 <tr valign="middle">
 <td>
 
-`<<foreach>> ...`
+`<<foreach>>` ...
 
 </td>
-<td align="center"><code>...</code></td>
-<td align="center"><code>...</code></td>
+<td align="center">...</td>
+<td align="center">...</td>
 </tr>
 <tr valign="middle">
-<td colspan="3" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>...</code></td>
+<td colspan="3" align="center">...</td>
 </tr>
 <tr valign="middle">
-<td  align="center"><code>...</code></td>
-<td align="center"><code>...</code></td>
+<td  align="center">...</td>
+<td align="center">...</td>
 <td>
 
-...`<</foreach>>`
+... `<</foreach>>`
 
 </td>
 </tr>
@@ -743,7 +740,7 @@ The next example demonstrates this advanced technique and shows how to populate
 </td>
 </tr>
 <tr valign="middle">
-<td align="right"><b>Total</b></td>
+<td align="left">Count</td>
 <td>
 
 `<<[ds.Contracts.Sum(c => c.Price)]>>`
@@ -774,7 +771,7 @@ You can use the following syntax to declare a conditional block:
 <</if>>
 ```
 
-The following example shows how you can use conditional expressions to represent a number of elements in a sequence, handling the situation, when the sequence is empty:
+The following example shows how you can use conditional expressions to represent a number of elements in a sequence, handling the situation when the sequence is empty:
 
 ```C#
 You have chosen <<if [!items.Any()]>>no items<<else>><<[items.Count()]>> item(s)<</if>>.
@@ -805,7 +802,7 @@ In this case, the engine produces a report as follows:
 
 By analogy with table-row data bands, when a conditional block is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Conditional Block***.
 
-Depending on the objectives, this conditional block may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in many cases, it occupies multiple rows of a table.
+Depending on the objectives, this conditional block may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in many cases it occupies multiple rows of a table.
 
 The body of a table-row conditional block, spread over multiple rows, as well as the body of its every template option, starts at the beginning of the first occupied row and ends at the end of the last occupied row as shown below:
 
@@ -814,21 +811,21 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 <tr valign="center">
 <td>
 
-`<<if [condition_1]>>`...
+`<<if [condition_1]>>` ...
 
 </td>
-<td align="middle"><code>...</code></td>
-<td align="middle"><code>...</code></td>
+<td align="middle">...</td>
+<td align="middle">...</td>
 </tr>
 
 <tr valign="center" style="{{< param accent1 >}}">
 <td>
 
-`<<elseif [condition_2]>>`...
+`<<elseif [condition_2]>>` ...
 
 </td>
-<td align="middle"><code>...</code></td>
-<td align="middle"><code>...</code></td>
+<td align="middle">...</td>
+<td align="middle">...</td>
 </tr>
 
 <tr valign="center" style="{{< param accent2 >}}">
@@ -837,17 +834,17 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 `<<elseif [condition_N]>>` ...
 
 </td>
-<td align="middle"><code>...</code></td>
-<td align="middle"><code>...</code></td>
+<td align="middle">...</td>
+<td align="middle">...</td>
 </tr>
 
 <tr valign="center">
 <td>
 
-`<<else>>`...
+`<<else>>` ...
 
 </td>
-<td align="middle"><code>...</code></td>
+<td align="middle">...</td>
 <td>
 
 ... `<</if>>`
@@ -859,4 +856,4 @@ The body of a table-row conditional block, spread over multiple rows, as well as
 
 ## See Also
 
-* The article "[C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029)" by Microsoft.
+* [C# Language Specification 5.0](http://www.microsoft.com/en-us/download/details.aspx?id=7029).

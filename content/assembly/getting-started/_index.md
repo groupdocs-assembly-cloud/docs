@@ -4,8 +4,8 @@ url: "assembly/getting-started"
 title: "Getting Started"
 weight: 1
 productName: "GroupDocs.Assembly Cloud"
-description: "Getting Started"
-keywords: ""
+description: "An introductory part to GroupDocs Assembly Cloud features."
+keywords: "groupdocs assembly cloud product"
 hideChildren: true
 ---
 
@@ -13,12 +13,10 @@ This introductory part provides a brief overview of the most important features,
 
 Please, refer to the required documentation section:
 
-| <div style="width:200px">Section</div>  | Short Description  |
-| --: | --- |
-| [Product Overview]({{< ref "product-overview" >}}) | Contains information about product's supported features, file formats, data sources, security compliance, software requirements, available SDKs and related resources. |
-| [Supported File Formats and Conversions]({{< ref "file-formats" >}}) | Describes groups of file formats and their conversions, supported by the API. |
-| [SDK Installation Instructions]({{< ref "sdk-installation" >}}) | Contains detailed instructions on how to install the required SDK. |
-| [Quick Start]({{< ref "quick-start" >}}) | Helps you get up and running with the Assembly Cloud SDK, so you can start using it within minutes. |
-| [Status and Error Codes]({{< ref "status-and-error-codes" >}}) | Introduces product's specific status and error codes. |
-| [Evaluation & Pricing Plans]({{< ref "licensing" >}}) | Contains marketing information on product's evaluation and pricing strategies. |
-| [Technical Support]({{< ref "support" >}}) | Contains information for developers, who have run into an error or have got a technical issue. |
+* _"Product Overview"_ — contains information about product's supported features, software requirements, security issues, available SDKs and other questions.
+* _"Supported File Formats and Conversions"_ — describes groups of file formats and their conversions, supported by the API.
+* _"SDK Installation Instructions"_ — contains detailed instructions on how to install the required SDK.
+* _"Quick Start"_ — helps you get up and running with the Assembly Cloud SDK, so you can start using it within minutes.
+* _"Status and Error Codes"_ — introduces product's specific status and error codes.
+* _"Evaluation and Pricing Plans"_ — contains marketing information on product's evaluation and pricing strategies.
+* _"Technical Support"_ — contains information for developers, who have run into an error or have got a technical issue.
