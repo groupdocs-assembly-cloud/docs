@@ -4,8 +4,8 @@ url: "assembly/getting-started/status-and-error-codes"
 title: "Status and Error Codes"
 weight: 5
 productName: "GroupDocs.Assembly Cloud"
-description: "Status and Error Codes"
-keywords: ""
+description: "An overview of GroupDocs Assembly Cloud API status and error codes."
+keywords: "groupdocs assembly cloud api status error codes"
 ---
 
 This section introduces Assembly Cloud specific status & error codes. The request/response data is transmitted in JSON format.

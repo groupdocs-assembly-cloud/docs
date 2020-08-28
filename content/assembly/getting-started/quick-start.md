@@ -4,8 +4,9 @@ url: "assembly/getting-started/quick-start"
 title: "Quick Start"
 weight: 4
 productName: "GroupDocs.Assembly Cloud"
-description: "Quick Start"
-keywords: ""
+description: "Obtain security credentials and proceed with three steps of the Report Generation process to demonstrate GroupDocs Assembly Cloud API within a few minutes."
+keywords: "groupdocs assembly cloud api sdk report generation document automation templates build generate dynamically quickstart how-to code samples examples c# .net java php c++ node.js ruby python swift go library"
+
 ---
 
 1. [Obtaining Security Credentials to Authorize API Requests]({{< param url >}}/#obtaining-security-credentials-to-authorize-api-requests)
@@ -14,7 +15,7 @@ keywords: ""
     2. [Designing a Data Source]({{< param url >}}/#designing-a-data-source)
     3. [Writing and Executing a Program Code]({{< param url >}}/#writing-and-executing-a-program-code)
 
-This section is intended to help developers start working with the chosen SDK quickly. You will learn how to obtain security credentials to authorize your requests to Assembly Cloud API and proceed with tree steps of the report generation process to demonstrate some major features and functionalities. The following code samples illustrate, that the Reporting Cloud API can be integrated into your application with just several lines of code in almost any mainstream programming language.
+This section is intended to help developers start working with the chosen SDK quickly. You will learn how to obtain security credentials to authorize your requests to [Assembly Cloud API](https://apireference.groupdocs.cloud/assembly/) and proceed with three steps of the report generation process to demonstrate some major features and functionalities. The following code samples illustrate, that the Reporting Cloud API can be integrated into your application with just several lines of code in almost any mainstream programming language.
 
 ## Obtaining Security Credentials to Authorize API Requests
 
@@ -38,7 +39,12 @@ Irrespective of the scale and type of document automation you are planning to em
 2. Data source design.
 3. Writing and executing a program code.
 
+---
+**NOTE**
+
 For demonstration purposes, we'll use a prepared set of materials.
+
+---
 
 ### Designing a Document Template
 
@@ -53,16 +59,6 @@ The following document template example demonstrates some typical tags, you can 
 At the next step, you need to create a JSON or XML data source with a correct structure and data. Уou can prepare it by extracting and serializing your business objects to JSON or XML formats. Since business data is often fragmented and distributed in a variety of formats, creating the appropriate information processing subsystem is often required.
 
 The following example demonstrates a JSON data source, that is compatible with a previous document template:
-
-<table>
-<thead>
-<tr>
-<th>JSON Data Source<th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
 
 ```JSON
 {
@@ -87,11 +83,6 @@ The following example demonstrates a JSON data source, that is compatible with a
   ]
 }
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 ### Writing and Executing a Program Code
 

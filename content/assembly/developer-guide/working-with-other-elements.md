@@ -4,18 +4,18 @@ url: "assembly/developer-guide/working-with-other-elements"
 title: "Working with Hyperlinks, Bookmarks, Checkboxes, Barcodes"
 weight: 6
 productName: "GroupDocs.Assembly Cloud"
-description: "Working with Hyperlinks, Bookmarks, Checkboxes, Barcodes"
-keywords: ""
+description: "Нow-to insert different types of elements, such as hyperlinks, bookmarks, barcodes, into reports dynamically using GroupDocs Assembly Cloud."
+keywords: "groupdocs assembly cloud report generation document automation templates build generate insert hyperlink bookmark checkbox barcode dynamically"
 ---
 
 1. [Inserting a Hyperlink]({{< param url >}}/#inserting-a-hyperlink)
-    * [Inserting a Hyperlink into a Word-Processing Document or Email]({{< param url >}}/#inserting-a-hyperlink-into-a-word-processing-document-or-email)
-    * [Inserting a Hyperlink into a Spreadsheet]({{< param url >}}/#inserting-a-hyperlink-into-a-spreadsheet)
-    * [Inserting a Hyperlink into a Presentation]({{< param url >}}/#inserting-a-hyperlink-into-a-presentation)
+   1. [Inserting a Hyperlink into a Word-Processing Document or Email]({{< param url >}}/#inserting-a-hyperlink-into-a-word-processing-document-or-email)
+   2. [Inserting a Hyperlink into a Spreadsheet]({{< param url >}}/#inserting-a-hyperlink-into-a-spreadsheet)
+   3. [Inserting a Hyperlink into a Presentation]({{< param url >}}/#inserting-a-hyperlink-into-a-presentation)
 2. [Inserting a Bookmark]({{< param url >}}/#inserting-a-bookmark)
 3. [Setting Checkbox Values]({{< param url >}}/#setting-checkbox-values)
 4. [Generating and Inserting a Barcode Image]({{< param url >}}/#generating-and-inserting-a-barcode-image)
-    * [Setting a Barcode Type]({{< param url >}}/#setting-a-barcode-type)
+   1. [Setting a Barcode Type]({{< param url >}}/#setting-a-barcode-type)
 
 This section describes template tags used to generate and insert different types of elements, such as hyperlinks, bookmarks, checkboxes, barcodes, into reports dynamically.
 
