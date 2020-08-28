@@ -4,8 +4,8 @@ url: "assembly/developer-guide/working-with-tables"
 title: "Working with Tables"
 weight: 4
 productName: "GroupDocs.Assembly Cloud"
-description: "Working with Tables"
-keywords: ""
+description: "How-to apply table generation techniques with GroupDocs Assembly Cloud API, using data bands and conditional expressions."
+keywords: "groupdocs assembly cloud report generation document automation templates build generate insert table tabular data dynamically"
 accent1: "background-color:#b8f2e6;color:#000;"
 accent2: "background-color:#ffa69e;color:#000;"
 ---
@@ -49,7 +49,7 @@ The following example shows how to generate a simple In-Table List:
 </td>
 </tr>
 <tr valign="middle">
-<td align="right"><b>Total</b></td>
+<td align="left">Total</td>
 <td>
 
 `<<[Sum(m => m.Order.Sum(c => c.Price))]>>`
@@ -92,7 +92,7 @@ The following example shows how to generate an In-Table List with a variable c
 </td>
 </tr>
 <tr valign="middle">
-<td align="right"><b>Total</b></td>
+<td align="left">Total</td>
 <td>
 
 `<<[Sum(c => c.Price)]>><</if>>`
@@ -194,7 +194,7 @@ The following example shows how to generate an In-Table List with row highlight
 </td>
 </tr>
 <tr valign="middle">
-<td align="right"><b>Total</b></td>
+<td align="right">Total</td>
 <td>
 
 `<<[Sum(c => c.Price)]>>`
