@@ -10,37 +10,20 @@ keywords: "groupdocs assembly cloud 20.7 release notes features"
 
 ## Major Features
 
-Our GroupDocs.Assembly Cloud REST API comes with many features, such as:
+Our GroupDocs.Assembly Cloud REST API comes with many features and allows developers to perform the following actions:
 
-* Perform Ordinal, Cardinal, Alphabetic Numeric Formatting in Template Syntax
-* Capable to Manipulate Data using Formulae & Sequential Data Operations
-* Format Strings in Template Syntax to be Upper, Lower, Capital, FirstCap
-* Define Variables in Template Documents
-* Dynamically Generate Barcode Image in Reports & Set Background Color for HTML Documents
-* Dynamically Assign Attributes to Email Message Body & Insert Hyperlinks in Reports
-* Dynamically Build Email Message Attachments
-* Update Fields while Assembling Word Processing Documents
-* Calculate Formula while Assembling Spreadsheet Documents
-* Format Numeric, Text, Image, Chart, Date-Time Elements of Template
-* Perform Conditional Text Formatting of Template Elements
-* Use LINQ-Based Syntax for Template
-* Change File Format of the Assembled Document using File Extension or Explicit Specs
-* Automatically Remove Empty Paragraphs
-* Supports Reports of Numerous Types, e.g., Charts, Lists, Tables, Images and more
-* Works with multiple data formats:
-  * Word: DOC, DOCX, DOT, DOTX, DOTM, DOCM, RTF, WordprocessingML (XML)
-  * Excel: XLS, XLSX, XLSM, XLSB, XLT, XLTM, XLTX, SpreadsheetML (XML)
-  * PowerPoint: PPT, PPTX, PPTM, PPS, PPSX, PPSM, POTX, POTM
-  * Outlook: EML, EMLX, MSG
-  * OpenOffice Document Formats: ODT, OTT, ODS, ODP
-  * Email: MHT, MHTML
-  * Web: HTML
-  * Other: TXT
+* Dynamically generate and insert lists, tables, charts, barcodes, hyperlinks and bookmarks.
+* Manipulate data using sequential data operations.
+* Perform flexible data formatting for numeric, text & date-time elements.
+* Use conditional blocks, which represent a set of alternative template options, bound with conditional expressions.
+* Define variables used to calculate computationally expensive values just once and access them multiple times.
+* Calculate formula while assembling spreadsheet documents.
+* Assign attributes to the email message body and build email message attachments dynamically.
+* And much more.
 
-## Supported Data Sources
+## Supported Data Source Types
 
-* XML
-* JSON
+XML and JSON data source types are supported.
 
 ## Full List of Issues Covering all Changes in this Release
 

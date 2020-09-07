@@ -55,7 +55,7 @@ You can normally use common expression tags in chart titles, series names, and a
 
 The following chart template demonstrates how to set the chart’s title, series name, and axis title dynamically:
 
-![Chart Template Example](/assembly/images/working-with-charts/chart_example_1.png)
+<p align="center"><img src="/assembly/images/working-with-charts/chart_example_1.png" alt="The Chart Template Example 1" style="width:80%;"></p>
 
 ## Excluding Chart Series
 
@@ -69,7 +69,7 @@ The **`removeif`** tag syntax is as follows:
 
  The following template demonstrates how to use the **`removeif`** tag to remove a series from a chart:
 
-![Chart Template Example](/assembly/images/working-with-charts/chart_example_2.png)
+<p align="center"><img src="/assembly/images/working-with-charts/chart_example_2.png" alt="The Chart Template Example 2" style="width:80%;"></p>
 
 ## Working with Colors
 
@@ -89,7 +89,7 @@ For a chart series to be colored dynamically, define the corresponding color exp
 
 The following template demonstrates how to use the **`seriesColor`** tag:
 
-![Chart Template Example](/assembly/images/working-with-charts/chart_example_3.png)
+<p align="center"><img src="/assembly/images/working-with-charts/chart_example_3.png" alt="The Chart Template Example 3" style="width:80%;"></p>
 
 ### Configuring Chart Series Point Colors
 

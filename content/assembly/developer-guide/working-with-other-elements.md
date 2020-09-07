@@ -132,7 +132,7 @@ The following example shows how you can dynamically generate a barcode image of 
 
 The result would look like as follows:
 
-![Barcode Image Example](/assembly/images/working-with-other-elements/barcode.png)
+<p align="left"><img src="/assembly/images/working-with-other-elements/barcode.png" alt="The Barcode Image Example" style="width:18%;"></p>
 
 A list of supported barcode types is presented below:
 

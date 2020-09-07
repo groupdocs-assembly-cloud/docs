@@ -52,7 +52,7 @@ First, you need to create a document template with tags and expressions, also kn
 
 The following document template example demonstrates some typical tags, you can use to generate tables and diagrams dynamically in your reports:
 
-![Template Example 1](/assembly/images/getting-started/template_1.png)
+<p align="center"><img src="/assembly/images/getting-started/template_1.png" alt="The Template Example 1" style="width:80%;"></p>
 
 ### Designing a Data Source
 
@@ -88,4 +88,5 @@ The following example demonstrates a JSON data source, that is compatible with a
 
 Finally, you need to use a program code to pass a document template with a data source to the Reporting Engine to bind them together and produce a final document, which would look as follows:
 
-![The Output of Example 1](/assembly/images/getting-started/result_1.png)
+<p align="center"><img src="/assembly/images/getting-started/result_1.png" alt="The Output of Example 1" style="width:80%;"></p>
+

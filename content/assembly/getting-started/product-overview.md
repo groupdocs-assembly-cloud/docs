@@ -40,7 +40,7 @@ Assembly Cloud is also a powerful [Mail Merge](https://docs.aspose.cloud/displa
 
 ## Supported Reporting Features
 
-The Reporting Engine, also known as the Report Generator, is the central functional element of our cloud-based Document Assembly technology, which allows customers to perform the following actions:
+The Reporting Engine, also known as the Report Generator, is the central functional element of our cloud-based Document Assembly technology, which allows developers to perform the following actions:
 
 * Dynamically generate and insert lists, tables, charts, barcodes, hyperlinks and bookmarks.
 * Manipulate data using sequential data operations.
@@ -53,7 +53,7 @@ The Reporting Engine, also known as the Report Generator, is the central functi
 
 ## Supported File Formats
 
-GroupDocs.Assembly Cloud API allows you to generate documents in popular Microsoft Word, Excel, PowerPoint, Outlook, OpenOffice, Adobe Acrobat, Web, Image, and many other formats:
+GroupDocs.Assembly Cloud API allows you to generate documents in popular Microsoft Word, Excel, PowerPoint, Outlook, OpenOffice, Adobe Acrobat, Web, and many other formats:
 
 | File Type | File Extensions |
 | --- | --- |
@@ -62,14 +62,12 @@ GroupDocs.Assembly Cloud API allows you to generate documents in popular Microso
 | Microsoft PowerPoint | PPTX, PPT, PPTM, PPS, PPSX, PPSM, POT, POTX, POTM |
 | Microsoft Outlook | MSG, EML, EMLX |
 | OpenOffice | ODT, OTT, ODS, ODP, OTP |
-| Adobe | PDF |
-| Web | HTML, MHTML, MHT, MD, TXT |
+| Adobe Acrobat | PDF |
 | Printing Language | PCL, PS, XPS, OXPS |
-| Vector Images | SVG, EMF |
-| Bitmap Images | PNG, JPEG, GIF, TIFF, BMP |
-| Other Formats | XAML, EPUB |
+| Web | HTML, MHTML, MHT, MD, TXT |
+| Other | SVG, EMF, TIFF, XAML, EPUB |
 
-Details are provided in the "Supported File Formats and Conversions" article.
+The details are provided in the "Supported File Formats and Conversions" article.
 
 ## Supported Data Sources
 

@@ -27,13 +27,13 @@ GroupDocs.Assembly Cloud is a powerful web-based Document Automation and Report 
 
 The main Report Generation concept, presented on the image below, is simple and consistent:
 
-![Report Generation Concepts](/assembly/images/concepts/concept.png)
+<p align="center"><img src="/assembly/images/concepts/concept.png" alt="Report Generation Concepts" style="width:80%;"></p>
 
 ## Document Templates
 
 A document template is just a normal document, created with Microsoft Office, OpenOffice or any other compatible office suite (LibreOffice, WPS Office, Polaris Office, Open365, SoftMaker FreeOffice, etc.), that contains special tags for the dynamic content. You are supposed to use that template to assemble documents on this model repeatedly and consistently.
 
-Have a note, that supported template types are not limited to word-processing document templates only, but also include spreadsheet templates, presentation templates, HTML document templates. email document templates, plain-text templates and others.
+Have a note, that supported template types are not limited to word-processing document templates only, but also include spreadsheet templates, presentation templates, HTML document templates, email document templates, plain-text templates and others.
 
 ## Data Sources
 
@@ -236,7 +236,7 @@ Depending on the functional role, the following types of tags can be distinguish
     </tbody>
 </table>
 
-Expressions are the most interesting part of a tag syntax. They are composed of operands, usually presented in the form of ***Data Field*** references, and ***Operators***, defined according to the _C# Language Specification 5.0_.
+Expressions are the most interesting part of a tag syntax. They are composed of operands, usually presented in the form of ***Data Field*** references, and ***Operators***, defined according to the _"C# Language Specification 5.0"_.
 
 ## Data Bands
 
@@ -257,7 +257,7 @@ The complete syntax of a data band is provided below:
 
 An iteration variable, defined by name and type, is intended to reference an element of a sequence inside a data band body.
 
-Variable's name and type are optional parameters, that can be specified oromitted depending on the aspects described in the following table:
+Variable's name and type are optional parameters, that can be specified or omitted depending on the aspects described in the following table:
 
 <table>
     <thead>
@@ -294,7 +294,7 @@ When a data band is related to a list, it is called a ***Common Data Band***.
 
 When a data band is related to a table, that is to a single or multiple rows of a table, it is called a ***Table-Row Data Band***.
 
-Depending on the objectives, this type of data band may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in more complicated scenarios, that imply the generation of hierarchical tabular data structures, using multirow data bands may be required.
+Depending on the objectives, this type of data band may occupy a different number of table rows. In the simplest cases, it occupies a single row, but in more complicated scenarios, that imply generation of hierarchical tabular data structures, using multirow data bands may be required.
 
 ### Referencing Fields in a Data Source
 
