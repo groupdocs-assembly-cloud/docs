@@ -1,11 +1,11 @@
 ﻿---
-id: "20-7-release-notes"
-url: "assembly/release-notes/release-notes-2020/20-7-release-notes"
-title: "GroupDocs.Assembly Cloud 20.7 Release Notes"
+id: "21-1-release-notes"
+url: "assembly/release-notes/release-notes-2021/21-1-release-notes"
+title: "GroupDocs.Assembly Cloud 21.1 Release Notes"
 weight: 1
 productName: "GroupDocs.Assembly Cloud"
-description: "GroupDocs Assembly Cloud 20.7 Release Notes"
-keywords: "groupdocs assembly cloud 20.7 release notes features"
+description: "GroupDocs Assembly Cloud 21.1 Release Notes"
+keywords: "groupdocs assembly cloud 21.1 release notes features"
 ---
 
 ## Major Features
