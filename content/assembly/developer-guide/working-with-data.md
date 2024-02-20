@@ -1,4 +1,4 @@
-﻿---
+---
 id: "working-with-data"
 url: "assembly/developer-guide/working-with-data"
 title: "Working with Data"
@@ -6,18 +6,8 @@ weight: 2
 productName: "GroupDocs.Assembly Cloud"
 description: "Programming techniques, designed to apply data filtering, grouping and formatting throughout the Report Generation process using GroupDocs Assembly Cloud."
 keywords: "groupdocs assembly cloud report generation document automation templates build generate data processing linq filtering sorting grouping formatting format dynamically"
+toc: True
 ---
-
-1. [Using Variables]({{< param url >}}/#using-variables)
-2. [Using Extension Methods]({{< param url >}}/#using-extension-methods)
-   1. [Using Extension Methods of Iteration Variables]({{< param url >}}/#using-extension-methods-of-iteration-variables)
-   2. [Using Enumeration Extension Methods]({{< param url >}}/#using-enumeration-extension-methods)
-3. [Data Formatting]({{< param url >}}/#data-formatting)
-   1. [Formatting Numeric and DateTime Expressions]({{< param url >}}/#formatting-numeric-and-datetime-expressions)
-   2. [Additional Number Formats]({{< param url >}}/#additional-number-formats)
-   3. [Additional String Formats]({{< param url >}}/#additional-string-formats)
-   4. [Formatting Options Combinations]({{< param url >}}/#formatting-options-combinations)
-4. [See Also]({{< param url >}}/#see-also)
 
 This section describes special techniques, designed to apply data filtering, sorting, grouping and formatting throughout the Report Generation process. There are a number of flexible approaches to data processing depending on what you want to do.
 

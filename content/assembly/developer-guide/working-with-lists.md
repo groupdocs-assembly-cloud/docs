@@ -1,4 +1,4 @@
-﻿---
+---
 id: "working-with-lists"
 url: "assembly/developer-guide/working-with-lists"
 title: "Working with Lists"
@@ -8,13 +8,8 @@ description: "How-to dynamically generate items within different types of lists 
 keywords: "groupdocs assembly cloud report generation document automation templates build generate insert list items dynamically"
 accent1: "background-color:#b8f2e6;color:#000;"
 accent2: "background-color:#ffa69e;color:#000;"
+toc: True
 ---
-
-1. [In-Paragraph List]({{< param url >}}/#in-paragraph-list)
-2. [Bulleted List]({{< param url >}}/#bulleted-list)
-3. [Numbered List]({{< param url >}}/#numbered-list)
-4. [Colouring List Items]({{< param url >}}/#colouring-list-items)
-5. [Sample Data Source]({{< param url >}}/#sample-data-source)
 
 Lists are extensively used in documents to emphasize important ideas and increase the readability of text by arranging and formatting information.
 

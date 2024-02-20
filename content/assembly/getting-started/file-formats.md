@@ -1,4 +1,4 @@
-﻿---
+---
 id: "file-formats"
 url: "assembly/getting-started/file-formats"
 title: "Supported File Formats and Conversions"
@@ -6,15 +6,8 @@ weight: 2
 productName: "GroupDocs.Assembly Cloud"
 description: "GroupDocs Assembly Cloud API provides support for a wide variety of Microsoft Office, OpenOffice, Email and Web document formats."
 keywords: "groupdocs assembly cloud api report generation document automation templates build generate dynamically microsoft office openoffice pdf document file format import export convert load save read write"
-
+toc: True
 ---
-
-1. [Microsoft Office Word Document Formats]({{< param url >}}/#microsoft-office-word-document-formats)
-2. [Microsoft Office Excel Document Formats]({{< param url >}}/#microsoft-office-excel-document-formats)
-3. [Microsoft Office PowerPoint Document Formats]({{< param url >}}/#microsoft-office-powerpoint-document-formats)
-4. [OpenOffice Document Formats]({{< param url >}}/#openoffice-document-formats)
-5. [Email Document Formats]({{< param url >}}/#email-document-formats)
-6. [Web Document Formats]({{< param url >}}/#web-document-formats)
 
 File formats, supported by the Assembly Cloud API, can be categorized into two groups:
 

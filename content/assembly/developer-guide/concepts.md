@@ -1,4 +1,4 @@
-﻿---
+---
 id: "concepts"
 url: "assembly/developer-guide/concepts"
 title: "Report Generation Concepts"
@@ -8,20 +8,8 @@ description: "GroupDocs Assembly Cloud is a powerful Document Automation and Rep
 keywords: "groupdocs assembly cloud report generation document automation templates build generate dynamically syntax tag expression data band source conditional processing"
 accent1: "background-color:#b8f2e6;color:#000;"
 accent2: "background-color:#ffa69e;color:#000;"
+toc: True
 ---
-
-1. [Document Templates]({{< param url >}}/#document-templates)
-2. [Data Sources]({{< param url >}}/#data-sources)
-3. [Tags and Expressions]({{< param url >}}/#tags-and-expressions)
-4. [Data Bands]({{< param url >}}/#data-bands)
-   1. [Data Band Syntax]({{< param url >}}/#data-band-syntax)
-   2. [Data Band Types]({{< param url >}}/#data-band-types)
-   3. [Referencing Fields in a Data Source]({{< param url >}}/#referencing-fields-in-a-data-source)
-   4. [Managing Paragraph Breaks]({{< param url >}}/#managing-paragraph-breaks)
-   5. [Passing Control to the Next Loop Iteration]({{< param url >}}/#passing-control-to-the-next-loop-iteration)
-   6. [Multi-Row Data Bands]({{< param url >}}/#multi-row-data-bands)
-5. [Conditional Data Processing]({{< param url >}}/#conditional-data-processing)
-6. [See Also]({{< param url >}}/#see-also)
 
 GroupDocs.Assembly Cloud is a powerful web-based Document Automation and Report Generation solution, designed to generate data-bound documents through templates dynamically.
 

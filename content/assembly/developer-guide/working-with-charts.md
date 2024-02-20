@@ -1,4 +1,4 @@
-﻿---
+---
 id: "working-with-charts"
 url: "assembly/developer-guide/working-with-charts"
 title: "Working with Charts"
@@ -6,14 +6,8 @@ weight: 5
 productName: "GroupDocs.Assembly Cloud"
 description: "How-to-use different types of charts and graphs, work with chart options and colors in document templates with GroupDocs Assembly Cloud."
 keywords: "groupdocs assembly cloud report generation document automation templates build generate insert chart series line column bar pie graphics dynamically"
+toc: True
 ---
-
-1. [Binding Chart to a Data Source]({{< param url >}}/#binding-chart-to-a-data-source)
-2. [Specifying Chart Options]({{< param url >}}/#specifying-chart-options)
-3. [Excluding Chart Series]({{< param url >}}/#excluding-chart-series)
-4. [Working with Colors]({{< param url >}}/#working-with-colors)
-   1. [Configuring Chart Series Colors]({{< param url >}}/#configuring-chart-series-colors)
-   2. [Configuring Chart Series Point Colors]({{< param url >}}/#configuring-chart-series-point-colors)
 
 A good template layout should reflect the client’s view and the kinds of questions he will ask. Graphics (diagrams and charts) and tabular data are usually combined with the relative weighting depending on the client’s preferences and analytical demands — that provides additional insight into specific trends that may not be evident from simple tabular reports.
 

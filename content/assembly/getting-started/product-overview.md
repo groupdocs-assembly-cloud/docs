@@ -1,4 +1,4 @@
-﻿---
+---
 id: "product-overview"
 url: "assembly/getting-started/product-overview"
 title: "Product Overview"
@@ -6,18 +6,7 @@ weight: 1
 productName: "GroupDocs.Assembly Cloud"
 description: "A brief overview of the most important features, functionalities and use aspects of GroupDocs Assembly Cloud."
 keywords: "groupdocs assembly cloud report generation document automation templates build generate dynamically product overview supported features functionalities requirements security microsoft office openoffice pdf"
----
-
-1. [What is GroupDocs Assembly Cloud]({{< param url >}}//#what-is-groupdocs-assembly-cloud)
-2. [Supported Reporting Features]({{< param url >}}//#supported-reporting-features)
-3. [Supported File Formats]({{< param url >}}//#supported-file-formats)
-4. [Supported Data Sources]({{< param url >}}//#supported-data-sources)
-5. [Security Compliance]({{< param url >}}//#security-compliance)
-6. [Software Requirements]({{< param url >}}//#software-requirements)
-7. [Available SDKs]({{< param url >}}//#available-sdks)
-8. [Related Resources]({{< param url >}}//#related-resources)
-9. [See Also]({{< param url >}}//#see-also)
-
+toc: True
 ---
 
 In the last years, ***Report Generation*** and ***Document Automation*** solutions have been gaining importance very fast. Their significance is increasing because of the opportunities for document-oriented knowledge reuse, which these technologies provide, promote and strengthen.

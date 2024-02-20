@@ -1,4 +1,4 @@
-﻿---
+---
 id: "quick-start"
 url: "assembly/getting-started/quick-start"
 title: "Quick Start"
@@ -6,14 +6,8 @@ weight: 4
 productName: "GroupDocs.Assembly Cloud"
 description: "Obtain security credentials and proceed with three steps of the Report Generation process to demonstrate GroupDocs Assembly Cloud API within a few minutes."
 keywords: "groupdocs assembly cloud api sdk report generation document automation templates build generate dynamically quickstart how-to code samples examples c# .net java php c++ node.js ruby python swift go library"
-
+toc: True
 ---
-
-1. [Obtaining Security Credentials to Authorize API Requests]({{< param url >}}/#obtaining-security-credentials-to-authorize-api-requests)
-2. [Generating a Report in Three Steps]({{< param url >}}/#generating-a-report-in-three-steps)
-    1. [Designing a Document Template]({{< param url >}}/#designing-a-document-template)
-    2. [Designing a Data Source]({{< param url >}}/#designing-a-data-source)
-    3. [Writing and Executing a Program Code]({{< param url >}}/#writing-and-executing-a-program-code)
 
 This section is intended to help developers start working with the chosen SDK quickly. You will learn how to obtain security credentials to authorize your requests to [Assembly Cloud API](https://apireference.groupdocs.cloud/assembly/) and proceed with three steps of the report generation process to demonstrate some major features and functionalities. The following code samples illustrate, that the Reporting Cloud API can be integrated into your application with just several lines of code in almost any mainstream programming language.
 

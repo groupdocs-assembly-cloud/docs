@@ -1,8 +1,8 @@
-﻿---
+---
 id: "GroupDocs.Assembly Cloud"
 url: "assembly"
 title: "GroupDocs.Assembly Cloud"
-description: "Welcome to the GroupDocs Assembly Cloud product family."
+description: "Welcome to the GroupDocs Assembly Cloud."
 keywords: "groupdocs assembly cloud report generation document automation templates build generate dynamically"
 hideChildren: true
 ---

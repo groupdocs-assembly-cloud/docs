@@ -1,4 +1,4 @@
-﻿---
+---
 id: "getting-started"
 url: "assembly/getting-started"
 title: "Getting Started"

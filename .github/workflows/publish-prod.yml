@@ -1,0 +1,68 @@
+# Build and publish documentation
+
+name: publish-prod
+
+# Controls when the workflow will run
+on: 
+  push:
+    branches:    
+      - master
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest      
+    env:
+      PRODUCT: assembly
+      ROOT_DIR: docs-cloud-common
+      SRC_DIR: docs-cloud-common/public
+      DEST_DIR: /var/www/docs.groupdocs.cloud/html
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Submodule update
+        run: |
+          git submodule update --init --recursive
+          git submodule foreach git pull origin master
+
+      - name: Install Hugo
+        run: |
+          curl -LO https://github.com/gohugoio/hugo/releases/download/v0.101.0/hugo_extended_0.101.0_Linux-64bit.deb
+          sudo dpkg -i hugo_extended_0.101.0_Linux-64bit.deb
+      
+      - name: Install xmlstarlet
+        run: |          
+          sudo apt install xmlstarlet
+
+      - name: Run and build Hugo
+        run: |
+          # echo ${{ env.ROOT_DIR }}
+          cp -r content/* ${{ env.ROOT_DIR }}/content/          
+          hugo --source ${{ env.ROOT_DIR }} --minify --config config-geekdoc.toml
+          rootUrl=$(sed -n -e '/^baseURL/p' ${{ env.ROOT_DIR }}/config-geekdoc.toml | sed 's/baseURL//; s/\s*//g; s/=//; s/"//g')
+          # echo $rootUrl
+          pattern="//*[*[contains(text(),'${rootUrl}storage') or contains(text(),'${rootUrl}total')]]"
+          # echo $pattern
+          xmlstarlet ed --inplace -d "$pattern" ${{ env.SRC_DIR }}/product-sitemap.xml
+          # less ${{ env.SRC_DIR }}/product-sitemap.xml
+
+      - name: Deploy sitemap
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: ${{ env.SRC_DIR }}/product-sitemap.xml
+          host: ${{ secrets.DOCS_SSH_HOST }}
+          remote: ${{ env.DEST_DIR }}/sitemaps/${{ env.PRODUCT }}.xml
+          user: ${{ secrets.DOCS_SSH_USER }}
+          key: ${{ secrets.DOCS_SSH_KEY }} 
+      
+      - name: Deploy documentation
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: ${{ env.SRC_DIR }}/${{ env.PRODUCT }}
+          host: ${{ secrets.DOCS_SSH_HOST }}
+          remote: ${{ env.DEST_DIR }}
+          user: ${{ secrets.DOCS_SSH_USER }}
+          key: ${{ secrets.DOCS_SSH_KEY }}     
+

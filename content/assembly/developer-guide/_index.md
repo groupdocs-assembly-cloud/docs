@@ -1,4 +1,4 @@
-﻿---
+---
 id: "developer-guide"
 url: "assembly/developer-guide"
 title: "Developer Guide"

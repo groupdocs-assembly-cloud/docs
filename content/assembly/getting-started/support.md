@@ -1,4 +1,4 @@
-﻿---
+---
 id: "support"
 url: "assembly/getting-started/support"
 title: "Technical Support"

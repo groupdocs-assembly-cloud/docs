@@ -1,4 +1,4 @@
-﻿---
+---
 id: "licensing"
 url: "assembly/getting-started/licensing"
 title: "Evaluation and Pricing Plans"
@@ -6,7 +6,7 @@ weight: 6
 productName: "GroupDocs.Assembly Cloud"
 description: "GroupDocs Assembly Cloud marketing information on product's evaluation and pricing plans."
 keywords: "groupdocs assembly cloud api report generation document automation templates build generate dynamically marketing evaluation free trial paid plan upgrade pricing"
-
+toc: True
 ---
 
 This section provides a general marketing information on Assembly Cloud evaluation and pricing strategies.

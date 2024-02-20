@@ -1,4 +1,4 @@
-﻿---
+---
 id: "status-and-error-codes"
 url: "assembly/getting-started/status-and-error-codes"
 title: "Status and Error Codes"

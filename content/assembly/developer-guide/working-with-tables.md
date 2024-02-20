@@ -1,4 +1,4 @@
-﻿---
+---
 id: "working-with-tables"
 url: "assembly/developer-guide/working-with-tables"
 title: "Working with Tables"
@@ -8,15 +8,8 @@ description: "How-to apply table generation techniques with GroupDocs Assembly C
 keywords: "groupdocs assembly cloud report generation document automation templates build generate insert table tabular data dynamically"
 accent1: "background-color:#b8f2e6;color:#000;"
 accent2: "background-color:#ffa69e;color:#000;"
+toc: True
 ---
-
-1. [Generating a Simple Table]({{< param url >}}/#generating-a-simple-table)
-2. [Varying Table's Contents]({{< param url >}}/#varying-tables-contents)
-3. [Data Filtering and Grouping]({{< param url >}}/#data-filtering-and-grouping)
-4. [Calculating a Progressive Total]({{< param url >}}/#calculating-a-progressive-total)
-5. [Highlighting Rows]({{< param url >}}/#highlighting-rows)
-6. [Setting Cell's Background Color]({{< param url >}}/#setting-cells-background-color)
-7. [See Also]({{< param url >}}/#see-also)
 
 Tables are widely used in almost every area of human endeavor to ensure precision, correctness and comparability of data. They organize text into rows and columns, which can make information easy to consolidate and analyze.
 

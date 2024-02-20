@@ -5,4 +5,4 @@ git submodule foreach git pull origin master
 rm -rf ./docs-cloud-common/content/assembly/*
 cp -r ./content/* ./docs-cloud-common/content/
 cd ./docs-cloud-common
-hugo server -D
+hugo server -D --config=config-geekdoc.toml
