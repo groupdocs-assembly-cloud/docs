@@ -12,7 +12,7 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest      
+    runs-on: self-hosted    
     env:
       PRODUCT: assembly
       ROOT_DIR: docs-cloud-common
