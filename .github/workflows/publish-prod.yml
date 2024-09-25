@@ -1,8 +1,5 @@
-# Build and publish documentation
-
 name: publish-prod
 
-# Controls when the workflow will run
 on: 
   push:
     branches:    
@@ -12,57 +9,56 @@ on:
 jobs:
 
   build:
-    runs-on: self-hosted    
+    runs-on: self-hosted      
     env:
       PRODUCT: assembly
-      ROOT_DIR: docs-cloud-common
-      SRC_DIR: docs-cloud-common/public
-      DEST_DIR: /var/www/docs.groupdocs.cloud/html
+      WORK_DIR: docs-cloud-common
+      PUBLIC_DIR: docs-cloud-common/public
+      REMOTE_DIR: /var/www/docs.groupdocs.cloud/html
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Submodule update
         run: |
+          rm -rf ${{ env.WORK_DIR }}
           git submodule update --init --recursive
           git submodule foreach git pull origin master
 
-      - name: Install Hugo
+      - name: Install tools
         run: |
           curl -LO https://github.com/gohugoio/hugo/releases/download/v0.101.0/hugo_extended_0.101.0_Linux-64bit.deb
           sudo dpkg -i hugo_extended_0.101.0_Linux-64bit.deb
-      
-      - name: Install xmlstarlet
-        run: |          
           sudo apt install xmlstarlet
 
       - name: Run and build Hugo
         run: |
-          # echo ${{ env.ROOT_DIR }}
-          cp -r content/* ${{ env.ROOT_DIR }}/content/          
-          hugo --source ${{ env.ROOT_DIR }} --minify --config config-geekdoc.toml
-          rootUrl=$(sed -n -e '/^baseURL/p' ${{ env.ROOT_DIR }}/config-geekdoc.toml | sed 's/baseURL//; s/\s*//g; s/=//; s/"//g')
-          # echo $rootUrl
+          # Copy content 
+          cp -r content/* ${{ env.WORK_DIR }}/content/          
+          hugo --source ${{ env.WORK_DIR }} --minify --config config-geekdoc.toml
+          # Read root URL from the config file
+          rootUrl=$(sed -n -e '/^baseURL/p' ${{ env.WORK_DIR }}/config-geekdoc.toml | sed 's/baseURL//; s/\s*//g; s/=//; s/"//g')
+          # Create pattern to search for `storage` or `total` pages
           pattern="//*[*[contains(text(),'${rootUrl}storage') or contains(text(),'${rootUrl}total')]]"
-          # echo $pattern
-          xmlstarlet ed --inplace -d "$pattern" ${{ env.SRC_DIR }}/product-sitemap.xml
-          # less ${{ env.SRC_DIR }}/product-sitemap.xml
+          # Remove entries with `storage` and `total` substring 
+          xmlstarlet ed --inplace -d "$pattern" ${{ env.PUBLIC_DIR }}/product-sitemap.xml
 
       - name: Deploy sitemap
-        uses: nogsantos/scp-deploy@master
+        uses: burnett01/rsync-deployments@7.0.1
         with:
-          src: ${{ env.SRC_DIR }}/product-sitemap.xml
-          host: ${{ secrets.DOCS_SSH_HOST }}
-          remote: ${{ env.DEST_DIR }}/sitemaps/${{ env.PRODUCT }}.xml
-          user: ${{ secrets.DOCS_SSH_USER }}
-          key: ${{ secrets.DOCS_SSH_KEY }} 
-      
-      - name: Deploy documentation
-        uses: nogsantos/scp-deploy@master
-        with:
-          src: ${{ env.SRC_DIR }}/${{ env.PRODUCT }}
-          host: ${{ secrets.DOCS_SSH_HOST }}
-          remote: ${{ env.DEST_DIR }}
-          user: ${{ secrets.DOCS_SSH_USER }}
-          key: ${{ secrets.DOCS_SSH_KEY }}     
+          switches: 
+          path: ${{ env.PUBLIC_DIR }}/product-sitemap.xml
+          remote_path: ${{ env.REMOTE_DIR }}/sitemaps/${{ env.PRODUCT }}.xml
+          remote_host: ${{ secrets.DOCS_SSH_HOST }}
+          remote_user: ${{ secrets.DOCS_SSH_USER }}
+          remote_key: ${{ secrets.DOCS_SSH_KEY }}
 
+      - name: Deploy documentation
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -vzr --delete
+          path: ${{ env.PUBLIC_DIR }}/${{ env.PRODUCT }}
+          remote_path: ${{ env.REMOTE_DIR }}
+          remote_host: ${{ secrets.DOCS_SSH_HOST }}
+          remote_user: ${{ secrets.DOCS_SSH_USER }}
+          remote_key: ${{ secrets.DOCS_SSH_KEY }}
